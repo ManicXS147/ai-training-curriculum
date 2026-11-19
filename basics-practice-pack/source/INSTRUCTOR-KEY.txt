@@ -46,7 +46,7 @@ SECTION 06 · Brainstorm in three turns  4:00
 --------------------------------------------------------------------
 Goal: the good ideas show up in turns 2 and 3.
 Checkpoint (2 min): "Who's on turn 3?" Anyone stuck on picking a topic gets
-the spare in prompts.txt.
+the spare in Practice-Prompts.html.
 Debrief: ask two people which idea they'd try and which turn found it. Most
 will say turn 2 or 3.
 

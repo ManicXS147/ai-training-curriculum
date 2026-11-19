@@ -1,93 +1,86 @@
-<title>AI for Leaders Playbook</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#F6F4EE;--card:#FFFFFF;--ink:#212121;--muted:#5F5B53;--line:#E3DED2;--amber:#B7872D;--amber-ink:#8A641B;--soft:#F7EEDA;--red:#C2463A;--green:#007F68;--head:#212121;--head-ink:#FFFFFF;--head-amber:#F0BC48}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#171717;--card:#212121;--ink:#F3F0E9;--muted:#B3ADA2;--line:#3B3833;--amber:#F0BC48;--amber-ink:#F0BC48;--soft:#352C17;--red:#F26A5D;--green:#2CC9A8;--head:#212121;--head-ink:#FFFFFF}}
-:root[data-theme="dark"]{--bg:#171717;--card:#212121;--ink:#F3F0E9;--muted:#B3ADA2;--line:#3B3833;--amber:#F0BC48;--amber-ink:#F0BC48;--soft:#352C17;--red:#F26A5D;--green:#2CC9A8;--head:#212121;--head-ink:#FFFFFF}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;font-size:16px;line-height:1.45;-webkit-text-size-adjust:100%}
-.top{background:var(--head);color:var(--head-ink);padding:36px max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px));border-bottom:4px solid var(--head-amber)}
-.top>div,.grid,.foot{max-width:1180px;margin:0 auto}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--head-amber);margin:0 0 10px}
-h1{font-size:clamp(28px,4.4vw,40px);font-weight:600;line-height:1.1;margin:0 0 10px;text-wrap:balance}
-.lede{font-size:18px;margin:0;color:#D9D5CC;max-width:62ch}
-.wrap{padding:22px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
-.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
-.card{grid-column:span 12;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px 16px;break-inside:avoid;min-width:0}
-@media(min-width:820px){.s6{grid-column:span 6}.s4{grid-column:span 4}.s8{grid-column:span 8}.s5{grid-column:span 5}.s7{grid-column:span 7}}
-.part{grid-column:span 12;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-ink);margin:10px 0 -4px;display:flex;align-items:center;gap:12px}
-.part::after{content:"";flex:1;height:1px;background:var(--line)}
-h2{font-size:20px;font-weight:700;line-height:1.2;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
-h2 .n{flex:none;font-size:13px;font-weight:700;color:var(--amber-ink);border:1.5px solid var(--amber);border-radius:50%;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;transform:translateY(-2px)}
-h3{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
-p{margin:0 0 8px}
-.card>:last-child{margin-bottom:0}
-.note{color:var(--muted);font-size:14.5px}
-ul,ol{margin:0 0 8px;padding-left:20px}
-li{margin:0 0 4px}
-ol.big{list-style:none;padding:0;counter-reset:k}
-ol.big>li{counter-increment:k;position:relative;padding-left:30px;margin-bottom:9px}
-ol.big>li::before{content:counter(k);position:absolute;left:0;top:1px;font-weight:700;color:var(--amber-ink);font-size:15px;width:20px;text-align:center}
-ol.big b{font-weight:600}
-.say{display:block;background:var(--soft);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:7px 11px;margin:5px 0 8px;font-size:15px}
-li .say{margin:4px 0 2px}
-.no{color:var(--red);font-weight:600}.yes{color:var(--green);font-weight:600}
-.tw{overflow-x:auto;margin:0 0 8px}
-table{border-collapse:collapse;width:100%;font-size:15px}
-th{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 6px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
-td{padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>AI for Leaders Playbook</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&amp;display=swap" rel="stylesheet"/><style>
+:root{--black:#212121;--white:#fff;--amber:#B7872D;--amber-t:#8C6619;--amber-d:#F0BC48;--rule:#cfcfcf;--grey:#5c5c5c;--crs:#4958A6}
+@page{size:Letter;margin:.45in 0 .45in}
+@page:first{margin-top:0}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html{background:#ddd}
+body{margin:0;font-family:'Outfit',Arial,sans-serif;color:var(--black);line-height:1.25;font-size:10pt}
+.doc{width:8.5in;max-width:100%;background:var(--white);margin:24px auto}
+@media print{html{background:#fff}.doc{margin:0;width:auto}}
+.eye{font-size:9pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+b{font-weight:700}
+p{margin:0 0 .06in}
+.head{background:var(--black);color:var(--white);padding:.34in .55in .26in;border-bottom:.07in solid var(--crs)}
+.head .eye{color:var(--amber-d)}
+.head h1{margin:.08in 0 .08in;font-size:28pt;font-weight:400;line-height:1.02;color:var(--white)}
+.head p{margin:0;font-size:12pt;line-height:1.3;color:var(--amber-d);max-width:6.6in}
+.main{padding:.1in .55in .1in}
+.part{break-after:avoid;margin:.1in 0 0;padding:.05in 0 .02in;color:var(--amber-t);border-top:3pt solid var(--black)}
+.part+.row,.part+.band{border-top:0}
+.pb{}
+.row{display:grid;grid-template-columns:1.35in 1fr;gap:.22in;border-top:1.5pt solid var(--black);padding:.075in 0;break-inside:avoid}
+.row .k .num{font-size:24pt;font-weight:400;line-height:.9;color:var(--amber)}
+.row .k h2{margin:.04in 0 .02in;font-size:13pt;font-weight:700;line-height:1.05}
+.row .k span{display:block;font-size:9pt;color:var(--grey)}
+.row .b{min-width:0;align-self:center}
+.row.wide{display:block}
+.row.wide .k{display:flex;align-items:baseline;gap:.16in;margin-bottom:.07in}
+.row.wide .k h2{margin:0}
+.row.wide .k span{display:inline}
+.row.long{break-inside:auto}
+.duo{display:grid;gap:.3in;border-top:1.5pt solid var(--black)}
+.duo>.row{border-top:0}
+.part+.duo{border-top:0}
+.row.wide .k .num{font-size:20pt}
+@media (max-width:700px){.duo{display:block}.duo>.row+.row{border-top:1.5pt solid var(--black)}}
+h3{margin:.07in 0 .02in;font-size:9pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-t)}
+.b>h3:first-child{margin-top:0}
+.b>:last-child{margin-bottom:0}
+ul{margin:0 0 .06in;padding:0;list-style:none}
+ul>li{padding:.015in 0 .015in .18in;position:relative}
+ul>li::before{content:"";position:absolute;left:0;top:.075in;width:.065in;height:.065in;background:var(--amber)}
+ol{margin:0 0 .06in;padding:0;list-style:none;counter-reset:k}
+ol>li{counter-increment:k;position:relative;padding:.015in 0 .015in .24in}
+ol>li::before{content:counter(k);position:absolute;left:0;top:.015in;font-weight:700;color:var(--amber)}
+.note{color:var(--grey);font-size:9pt}
+.note b{color:var(--black)}
+.cond{font-size:9.5pt}.cond b{color:var(--amber-t)}
+.say{display:block;border:1px solid var(--rule);border-left:4px solid var(--amber);padding:.07in .1in .07in .12in;margin:.04in 0 .07in}
+.pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word;font-size:7.5pt;line-height:1.3;border:1px solid var(--rule);border-left:4px solid var(--amber);padding:.08in .1in .08in .13in;margin:.05in 0 .07in}
+.tw{overflow-x:auto;margin:0 0 .06in}
+table{border-collapse:collapse;width:100%;font-size:9.5pt}
+th{font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--black);text-align:left;padding:0 .1in .04in 0;border-bottom:1.5pt solid var(--black);vertical-align:bottom}
+td{padding:.035in .1in .035in 0;border-bottom:1px solid var(--rule);vertical-align:top}
 tr:last-child td{border-bottom:0}
 td:last-child,th:last-child{padding-right:0}
-td b{font-weight:600}
-.four{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;margin:0 0 8px}
-.four dt{font-weight:700;color:var(--amber-ink)}.four dd{margin:0}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 8px}
-.steps>div{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
-.steps b{display:block;font-weight:700;font-size:15px}
-.steps .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);display:block;margin-bottom:2px}
-.steps span{font-size:14.5px;color:var(--muted)}
-.fill{display:grid;grid-template-columns:auto 1fr;gap:0 14px;margin:4px 0 8px}
-.fill dt{font-weight:700;padding:9px 0 0}.fill dd{margin:0;border-bottom:1px solid var(--muted);padding:9px 0 5px;color:var(--muted);font-size:14.5px}
-.key{background:var(--head);color:var(--head-ink);border-color:var(--head-amber)}
-.key .steps>div{border-color:#4a463f}.key .steps span{color:#D9D5CC}
-.key h2 .n,.key h3,.key .note{color:var(--head-amber)}.key h2 .n{border-color:var(--head-amber)}
-.key ol.big>li::before{color:var(--head-amber)}
-.foot{padding:18px max(16px,env(safe-area-inset-right,0px)) 30px max(16px,env(safe-area-inset-left,0px));color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media print{:root{--bg:#fff;--card:#fff;--ink:#212121;--muted:#55514A;--line:#D8D2C4;--amber:#B7872D;--amber-ink:#8A641B;--soft:#F7EEDA;--red:#C2463A;--green:#007F68}
-*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{font-size:14.5px}.top{padding-top:22px;padding-bottom:20px}.wrap{padding-top:14px}.grid{gap:11px}.card{padding:13px 15px 11px}}
-/* course look (2026-11-11): matches the deck's accent; text stays amber */
-.top{border-bottom-color:#4958A6;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20420%20200%27%20fill%3D%27none%27%20stroke%3D%27%234958A6%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.5%27%3E%3Cpath%20d%3D%27M0%20190%20C150%20186%20260%20120%20420%2090%27/%3E%3Cpath%20d%3D%27M0%20176%20C150%20172%20260%20100%20420%2070%27/%3E%3Cpath%20d%3D%27M0%20162%20C150%20158%20260%2080%20420%2050%27/%3E%3Cpath%20d%3D%27M0%20148%20C150%20144%20260%2060%20420%2030%27/%3E%3Cpath%20d%3D%27M0%20134%20C150%20130%20260%2040%20420%2010%27/%3E%3Cpath%20d%3D%27M0%20120%20C150%20116%20260%2020%20420%20-10%27/%3E%3Cpath%20d%3D%27M0%20106%20C150%20102%20260%200%20420%20-30%27/%3E%3Cpath%20d%3D%27M0%2092%20C150%2088%20260%20-20%20420%20-50%27/%3E%3Cpath%20d%3D%27M0%2078%20C150%2074%20260%20-40%20420%20-70%27/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right max(16px,calc(50% - 600px)) center;background-size:auto 88%}
-@media(max-width:700px){.top{background-size:auto 60%;background-position:right 8px bottom 8px}}
-/* course palette (v2): course background tones and a complementary accent */
-:root{--bg:#F4F6FB;--head:#171d30;--head-amber:#F5A04E;--amber:#B8641A;--amber-ink:#8E4A10;--soft:#FCEBD9}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#11162a;--card:#1a2138;--line:#2c3552;--head:#171d30;--amber:#F5A04E;--amber-ink:#F5A04E;--soft:#3a2a1a}}
-:root[data-theme="dark"]{--bg:#11162a;--card:#1a2138;--line:#2c3552;--head:#171d30;--amber:#F5A04E;--amber-ink:#F5A04E;--soft:#3a2a1a}
-@media print{:root{--bg:#fff;--card:#fff;--amber:#B8641A;--amber-ink:#8E4A10;--soft:#FCEBD9}}
-.say{white-space:normal}
-.say ol{margin:4px 0 4px;padding-left:20px}
-.log{width:100%;font-size:14px}
-.log td{height:24px}
+table.log td{height:.3in;border-bottom:1px solid var(--rule)}
+.four{display:grid;grid-template-columns:auto 1fr;gap:.04in .14in;margin:0 0 .06in}
+.four dt{font-weight:700;color:var(--amber)}.four dd{margin:0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(1.3in,1fr));gap:.2in;margin:.04in 0 .08in}
+.steps>div{border-left:2pt solid var(--amber);padding-left:.12in}
+.steps .k2{display:block;font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-t)}
+.steps b{display:block;font-size:12pt}
+.steps span{display:block;font-size:10pt}
+.fill{display:grid;grid-template-columns:auto 1fr;gap:0 .14in;margin:.04in 0 .06in}
+.fill dt{font-weight:700;padding:.08in 0 0}.fill dd{margin:0;border-bottom:1px solid var(--grey);padding:.08in 0 .04in}
+.band{background:var(--black);color:var(--white);margin:.12in -.55in 0;padding:.16in .55in .15in;break-inside:avoid}
+.band .eye{color:var(--amber-d);display:block;margin-bottom:.07in}
+.band p{font-size:11pt}
+.band .steps>div{border-left-color:var(--amber-d)}
+.band .steps .k2{color:var(--amber-d)}
+.band .steps b{font-size:13pt}
+.band .note,.band h3{color:var(--amber-d)}
+.foot{display:flex;justify-content:space-between;gap:.2in;flex-wrap:wrap;padding:.12in .55in .16in;font-size:8pt;color:var(--grey);border-top:1px solid var(--rule)}
+@media print{.foot{display:none}}
+@media (max-width:700px){
+  .head,.main,.foot{padding-left:16px;padding-right:16px}
+  .band{margin-left:-16px;margin-right:-16px;padding-left:16px;padding-right:16px}
+  .row{grid-template-columns:1fr;gap:.06in}
+  .head h1{font-size:26pt}
+}
+</style></head><body><div class="doc"><header class="head"><div class="eye">AI for Leaders · Your playbook · v1.0</div><h1>Sharpen a decision</h1><p>Your decisions land on more people than anyone else's. Use AI for insight, not decisions: it finds the evidence, the gaps and the case against; you frame, decide and sign. Copy this playbook into your own document and improve it every time it misses.</p></header><main class="main"><div class="part eye">The workflow</div><section class="row wide"><div class="k"><div class="num">7</div><h2>Seven steps, and why each one is there</h2></div><div class="b">
 
-.pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word;font-size:12.5px;line-height:1.4;background:var(--soft);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:10px 12px;margin:6px 0 8px}
-.cond{font-size:14.5px;margin:0 0 6px}.cond b{color:var(--amber-ink)}
-.who{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink)}
-.pb{break-before:page}
-@media print{.pre{font-size:11.5px}}
-</style>
-
-<body>
-<header class="top"><div>
-<p class="eyebrow">AI for Leaders · Your playbook · v1.0</p>
-<h1>Sharpen a decision</h1>
-<p class="lede">Your decisions land on more people than anyone else's. Use AI for insight, not decisions: it finds the evidence, the gaps and the case against; you frame, decide and sign. Copy this playbook into your own document and improve it every time it misses.</p>
-</div></header>
-<div class="wrap"><main class="grid">
-
-<div class="part">The workflow</div>
-
-<section class="card s12" style="grid-column:span 12">
-<h2><span class="n">7</span>Seven steps, and why each one is there</h2>
 <div class="tw"><table>
 <tr><th>Step</th><th>Who · chat</th><th>What happens</th><th>Why it's there</th><th>Principle</th></tr>
 <tr><td><b>1 Frame it</b></td><td>You · A</td><td>An interview fills seven dimensions: decision, options, deadline, blast radius, undo cost, criteria, leaning. You confirm the frame.</td><td>AI can only analyze the question you hand it. Your leaning is written down, then kept out of the brief.</td><td>You own the question. Keep your preference out of the analysis.</td></tr>
@@ -99,11 +92,9 @@ td b{font-weight:600}
 <tr><td><b>7 Improve</b></td><td>You</td><td>When the outcome is known, compare it with the brief. Change the prompt that should have caught the miss, raise the version, log it, rerun it on the same input.</td><td>Playbooks get better from real misses.</td><td>Improve from real misses, and log every change.</td></tr>
 </table></div>
 <p class="note">Only the artifact moves to the next chat, never the conversation. Fix an artifact in the chat that built it.</p>
-</section>
+</div></section><div class="duo" style="grid-template-columns:6fr 6fr"><section class="row wide"><div class="k"><div class="num">S</div><h2>Decision Brief standard</h2></div><div class="b">
 
-<section class="card s6">
-<h2><span class="n">S</span>Decision Brief standard</h2>
-<ol class="big">
+<ol>
 <li><b>[Lint]</b> Every claim the decision rests on is listed, with its quote.</li>
 <li><b>[Review]</b> Every claim shows its evidence and where it is, or NO EVIDENCE.</li>
 <li><b>[Review]</b> Every figure is recomputed; a mismatch shows both values.</li>
@@ -113,10 +104,8 @@ td b{font-weight:600}
 <li><b>[Lint]</b> The brief contains no recommendation.</li>
 </ol>
 <p class="note">Lint rules are mechanical and always patched. Review rules need judgment and go through the gate.</p>
-</section>
+</div></section><section class="row wide"><div class="k"><div class="num">G</div><h2>Review Gate</h2></div><div class="b">
 
-<section class="card s6">
-<h2><span class="n">G</span>Review Gate</h2>
 <h3>Impact</h3>
 <p>1 Cosmetic · 2 Local · 3 Misleading (unclear, and someone could act on it) · 4 Wrong (differs from the source, or conditional shown as final) · 5 Missing or invented</p>
 <h3>Ambiguity</h3>
@@ -124,13 +113,9 @@ td b{font-weight:600}
 <h3>Gate</h3>
 <p><b>Patch</b> when Impact is 4 or 5, or Impact 3 with Ambiguity 2. <b>Keep</b> in every other case.</p>
 <h3>Decision Record (you write it)</h3>
-<dl class="fill"><dt>Decision</dt><dd>&nbsp;</dd><dt>Why (brief IDs)</dt><dd>&nbsp;</dd><dt>Would change my mind</dt><dd>&nbsp;</dd><dt>Who it lands on</dt><dd>&nbsp;</dd><dt>Owners and dates</dt><dd>&nbsp;</dd><dt>Still open</dt><dd>&nbsp;</dd></dl>
-</section>
+<dl class="fill"><dt>Decision</dt><dd> </dd><dt>Why (brief IDs)</dt><dd> </dd><dt>Would change my mind</dt><dd> </dd><dt>Who it lands on</dt><dd> </dd><dt>Owners and dates</dt><dd> </dd><dt>Still open</dt><dd> </dd></dl>
+</div></section></div><div class="part eye pb">The prompts · copy each whole, into a new chat</div><section class="row wide long"><div class="k"><div class="num">1</div><h2>Frame the decision</h2><span>chat A</span></div><div class="b">
 
-<div class="part pb">The prompts · copy each whole, into a new chat</div>
-
-<section class="card s12" style="grid-column:span 12">
-<h2><span class="n">1</span>Frame the decision · chat A</h2>
 <p class="cond"><b>Condition:</b> you face a decision that lands on others.</p><div class="pre">&lt;decision_talk&gt;
 [Talk freely: the decision, why now, the options you see, who it affects, and what you lean toward]
 &lt;/decision_talk&gt;
@@ -152,10 +137,10 @@ Interview me, then translate my answers into a Decision Frame that a separate ch
 &lt;status_definitions&gt;
 Clear: an explicit answer with one reasonable reading.
 Fuzzy: answered, but vague, conflicting, or open to two readings.
-Unknown: not yet discussed, or I said I don&#x27;t know.
+Unknown: not yet discussed, or I said I don't know.
 &lt;/status_definitions&gt;
 &lt;limits&gt;
-- Each round: the status of dimensions 1 to 7, then up to 3 questions, each with options A, B, C and D (&quot;None of these, or I don&#x27;t know&quot;).
+- Each round: the status of dimensions 1 to 7, then up to 3 questions, each with options A, B, C and D ("None of these, or I don't know").
 - Exit: when all seven are Clear, or after round 5. Every remaining Fuzzy or Unknown becomes an open item.
 &lt;/limits&gt;
 &lt;output&gt;
@@ -167,11 +152,10 @@ At the end:
 2. Decision Frame, dimensions 1 to 6: | Dimension | Answer | My words |
 3. Leaning, as its own block, so it can be left out of the brief.
 4. Open items: | ID (OPEN-n) | What is unresolved |
-5. Final line: &quot;Reply Confirmed, or list the dimensions to correct.&quot;
+5. Final line: "Reply Confirmed, or list the dimensions to correct."
 &lt;/output&gt;</div>
-</section>
-<section class="card s12" style="grid-column:span 12">
-<h2><span class="n">2</span>Build the brief · chat B (new)</h2>
+</div></section><section class="row wide long"><div class="k"><div class="num">2</div><h2>Build the brief</h2><span>chat B (new)</span></div><div class="b">
+
 <p class="cond"><b>Condition:</b> you have a confirmed frame. Leave your leaning out.</p><div class="pre">&lt;source_material&gt;
 [Upload or paste the plan, proposal or work the decision rests on]
 &lt;/source_material&gt;
@@ -196,7 +180,7 @@ DB7 [Lint] The brief contains no recommendation.
 &lt;/standard&gt;
 &lt;limits&gt;
 - Labels: NO EVIDENCE, FIGURE FAILS, NOT IN SOURCE, SOURCE TO OPEN.
-- Impact: H = the decision&#x27;s goal fails if this is wrong; M = cost or schedule slips; L = minor rework.
+- Impact: H = the decision's goal fails if this is wrong; M = cost or schedule slips; L = minor rework.
 - Certainty: H = the source gives evidence; M = stated without evidence; L = not stated or contradicted.
 &lt;/limits&gt;
 &lt;output&gt;
@@ -207,9 +191,8 @@ DB7 [Lint] The brief contains no recommendation.
 5. Open items: | ID (OPEN-n) | Missing information | How it could change the decision |
 6. Sources to open: | Source | Why |
 &lt;/output&gt;</div>
-</section>
-<section class="card s12" style="grid-column:span 12">
-<h2><span class="n">3</span>Review the brief · chat C (new)</h2>
+</div></section><section class="row wide long"><div class="k"><div class="num">3</div><h2>Review the brief</h2><span>chat C (new)</span></div><div class="b">
+
 <p class="cond"><b>Condition:</b> the brief is built. Never in the chat that built it.</p><div class="pre">&lt;source&gt;
 [Upload or paste what the brief was built from]
 &lt;/source&gt;
@@ -235,7 +218,7 @@ Impact (I):
 Ambiguity (A):
 0 Two readers would read the item the same way.
 1 Two readers would read it the same way with small differences.
-2 Two readers could read it differently, or it can&#x27;t be checked.
+2 Two readers could read it differently, or it can't be checked.
 Patch when I is 4 or 5, or when I is 3 and A is 2. Keep in every other case.
 &lt;/gate&gt;
 &lt;inputs&gt;
@@ -268,9 +251,8 @@ Apply every patch row to the artifact above. Success: each patched ID matches it
 1. The full artifact, version raised by 0.1, same tables as before.
 2. Change log: | Version | Date | Change | Why |
 &lt;/output&gt;</div>
-</section>
-<section class="card s12" style="grid-column:span 12">
-<h2><span class="n">4</span>Case against · chat D (new)</h2>
+</div></section><section class="row wide long"><div class="k"><div class="num">4</div><h2>Case against</h2><span>chat D (new)</span></div><div class="b">
+
 <p class="cond"><b>Condition:</b> the brief is fixed.</p><div class="pre">&lt;decision_brief&gt;
 [Paste the fixed Decision Brief]
 &lt;/decision_brief&gt;
@@ -293,9 +275,8 @@ The strongest case against my leaning, built only from the brief, so I decide kn
 2. Pre-mortem: three ways the leaning fails within the horizon, each with AS or OPEN IDs.
 3. What would change the decision: | Evidence | Option it favors | How to get it |
 &lt;/output&gt;</div>
-</section>
-<section class="card s12" style="grid-column:span 12">
-<h2><span class="n">6</span>Announcement · chat E (new)</h2>
+</div></section><section class="row wide long"><div class="k"><div class="num">6</div><h2>Announcement</h2><span>chat E (new)</span></div><div class="b">
+
 <p class="cond"><b>Condition:</b> you've decided and written your Decision Record.</p><div class="pre">&lt;decision_record&gt;
 [Paste your Decision Record]
 &lt;/decision_record&gt;
@@ -309,8 +290,8 @@ An announcement each reader can act on and challenge. Success: the decision, the
 &lt;/goal&gt;
 &lt;limits&gt;
 - 250 words or fewer.
-- State the decision in the record&#x27;s own words.
-- Open items appear as open, with their owner or &quot;Owner needed&quot;.
+- State the decision in the record's own words.
+- Open items appear as open, with their owner or "Owner needed".
 &lt;/limits&gt;
 &lt;output&gt;
 Subject: [Decision], [date]
@@ -322,12 +303,8 @@ Subject: [Decision], [date]
 6. How to raise a concern.
 &lt;/output&gt;</div>
 <p class="note">Read it, correct it, and send it under your name.</p>
-</section>
+</div></section><div class="part eye pb">More in your playbook</div><section class="row wide long"><div class="k"><div class="num">M</div><h2>Meeting notes</h2><span>one saved prompt</span></div><div class="b">
 
-<div class="part pb">More in your playbook</div>
-
-<section class="card s12" style="grid-column:span 12">
-<h2><span class="n">M</span>Meeting notes · one saved prompt</h2>
 <p class="cond"><b>Condition:</b> after any meeting where something was decided or assigned. Record only in Teams, and say so before you start. Read the notes against what you heard, then send them under your name. Keep the transcript.</p><div class="pre">&lt;transcript&gt;
 [Upload or paste the meeting transcript]
 &lt;/transcript&gt;
@@ -343,7 +320,7 @@ Subject: [Decision], [date]
 Meeting notes every attendee can act on without rereading the transcript. Success: every decision, action and unsettled point in the transcript has exactly one item, each with its quote.
 &lt;/goal&gt;
 &lt;limits&gt;
-- Decisions: what was decided, who decided, and the condition or &quot;None stated&quot;.
+- Decisions: what was decided, who decided, and the condition or "None stated".
 - Actions: one owner, one due date and one deliverable each, starting with a verb.
 - Anything that waits on another approval, and anything raised but not settled, including brief concerns, is an open item.
 - Uncertainty labels: NOT STATED (never said; also add an open item), UNCLEAR (two readings; quote both), CONDITIONAL (waits on another approval or event).
@@ -353,11 +330,10 @@ Meeting notes every attendee can act on without rereading the transcript. Succes
 1. Decisions: | ID (DEC-n) | Decision | Decided by | Condition | Quote |
 2. Actions: | ID (ACT-n) | Action | Owner | Due | Deliverable | Quote |
 3. Open items: | ID (OPEN-n) | Item | Raised by | Label | Quote |
-4. Note to send, 250 words or fewer: decisions, then actions by owner, then what&#x27;s still open.
+4. Note to send, 250 words or fewer: decisions, then actions by owner, then what's still open.
 &lt;/output&gt;</div>
-</section>
-<section class="card s12" style="grid-column:span 12">
-<h2><span class="n">R</span>Requirement card · interview</h2>
+</div></section><section class="row wide long"><div class="k"><div class="num">R</div><h2>Requirement card</h2><span>interview</span></div><div class="b">
+
 <p class="cond"><b>Condition:</b> a goal needs a tool that doesn't exist yet. Bring the card to the people who build tools; they pick the tool.</p><div class="pre">&lt;goal_statement&gt;
 [The goal or problem, in your own words]
 &lt;/goal_statement&gt;
@@ -378,12 +354,12 @@ Interview me, then translate my answers into a Requirement Card a builder can de
 &lt;status_definitions&gt;
 Clear: an explicit answer with one reasonable reading.
 Fuzzy: answered, but vague, conflicting, or open to two readings.
-Unknown: not yet discussed, or I said I don&#x27;t know.
+Unknown: not yet discussed, or I said I don't know.
 &lt;/status_definitions&gt;
 &lt;limits&gt;
-- Each round: the status of dimensions 1 to 6, then up to 3 questions, each with options A, B, C and D (&quot;None of these, or I don&#x27;t know&quot;).
+- Each round: the status of dimensions 1 to 6, then up to 3 questions, each with options A, B, C and D ("None of these, or I don't know").
 - Exit: when all six are Clear, or after round 5. Every remaining Fuzzy or Unknown becomes an open item.
-- Card standard: each requirement is one EARS statement (&quot;When [trigger], the [capability] shall [response]&quot;), singular, verifiable and solution-free per INCOSE rules; it names a product only when that product is BINDING.
+- Card standard: each requirement is one EARS statement ("When [trigger], the [capability] shall [response]"), singular, verifiable and solution-free per INCOSE rules; it names a product only when that product is BINDING.
 &lt;/limits&gt;
 &lt;output&gt;
 During the interview:
@@ -393,33 +369,32 @@ At the end:
 1. Specifics: | Detail | BINDING / EXAMPLE / BACKGROUND / GUESS | Restated |
 2. Requirements: | ID (REQ-n) | Requirement | Dimension | My words |
 3. Open items: | ID (OPEN-n) | What is unresolved |
-4. Final line: &quot;Reply Confirmed, or list the IDs to correct.&quot;
+4. Final line: "Reply Confirmed, or list the IDs to correct."
 &lt;/output&gt;</div>
-</section>
-<section class="card s12" style="grid-column:span 12">
-<h2><span class="n">P</span>Prompt Grader · before you share a prompt</h2>
+</div></section><section class="row wide long"><div class="k"><div class="num">P</div><h2>Prompt Grader</h2><span>before you share a prompt</span></div><div class="b">
+
 <p class="cond"><b>Condition:</b> before a prompt goes to your team, or after you change one. New chat. Rerun the revised prompt on the same input before you save it.</p>
 <div class="pre">&lt;rubric&gt;
 Score each criterion 1 to 3. A criterion with nothing to act on scores 3 if the prompt states that case and how to handle it.
 
 | Criterion | 1 — Legacy | 2 — Developing | 3 — Standard |
 | --- | --- | --- | --- |
-| 1. Context | Vague, or includes material the task doesn&#x27;t use. | Right material, but not delimited, or long material follows the goal with no restatement. | Only material the task uses, each piece labeled and delimited. Long material first; goal and output after. |
-| 2. Goal | Scripts the model&#x27;s reasoning (&quot;think step by step&quot;). | Goal mixed with procedure the task doesn&#x27;t need. | States the goal and success criteria. Steps only where their order is part of the result or a person takes part. |
-| 3. Limits | Vague bans (&quot;don&#x27;t be wordy&quot;) or no limits. | Basic limits; edge cases open. | Positive, specific limits. A named label or action for each kind of uncertainty. Claims cite sources when sources exist. |
-| 4. Output | Open, or described casually. | General form only (&quot;use a table&quot;). | Parts in order, each part&#x27;s form and limits, any labels or IDs. Working before the final block. JSON only for programs. |
+| 1. Context | Vague, or includes material the task doesn't use. | Right material, but not delimited, or long material follows the goal with no restatement. | Only material the task uses, each piece labeled and delimited. Long material first; goal and output after. |
+| 2. Goal | Scripts the model's reasoning ("think step by step"). | Goal mixed with procedure the task doesn't need. | States the goal and success criteria. Steps only where their order is part of the result or a person takes part. |
+| 3. Limits | Vague bans ("don't be wordy") or no limits. | Basic limits; edge cases open. | Positive, specific limits. A named label or action for each kind of uncertainty. Claims cite sources when sources exist. |
+| 4. Output | Open, or described casually. | General form only ("use a table"). | Parts in order, each part's form and limits, any labels or IDs. Working before the final block. JSON only for programs. |
 | 5. Signal | Filler, personas, threats, tips. | Some padding. | Every sentence serves context, goal, limits or output. Definitions needed to stand alone stay. |
-| 6. Inputs and handoffs | Demands a specification from the person, or takes a raw chat or summary. | Treats every detail from a person as binding, or the next step can&#x27;t check the output. | States how each input is treated. A person&#x27;s free talk fills a stated rubric: named dimensions, each rated Clear, Fuzzy or Unknown against written definitions, with an exit rule; anything unresolved becomes an open item. Specifics are sorted as binding, example, background or guess; examples restated generally. The handoff translates what the person wants into a finite, testable artifact built to a named standard for its type (requirements: INCOSE rules, EARS syntax); it is a translation, never a summary; it lists open items and is confirmed by the person. A rubric encoding that standard checks it: a lint for mechanical rules, an anchored review for judgment. The next prompt takes only the artifact, in a new thread. |
+| 6. Inputs and handoffs | Demands a specification from the person, or takes a raw chat or summary. | Treats every detail from a person as binding, or the next step can't check the output. | States how each input is treated. A person's free talk fills a stated rubric: named dimensions, each rated Clear, Fuzzy or Unknown against written definitions, with an exit rule; anything unresolved becomes an open item. Specifics are sorted as binding, example, background or guess; examples restated generally. The handoff translates what the person wants into a finite, testable artifact built to a named standard for its type (requirements: INCOSE rules, EARS syntax); it is a translation, never a summary; it lists open items and is confirmed by the person. A rubric encoding that standard checks it: a lint for mechanical rules, an anchored review for judgment. The next prompt takes only the artifact, in a new thread. |
 
 Rules:
 
 - Name no particular system, product, site, vendor or person; specifics arrive as inputs.
 - Remove unwanted details from the input instead of telling the model to ignore them.
-- A ban naming one exact item (&quot;never write TBD&quot;) is allowed.
+- A ban naming one exact item ("never write TBD") is allowed.
 - Show formats with empty templates, not filled examples.
-- State artifacts directly, without process references (&quot;from Stage 4&quot;).
-- Review in a new thread, with the output, the artifact it came from, and the person&#x27;s words only.
-- Fix a thread&#x27;s own artifact in that thread; hand on only the fixed artifact.
+- State artifacts directly, without process references ("from Stage 4").
+- Review in a new thread, with the output, the artifact it came from, and the person's words only.
+- Fix a thread's own artifact in that thread; hand on only the fixed artifact.
 - Follow the Agile cycle: build from the artifact, the person reviews the result, new or changed requirements go into the artifact as a versioned patch with a change-log line, and the next cycle starts a new thread from the revised artifact.
 - Before saving a changed prompt, rerun it on the same input.
 &lt;/rubric&gt;
@@ -440,7 +415,7 @@ Grade the prompt under review against every rubric criterion and rule, and write
 - Use the rubric cell wording as the anchor for each score.
 - Evidence is the exact quoted line, or MISSING plus what is missing.
 - When the purpose is NOT STATED and a score depends on it, write ASSUMED and the purpose you assumed.
-- Keep the prompt&#x27;s task, inputs and intended output. Record each change in the change list, outside the revised prompt.
+- Keep the prompt's task, inputs and intended output. Record each change in the change list, outside the revised prompt.
 - Revised prompt length: the original length plus only what the fixes add.
 &lt;/limits&gt;
 
@@ -451,14 +426,9 @@ Grade the prompt under review against every rubric criterion and rule, and write
 4. Open items: decisions the person must make before saving the revised prompt, or NONE.
 5. Retest: one line naming the input to rerun the revised prompt on before saving.
 &lt;/output&gt;</div>
-</section>
-<section class="card s12" style="grid-column:span 12">
-<h2><span class="n">L</span>Change log</h2>
+</div></section><section class="row wide"><div class="k"><div class="num">L</div><h2>Change log</h2></div><div class="b">
+
 <table class="log"><tr><th>Version</th><th>Date</th><th>Prompt</th><th>Change</th><th>Why</th></tr>
 <tr><td>1.0</td><td></td><td>All</td><td>First version, from AI for Leaders</td><td></td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
-</section>
-
-</main></div>
-<footer class="foot"><span>© 2026 SkyWater Technology. Proprietary.</span><span>Training material. Prompts written to the Prompt Evaluation Rubric v3.2.</span></footer>
-</body>
+</div></section></main><footer class="foot"><span>© 2026 SkyWater Technology. Proprietary.</span><span>Training material. Prompts written to the Prompt Evaluation Rubric v3.2.</span></footer></div></body></html>

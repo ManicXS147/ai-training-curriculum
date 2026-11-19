@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Basics Practice Prompts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#212121;--white:#fff;--amber:#B7872D;--amber-t:#8C6619;--amber-d:#F0BC48;--rule:#cfcfcf;--grey:#5c5c5c;--bg:#ececec}
+@page{size:Letter;margin:.45in .5in}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html{background:var(--bg)}
+body{margin:0;font-family:'Outfit',Arial,sans-serif;color:var(--black);line-height:1.35;font-size:16px}
+.wrap{max-width:860px;margin:24px auto;background:var(--white)}
+.eye{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
+.head{background:var(--black);color:var(--white);padding:32px 40px 26px;border-bottom:6px solid var(--amber-d)}
+.head .eye{color:var(--amber-d)}
+.head h1{margin:8px 0 6px;font-size:40px;font-weight:400;line-height:1.05}
+.head p{margin:0;font-size:18px;color:var(--amber-d)}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:20px 40px;border-bottom:1.5px solid var(--black)}
+.how div{font-size:15px;border-left:3px solid var(--amber);padding-left:12px}
+.how b{display:block;font-size:16px}
+main{padding:0 40px 8px}
+section{padding:26px 0 18px;border-bottom:1.5px solid var(--black)}
+section:last-of-type{border-bottom:0}
+.sh{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.sh .num{font-size:44px;line-height:.9;color:var(--amber);font-weight:400}
+.sh h2{margin:0;font-size:26px;font-weight:700;flex:1}
+.sh .time{font-size:14px;color:var(--grey);font-weight:500}
+.files{display:flex;gap:28px;flex-wrap:wrap;margin:10px 0 4px;font-size:15px}
+.files .eye{color:var(--amber-t);margin-right:6px}
+.note{margin:8px 0 0;font-size:15px;color:var(--grey)}
+.note b{color:var(--black)}
+.step{margin-top:18px}
+.step h3{margin:0 0 8px;font-size:17px;font-weight:700}
+.step h3 span{font-weight:400;color:var(--grey)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.p{border:1px solid var(--rule);border-left:4px solid var(--amber);padding:10px 12px 10px 14px;display:flex;flex-direction:column;gap:8px}
+.p .lab{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-t)}
+.ptip{display:none}
+.p .t{font-size:17px;line-height:1.4;white-space:pre-wrap;user-select:all;-webkit-user-select:all;cursor:text}
+.p .t i{font-style:normal;color:var(--amber-t);font-weight:500}
+.p .after{font-size:14px;color:var(--grey)}
+.p .after b{color:var(--black);font-weight:500}
+button.copy{align-self:flex-start;font:700 13px 'Outfit',Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;background:var(--black);color:var(--white);border:0;border-radius:0;padding:7px 14px;cursor:pointer;min-height:32px}
+button.copy:hover{background:#000}
+button.copy:focus-visible{outline:3px solid var(--amber-d);outline-offset:2px}
+button.copy.done{background:var(--amber);color:var(--black)}
+.then{margin:16px 0 0;font-size:16px;font-weight:500}
+.then::before{content:"Then ";font-weight:700;color:var(--amber-t)}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 40px 18px;font-size:11px;color:var(--grey);border-top:1px solid var(--rule)}
+@media (max-width:640px){
+  .head,.how,main,.foot{padding-left:16px;padding-right:16px}
+  .how,.pair{grid-template-columns:1fr}
+  .head h1{font-size:32px}
+}
+@media print{
+  html{background:#fff}
+  body{font-size:12px}
+  .wrap{margin:0;max-width:none}
+  button.copy{display:none}
+  .head{padding:20px 24px 16px}
+  .head h1{font-size:30px}
+  .how,main,.foot{padding-left:0;padding-right:0}
+  section{padding:14px 0 10px}
+  .step,.sh,.files{break-inside:avoid;break-after:auto}
+  .sh{break-after:avoid}
+  .p .t{font-size:13px}
+  .sh .num{font-size:32px}
+  .sh h2{font-size:20px}
+  .step{margin-top:10px}
+  .tip{display:none}
+  .ptip{display:inline}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="head">
+  <div class="eye">AI Basics · Practice prompts</div>
+  <h1>Copy, paste, try it</h1>
+  <p>Every prompt from today's practice, in the order you'll use them.</p>
+</header>
+
+<div class="how">
+  <div><b>1 · Copy</b><span class="tip">Press Copy next to a prompt, or select its text.</span><span class="ptip">Open Practice-Prompts.html from the practice pack and press Copy.</span></div>
+  <div><b>2 · Paste</b>Paste it into Copilot Chat. Then paste the practice file's text under it, or attach the file.</div>
+  <div><b>3 · Fill the [brackets]</b>Swap anything in brackets for your own words before you send.</div>
+</div>
+
+<main>
+
+<!-- 02 -->
+<section>
+  <div class="sh"><span class="num">02</span><h2>Prompt A or B?</h2><span class="time">5 minutes</span></div>
+  <div class="files"><span><span class="eye">Floor</span>02-shift-notes.txt</span><span><span class="eye">Office</span>02-project-notes.txt</span></div>
+
+  <div class="step"><h3>Step 1 <span>· new chat · Prompt A</span></h3>
+    <div class="pair">
+      <div class="p"><span class="lab">Floor</span><div class="t">Turn these notes into a pass-down.</div><button class="copy">Copy</button></div>
+      <div class="p"><span class="lab">Office</span><div class="t">Turn these notes into a status update.</div><button class="copy">Copy</button></div>
+    </div>
+  </div>
+
+  <div class="step"><h3>Step 2 <span>· new chat · Prompt B</span></h3>
+    <div class="pair">
+      <div class="p"><span class="lab">Floor</span><div class="t">Here are my shift notes. The reader is the next shift lead. Keep only open items and what changed. Three bullets, open items first.</div><button class="copy">Copy</button></div>
+      <div class="p"><span class="lab">Office</span><div class="t">Here are my project notes. The reader is my manager. Keep only what changed, what's at risk, and what I need. Three bullets, the ask first.</div><button class="copy">Copy</button></div>
+    </div>
+  </div>
+
+  <div class="step"><h3>Step 3 <span>· same chat as Prompt B · add one move</span></h3>
+    <div class="pair">
+      <div class="p"><span class="lab">Floor</span><div class="t">Use the same shape as this example. If my notes don't say something, write "not in notes" instead of guessing.</div><div class="after">Paste <b>02-example-pass-down.txt</b> under it.</div><button class="copy">Copy</button></div>
+      <div class="p"><span class="lab">Office</span><div class="t">Use the same shape as this example. If my notes don't say something, write "not in notes" instead of guessing.</div><div class="after">Paste <b>02-example-status-update.txt</b> under it.</div><button class="copy">Copy</button></div>
+    </div>
+  </div>
+  <p class="then">which version would you actually send?</p>
+</section>
+
+<!-- 05 -->
+<section>
+  <div class="sh"><span class="num">05</span><h2>Same question, no names</h2><span class="time">3 minutes</span></div>
+  <p class="note"><b>Everyone uses this one.</b> No file needed. All names are made up.</p>
+
+  <div class="step"><h3>Start with this <span>· copy it to edit, but don't send it as is</span></h3>
+    <div class="p"><span class="lab">Everyone</span><div class="t">Dana Ortiz on night shift says lots A2231 to A2240 for Acme Aerospace, part 7741-B, failed final inspection. Draft my reply to Dana's manager.</div><button class="copy">Copy</button></div>
+  </div>
+  <div class="step"><h3>Step 1 <span>· strip</span></h3><p class="note">Take out the person, the customer, the part and the lots.</p></div>
+  <div class="step"><h3>Step 2 <span>· describe</span></h3><p class="note">Say the situation instead.</p></div>
+  <div class="step"><h3>Step 3 <span>· ask</span></h3><p class="note">Send your rewrite in a new chat.</p></div>
+  <p class="then">did the answer lose anything when the names came out?</p>
+</section>
+
+<!-- 06 -->
+<section>
+  <div class="sh"><span class="num">06</span><h2>Brainstorm in three turns</h2><span class="time">4 minutes</span></div>
+  <p class="note"><b>Use a small annoyance from your own week,</b> with no names, customers or part numbers in it.</p>
+
+  <div class="step"><h3>Stuck for a topic? <span>· use the spare</span></h3>
+    <div class="p"><span class="lab">Spare annoyance</span><div class="t">Our weekly team meeting runs 20 minutes over and half the room isn't needed for most of it.</div><button class="copy">Copy</button></div>
+  </div>
+  <div class="step"><h3>Turn 1 <span>· go wide</span></h3>
+    <div class="p"><div class="t">Give me ten ideas to fix this: <i>[your annoyance]</i></div><button class="copy">Copy</button></div>
+  </div>
+  <div class="step"><h3>Turn 2 <span>· go different</span></h3>
+    <div class="p"><div class="t">Five more, and make them a different kind from these. At least two should cost nothing.</div><button class="copy">Copy</button></div>
+  </div>
+  <div class="step"><h3>Turn 3 <span>· narrow</span></h3>
+    <div class="p"><div class="t">Pick the one that fits <i>[your real constraint, e.g. no budget, 12 people]</i>. What's its weak spot, and what's the smallest first step I could try this week?</div><button class="copy">Copy</button></div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section>
+  <div class="sh"><span class="num">07</span><h2>Draft and shape</h2><span class="time">5 minutes · keep this chat open</span></div>
+  <div class="files"><span><span class="eye">Floor</span>07-lesson-notes.txt</span><span><span class="eye">Office</span>07-meeting-notes.txt</span></div>
+
+  <div class="step"><h3>Step 1 <span>· draft</span></h3>
+    <div class="pair">
+      <div class="p"><span class="lab">Floor</span><div class="t">Turn these notes into a one-point lesson for new techs.</div><button class="copy">Copy</button></div>
+      <div class="p"><span class="lab">Office</span><div class="t">Turn these notes into a summary email to the people who were there, plus the shipping lead.</div><button class="copy">Copy</button></div>
+    </div>
+  </div>
+
+  <div class="step"><h3>Step 2 <span>· shape: two edits, one at a time</span></h3>
+    <div class="pair">
+      <div class="p"><span class="lab">Floor · edit 1</span><div class="t">Shorter. Lead with the most common mistake.</div><button class="copy">Copy</button></div>
+      <div class="p"><span class="lab">Office · edit 1</span><div class="t">Shorter. Actions first.</div><button class="copy">Copy</button></div>
+      <div class="p"><span class="lab">Floor · edit 2</span><div class="t">Write it for someone in their first week.</div><button class="copy">Copy</button></div>
+      <div class="p"><span class="lab">Office · edit 2</span><div class="t">Write it so the shipping lead, who missed the meeting, knows what they're being asked.</div><button class="copy">Copy</button></div>
+    </div>
+  </div>
+
+  <div class="step"><h3>Step 3 <span>· protect one line</span></h3>
+    <div class="p"><div class="t">Keep my line about <i>[pick one line you like]</i> word for word. Change nothing else.</div><button class="copy">Copy</button></div>
+  </div>
+
+  <div class="step"><h3>Finish <span>· add your own last line, for example</span></h3>
+    <div class="p"><div class="t">Drafted with AI from my notes. I checked the steps against them.</div><button class="copy">Copy</button></div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section>
+  <div class="sh"><span class="num">08</span><h2>Review race</h2><span class="time">4 minutes · same chat as 07, or paste your draft</span></div>
+  <div class="files"><span><span class="eye">Floor</span>08-one-point-lesson-checklist.txt</span><span><span class="eye">Office</span>08-meeting-summary-checklist.txt</span></div>
+
+  <div class="step"><h3>Step 1 <span>· ask it to be the reader</span></h3>
+    <div class="pair">
+      <div class="p"><span class="lab">Floor</span><div class="t">Read this as a tech in their first week. List three problems. Quote the line each one is on. Don't rewrite it.</div><button class="copy">Copy</button></div>
+      <div class="p"><span class="lab">Office</span><div class="t">Read this as the shipping lead. List three problems. Quote the line each one is on. Don't rewrite it.</div><button class="copy">Copy</button></div>
+    </div>
+  </div>
+
+  <div class="step"><h3>Step 2 <span>· check it against the standard</span></h3>
+    <div class="pair">
+      <div class="p"><span class="lab">Floor</span><div class="t">Here is our checklist. Which items are missing or thin in my draft? Don't rewrite it.</div><div class="after">Paste <b>08-one-point-lesson-checklist.txt</b> under it.</div><button class="copy">Copy</button></div>
+      <div class="p"><span class="lab">Office</span><div class="t">Here is our checklist. Which items are missing or thin in my draft? Don't rewrite it.</div><div class="after">Paste <b>08-meeting-summary-checklist.txt</b> under it.</div><button class="copy">Copy</button></div>
+    </div>
+  </div>
+
+  <div class="step"><h3>Step 3 <span>· you decide</span></h3><p class="note">Fix the one problem that matters most, yourself.</p></div>
+  <p class="then">would you sign it now?</p>
+</section>
+
+</main>
+
+<div class="foot"><span>© 2026 SkyWater Technology. Proprietary.</span><span>AI Basics · Rev. November 2026 · Everything in the practice pack is invented for training</span></div>
+</div>
+
+<script>
+function plain(el){return el.innerText.replace(/\s+/g,' ').trim();}
+function fallback(text){
+  var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');
+  ta.style.position='fixed';ta.style.top='-1000px';document.body.appendChild(ta);ta.select();
+  var ok=false;try{ok=document.execCommand('copy');}catch(e){}document.body.removeChild(ta);return ok;
+}
+function flash(btn,ok){
+  btn.textContent=ok?'Copied':'Select the text and copy';btn.classList.toggle('done',ok);
+  setTimeout(function(){btn.textContent='Copy';btn.classList.remove('done');},1600);
+}
+document.querySelectorAll('button.copy').forEach(function(btn){
+  var t=btn.parentNode.querySelector('.t');
+  btn.setAttribute('aria-label','Copy: '+plain(t).slice(0,60));
+  btn.addEventListener('click',function(){
+    var text=plain(t);
+    if(navigator.clipboard&&window.isSecureContext){
+      navigator.clipboard.writeText(text).then(function(){flash(btn,true);},function(){flash(btn,fallback(text));});
+    }else{flash(btn,fallback(text));}
+  });
+});
+</script>
+</body>
+</html>

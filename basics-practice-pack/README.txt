@@ -9,20 +9,29 @@ HOW TO USE IT
 1. Open Copilot Chat (the training invite explains how).
 2. Open the file the slide names, select all the text, and copy it.
 3. Paste it into the chat under your prompt. (You can also attach the file.)
-4. The exact prompts are in prompts.txt, so you can copy them instead of typing.
+4. Every prompt is in Practice-Prompts.html. Open it in your browser and press
+   Copy next to a prompt, so you never have to type one.
 
 PICK A TRACK
 Each exercise has a Floor file and an Office file. Use whichever is closer to
 your job. Both teach the same thing.
 
-                         FLOOR                         OFFICE
-Section 02 · Ask well    02-shift-notes.txt            02-project-notes.txt
-  (example to copy)      02-example-pass-down.txt      02-example-status-update.txt
-Section 07 · Write       07-lesson-notes.txt           07-meeting-notes.txt
-Section 08 · Review      08-one-point-lesson-checklist.txt
-                                                       08-meeting-summary-checklist.txt
+Section 02 · Ask well
+  Floor:  02-shift-notes.txt   (example to copy: 02-example-pass-down.txt)
+  Office: 02-project-notes.txt (example to copy: 02-example-status-update.txt)
+
+Section 05 · Same question, no names
+  Everyone: the sentence is in Practice-Prompts.html. No file needed.
+
+Section 07 · Write
+  Floor:  07-lesson-notes.txt
+  Office: 07-meeting-notes.txt
+
+Section 08 · Review
+  Floor:  08-one-point-lesson-checklist.txt
+  Office: 08-meeting-summary-checklist.txt
 
 Section 06 uses something from your own week, with nothing sensitive in it.
-If you can't think of one, prompts.txt has a spare.
+If you can't think of one, Practice-Prompts.html has a spare.
 
 Keep your section 07 chat open. Section 08 reviews the draft you make there.

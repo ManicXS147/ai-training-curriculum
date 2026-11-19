@@ -1,113 +1,112 @@
-<title>AI for Process Development: Before You Come</title>
-<meta name="claude:viewport-fit-sides" content="cover">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#F6F4EE;--card:#FFFFFF;--ink:#212121;--muted:#5F5B53;--line:#E3DED2;--amber:#B7872D;--amber-ink:#8A641B;--soft:#F7EEDA;--red:#C2463A;--green:#007F68;--head:#212121;--head-ink:#FFFFFF;--head-amber:#F0BC48}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#171717;--card:#212121;--ink:#F3F0E9;--muted:#B3ADA2;--line:#3B3833;--amber:#F0BC48;--amber-ink:#F0BC48;--soft:#352C17;--red:#F26A5D;--green:#2CC9A8;--head:#212121;--head-ink:#FFFFFF}}
-:root[data-theme="dark"]{--bg:#171717;--card:#212121;--ink:#F3F0E9;--muted:#B3ADA2;--line:#3B3833;--amber:#F0BC48;--amber-ink:#F0BC48;--soft:#352C17;--red:#F26A5D;--green:#2CC9A8;--head:#212121;--head-ink:#FFFFFF}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;font-size:16px;line-height:1.45;-webkit-text-size-adjust:100%}
-.top{background:var(--head);color:var(--head-ink);padding:36px max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px));border-bottom:4px solid var(--head-amber)}
-.top>div,.grid,.foot{max-width:1180px;margin:0 auto}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--head-amber);margin:0 0 10px}
-h1{font-size:clamp(28px,4.4vw,40px);font-weight:600;line-height:1.1;margin:0 0 10px;text-wrap:balance}
-.lede{font-size:18px;margin:0;color:#D9D5CC;max-width:62ch}
-.wrap{padding:22px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
-.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
-.card{grid-column:span 12;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px 16px;break-inside:avoid;min-width:0}
-@media(min-width:820px){.s6{grid-column:span 6}.s4{grid-column:span 4}.s8{grid-column:span 8}.s5{grid-column:span 5}.s7{grid-column:span 7}}
-.part{grid-column:span 12;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-ink);margin:10px 0 -4px;display:flex;align-items:center;gap:12px}
-.part::after{content:"";flex:1;height:1px;background:var(--line)}
-h2{font-size:20px;font-weight:700;line-height:1.2;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
-h2 .n{flex:none;font-size:13px;font-weight:700;color:var(--amber-ink);border:1.5px solid var(--amber);border-radius:50%;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;transform:translateY(-2px)}
-h3{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
-p{margin:0 0 8px}
-.card>:last-child{margin-bottom:0}
-.note{color:var(--muted);font-size:14.5px}
-ul,ol{margin:0 0 8px;padding-left:20px}
-li{margin:0 0 4px}
-ol.big{list-style:none;padding:0;counter-reset:k}
-ol.big>li{counter-increment:k;position:relative;padding-left:30px;margin-bottom:9px}
-ol.big>li::before{content:counter(k);position:absolute;left:0;top:1px;font-weight:700;color:var(--amber-ink);font-size:15px;width:20px;text-align:center}
-ol.big b{font-weight:600}
-.say{display:block;background:var(--soft);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:7px 11px;margin:5px 0 8px;font-size:15px}
-li .say{margin:4px 0 2px}
-.no{color:var(--red);font-weight:600}.yes{color:var(--green);font-weight:600}
-.tw{overflow-x:auto;margin:0 0 8px}
-table{border-collapse:collapse;width:100%;font-size:15px}
-th{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 6px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
-td{padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>AI for Process Development: Before You Come</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&amp;display=swap" rel="stylesheet"/><style>
+:root{--black:#212121;--white:#fff;--amber:#B7872D;--amber-t:#8C6619;--amber-d:#F0BC48;--rule:#cfcfcf;--grey:#5c5c5c;--crs:#00B08F}
+@page{size:Letter;margin:.45in 0 .45in}
+@page:first{margin-top:0}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html{background:#ddd}
+body{margin:0;font-family:'Outfit',Arial,sans-serif;color:var(--black);line-height:1.25;font-size:10pt}
+.doc{width:8.5in;max-width:100%;background:var(--white);margin:24px auto}
+@media print{html{background:#fff}.doc{margin:0;width:auto}}
+.eye{font-size:9pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+b{font-weight:700}
+p{margin:0 0 .06in}
+.head{background:var(--black);color:var(--white);padding:.34in .55in .26in;border-bottom:.07in solid var(--crs)}
+.head .eye{color:var(--amber-d)}
+.head h1{margin:.08in 0 .08in;font-size:28pt;font-weight:400;line-height:1.02;color:var(--white)}
+.head p{margin:0;font-size:12pt;line-height:1.3;color:var(--amber-d);max-width:6.6in}
+.main{padding:.1in .55in .1in}
+.part{break-after:avoid;margin:.1in 0 0;padding:.05in 0 .02in;color:var(--amber-t);border-top:3pt solid var(--black)}
+.part+.row,.part+.band{border-top:0}
+.pb{}
+.row{display:grid;grid-template-columns:1.35in 1fr;gap:.22in;border-top:1.5pt solid var(--black);padding:.075in 0;break-inside:avoid}
+.row .k .num{font-size:24pt;font-weight:400;line-height:.9;color:var(--amber)}
+.row .k h2{margin:.04in 0 .02in;font-size:13pt;font-weight:700;line-height:1.05}
+.row .k span{display:block;font-size:9pt;color:var(--grey)}
+.row .b{min-width:0;align-self:center}
+.row.wide{display:block}
+.row.wide .k{display:flex;align-items:baseline;gap:.16in;margin-bottom:.07in}
+.row.wide .k h2{margin:0}
+.row.wide .k span{display:inline}
+.row.long{break-inside:auto}
+.duo{display:grid;gap:.3in;border-top:1.5pt solid var(--black)}
+.duo>.row{border-top:0}
+.part+.duo{border-top:0}
+.row.wide .k .num{font-size:20pt}
+@media (max-width:700px){.duo{display:block}.duo>.row+.row{border-top:1.5pt solid var(--black)}}
+h3{margin:.07in 0 .02in;font-size:9pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-t)}
+.b>h3:first-child{margin-top:0}
+.b>:last-child{margin-bottom:0}
+ul{margin:0 0 .06in;padding:0;list-style:none}
+ul>li{padding:.015in 0 .015in .18in;position:relative}
+ul>li::before{content:"";position:absolute;left:0;top:.075in;width:.065in;height:.065in;background:var(--amber)}
+ol{margin:0 0 .06in;padding:0;list-style:none;counter-reset:k}
+ol>li{counter-increment:k;position:relative;padding:.015in 0 .015in .24in}
+ol>li::before{content:counter(k);position:absolute;left:0;top:.015in;font-weight:700;color:var(--amber)}
+.note{color:var(--grey);font-size:9pt}
+.note b{color:var(--black)}
+.cond{font-size:9.5pt}.cond b{color:var(--amber-t)}
+.say{display:block;border:1px solid var(--rule);border-left:4px solid var(--amber);padding:.07in .1in .07in .12in;margin:.04in 0 .07in}
+.pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word;font-size:7.5pt;line-height:1.3;border:1px solid var(--rule);border-left:4px solid var(--amber);padding:.08in .1in .08in .13in;margin:.05in 0 .07in}
+.tw{overflow-x:auto;margin:0 0 .06in}
+table{border-collapse:collapse;width:100%;font-size:9.5pt}
+th{font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--black);text-align:left;padding:0 .1in .04in 0;border-bottom:1.5pt solid var(--black);vertical-align:bottom}
+td{padding:.035in .1in .035in 0;border-bottom:1px solid var(--rule);vertical-align:top}
 tr:last-child td{border-bottom:0}
 td:last-child,th:last-child{padding-right:0}
-td b{font-weight:600}
-.four{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;margin:0 0 8px}
-.four dt{font-weight:700;color:var(--amber-ink)}.four dd{margin:0}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 8px}
-.steps>div{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
-.steps b{display:block;font-weight:700;font-size:15px}
-.steps .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);display:block;margin-bottom:2px}
-.steps span{font-size:14.5px;color:var(--muted)}
-.fill{display:grid;grid-template-columns:auto 1fr;gap:0 14px;margin:4px 0 8px}
-.fill dt{font-weight:700;padding:9px 0 0}.fill dd{margin:0;border-bottom:1px solid var(--muted);padding:9px 0 5px;color:var(--muted);font-size:14.5px}
-.key{background:var(--head);color:var(--head-ink);border-color:var(--head-amber)}
-.key .steps>div{border-color:#4a463f}.key .steps span{color:#D9D5CC}
-.key h2 .n,.key h3,.key .note{color:var(--head-amber)}.key h2 .n{border-color:var(--head-amber)}
-.key ol.big>li::before{color:var(--head-amber)}
-.foot{padding:18px max(16px,env(safe-area-inset-right,0px)) 30px max(16px,env(safe-area-inset-left,0px));color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-@media print{:root{--bg:#fff;--card:#fff;--ink:#212121;--muted:#55514A;--line:#D8D2C4;--amber:#B7872D;--amber-ink:#8A641B;--soft:#F7EEDA;--red:#C2463A;--green:#007F68}
-*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{font-size:14.5px}.top{padding-top:22px;padding-bottom:20px}.wrap{padding-top:14px}.grid{gap:11px}.card{padding:13px 15px 11px}}
-/* course look (2026-11-11): matches the deck's accent; text stays amber */
-.top{border-bottom-color:#00B08F;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20420%20200%27%20fill%3D%27none%27%20stroke%3D%27%2300B08F%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.5%27%3E%3Cellipse%20cx%3D%27300%27%20cy%3D%27110%27%20rx%3D%2726%27%20ry%3D%2710%27%20transform%3D%27rotate%28-28%20300%20110%29%27/%3E%3Cellipse%20cx%3D%27300%27%20cy%3D%27110%27%20rx%3D%2754%27%20ry%3D%2721%27%20transform%3D%27rotate%28-28%20300%20110%29%27/%3E%3Cellipse%20cx%3D%27300%27%20cy%3D%27110%27%20rx%3D%2786%27%20ry%3D%2733%27%20transform%3D%27rotate%28-28%20300%20110%29%27/%3E%3Cellipse%20cx%3D%27300%27%20cy%3D%27110%27%20rx%3D%27122%27%20ry%3D%2747%27%20transform%3D%27rotate%28-28%20300%20110%29%27/%3E%3Cellipse%20cx%3D%27300%27%20cy%3D%27110%27%20rx%3D%27160%27%20ry%3D%2762%27%20transform%3D%27rotate%28-28%20300%20110%29%27/%3E%3Cellipse%20cx%3D%27300%27%20cy%3D%27110%27%20rx%3D%27202%27%20ry%3D%2778%27%20transform%3D%27rotate%28-28%20300%20110%29%27/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right max(16px,calc(50% - 600px)) center;background-size:auto 88%}
-@media(max-width:700px){.top{background-size:auto 60%;background-position:right 8px bottom 8px}}
-/* course palette (v2): course background tones and a complementary accent */
-:root{--bg:#F2F8F6;--head:#11201d;--head-amber:#FF8593;--amber:#C23A55;--amber-ink:#962840;--soft:#FBE3E7}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c1816;--card:#142623;--line:#24403b;--head:#11201d;--amber:#FF8593;--amber-ink:#FF8593;--soft:#3d1d24}}
-:root[data-theme="dark"]{--bg:#0c1816;--card:#142623;--line:#24403b;--head:#11201d;--amber:#FF8593;--amber-ink:#FF8593;--soft:#3d1d24}
-@media print{:root{--bg:#fff;--card:#fff;--amber:#C23A55;--amber-ink:#962840;--soft:#FBE3E7}}
-</style>
-<header class="top"><div>
-<p class="eyebrow">AI for Process Development · Before you come</p>
-<h1>Five things to do before the session.</h1>
-<p class="lede">The whole session is hands-on, on your own laptop, in Gemini Enterprise. If any of these isn't done, you'll spend the session watching instead of working.</p>
-</div></header>
-<div class="wrap"><main class="grid">
+table.log td{height:.3in;border-bottom:1px solid var(--rule)}
+.four{display:grid;grid-template-columns:auto 1fr;gap:.04in .14in;margin:0 0 .06in}
+.four dt{font-weight:700;color:var(--amber)}.four dd{margin:0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(1.3in,1fr));gap:.2in;margin:.04in 0 .08in}
+.steps>div{border-left:2pt solid var(--amber);padding-left:.12in}
+.steps .k2{display:block;font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-t)}
+.steps b{display:block;font-size:12pt}
+.steps span{display:block;font-size:10pt}
+.fill{display:grid;grid-template-columns:auto 1fr;gap:0 .14in;margin:.04in 0 .06in}
+.fill dt{font-weight:700;padding:.08in 0 0}.fill dd{margin:0;border-bottom:1px solid var(--grey);padding:.08in 0 .04in}
+.band{background:var(--black);color:var(--white);margin:.12in -.55in 0;padding:.16in .55in .15in;break-inside:avoid}
+.band .eye{color:var(--amber-d);display:block;margin-bottom:.07in}
+.band p{font-size:11pt}
+.band .steps>div{border-left-color:var(--amber-d)}
+.band .steps .k2{color:var(--amber-d)}
+.band .steps b{font-size:13pt}
+.band .note,.band h3{color:var(--amber-d)}
+.foot{display:flex;justify-content:space-between;gap:.2in;flex-wrap:wrap;padding:.12in .55in .16in;font-size:8pt;color:var(--grey);border-top:1px solid var(--rule)}
+@media print{.foot{display:none}}
+@media (max-width:700px){
+  .head,.main,.foot{padding-left:16px;padding-right:16px}
+  .band{margin-left:-16px;margin-right:-16px;padding-left:16px;padding-right:16px}
+  .row{grid-template-columns:1fr;gap:.06in}
+  .head h1{font-size:26pt}
+}
+</style></head><body><div class="doc"><header class="head"><div class="eye">AI for Process Development · Before you come</div><h1>Five things to do before the session.</h1><p>The whole session is hands-on, on your own laptop, in Gemini Enterprise. If any of these isn't done, you'll spend the session watching instead of working.</p></header><main class="main"><div class="duo" style="grid-template-columns:7fr 5fr"><section class="row wide"><div class="k"><div class="num">1</div><h2>Get a Gemini Enterprise seat</h2></div><div class="b">
 
-<section class="card s7">
-<h2><span class="n">1</span>Get a Gemini Enterprise seat</h2>
 <p><b>Required.</b> The exercises use Gemini Enterprise chat with file upload, and Gemini writing and running code to check the numbers. Seats cost money, so your manager approves them with a short justification. <b>Ask at least two weeks before your session.</b></p>
 <h3>A justification you can adapt</h3>
 <span class="say">I run [process improvement projects, DOEs, recipe changes] about [N] times a quarter. Gemini Enterprise lets me plan experiments with a reviewed, shared playbook, check run sheets and data by code instead of by eye, and hand on plans others can trust. I expect it to save about [X] hours per project. It is required for the AI for Process Development course on [date].</span>
 <p class="note">Managers: the course can't be done in Copilot Chat. Approving the seat before the session is what makes the 90 minutes worth it.</p>
-</section>
+</div></section><section class="row wide"><div class="k"><div class="num">2</div><h2>Sign in once, before the day</h2></div><div class="b">
 
-<section class="card s5">
-<h2><span class="n">2</span>Sign in once, before the day</h2>
-<ol class="big">
+<ol>
 <li>Open <b>Gemini Enterprise</b> and start a chat.</li>
 <li>Upload any small CSV and ask: <b>"Write and run code to count the rows."</b></li>
 <li>Check that it shows the code and a result, not just an answer.</li>
 <li>Open a second chat. You'll use several at once.</li>
 </ol>
 <p class="note">If any step fails, contact IT or Andrew before the session, not during it.</p>
-</section>
+</div></section></div><div class="duo" style="grid-template-columns:6fr 6fr"><section class="row wide"><div class="k"><div class="num">3</div><h2>Bring your laptop</h2></div><div class="b">
 
-<section class="card s6">
-<h2><span class="n">3</span>Bring your laptop</h2>
 <ul>
 <li>Charged, with the charger</li>
 <li>Able to reach Gemini Enterprise from the training room network</li>
 <li>Signed in to your SkyWater account</li>
 </ul>
-</section>
+</div></section><section class="row wide"><div class="k"><div class="num">4</div><h2>Download the project kit</h2></div><div class="b">
 
-<section class="card s6">
-<h2><span class="n">4</span>Download the project kit</h2>
 <p>Unzip <b>AI-for-Process-Development-kit.zip</b> from the invite to a folder you can find. It has a project brief, tool limits, old tech reports, SPC history, a process flow, experiment results, the Plan an Experiment playbook (every prompt from the session) and a worked example with ready answers.</p>
 <p class="note">Every file is synthetic training data, safe to upload. Don't bring real data; we won't use it in class.</p>
-</section>
+</div></section></div><div class="duo" style="grid-template-columns:7fr 5fr"><section class="row wide"><div class="k"><div class="num">5</div><h2>Have AI Basics fresh</h2></div><div class="b">
 
-<section class="card s7">
-<h2><span class="n">5</span>Have AI Basics fresh</h2>
 <p>This course builds on AI Basics and won't repeat it. You should be comfortable with:</p>
 <ul>
 <li>Having a back-and-forth conversation with it, not one perfect prompt</li>
@@ -115,14 +114,9 @@ td b{font-weight:600}
 <li>The desk card: Ask, Refine, Check, Send</li>
 </ul>
 <p class="note">Haven't taken it, or it's been a while? Read the AI Basics desk card (one page).</p>
-</section>
+</div></section><section class="row wide"><div class="k"><div class="num">★</div><h2>Optional</h2></div><div class="b">
 
-<section class="card s5">
-<h2><span class="n">★</span>Optional</h2>
 <p>Think of one experiment you're planning or just ran. Bring the story, not the data. We'll use a few as examples in the open forum.</p>
 <h3>You'll use</h3>
 <p>DOE basics (factors, levels, interactions, aliasing). If you've run a DOE before, you're ready.</p>
-</section>
-
-</main></div>
-<footer class="foot"><span>© 2026 SkyWater Technology. Proprietary.</span><span>AI for Process Development · 90 minutes · For engineers</span></footer>
+</div></section></div></main><footer class="foot"><span>© 2026 SkyWater Technology. Proprietary.</span><span>AI for Process Development · 90 minutes · For engineers</span></footer></div></body></html>

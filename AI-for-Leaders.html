@@ -1362,11 +1362,15 @@ body[data-course="leaders"] .intro-card .bignum{-webkit-text-stroke-width:3px}
   <kbd>→</kbd><kbd>Space</kbd> next change · <kbd>←</kbd> back<br>
   <kbd>0</kbd>–<kbd>9</kbd> jump to a section (0 opening, 9 close)<br>
   <kbd>P</kbd> presenter window · <kbd>N</kbd> notes · <kbd>F</kbd> full screen<br>
-  <kbd>T</kbd> start or pause the timer (on a remote, the first Next on a timed screen starts it) · <kbd>?</kbd> this help
+  <kbd>T</kbd> start or pause the timer (on a remote, the first Next on a timed screen starts it) · <kbd>?</kbd> this help<br>
+  <kbd>E</kbd> edit mode: click text to change it, Alt+drag to move, Ctrl+S to save
 </div></div>
 <div class="navbtns"><button id="prevBtn">‹</button><button id="nextBtn">›</button><button id="helpBtn">?</button></div>
 
-<script>
+<script id="emSnap" data-em-keep>/* Edit mode: clean copy of the slides, taken before the slide code runs */
+(function(){const all=document.getElementsByTagName("*"),idx=new WeakMap();for(let i=0;i<all.length;i++)idx.set(all[i],i);window.__EM_SNAP={html:"<!doctype html>\n"+document.documentElement.outerHTML,count:all.length,idx}})();
+</script>
+<script data-em-keep>
 /* ===== Edit these ===== */
 // Logo: a file path next to this HTML (for example 'skywater-logo.png') or a data: URI.
 const LOGO = '';
@@ -1814,6 +1818,112 @@ applyStep=function(f,k){
 let startAt=NaN;try{startAt=parseInt(location.hash.slice(1),10)}catch(e){}
 go(isNaN(startAt)?0:startAt-1,true);
 requestAnimationFrame(pulseLoop);
+</script>
+<script data-em-keep>
+/* ===== Edit mode (press E). Edits are written into a clean copy of this file taken before the slides start, never the running slides. ===== */
+(function(){
+const SNAP=window.__EM_SNAP;if(!SNAP)return;
+let doc=null,on=false,dirty=0,bar,notesBox,sel=null;
+const LOCK='.timer,[data-count],[data-hop],svg,script,style,.notes';
+const TXT=/^(H1|H2|H3|H4|H5|H6|P|LI|TD|TH|BLOCKQUOTE|FIGCAPTION|LABEL|SPAN|DIV|B|EM|STRONG|I|SMALL|A|BUTTON|KBD|CODE)$/;
+const BLOCK=/^(DIV|P|UL|OL|LI|TABLE|SECTION|ASIDE|SVG|H1|H2|H3|H4|H5|H6|BLOCKQUOTE|FIGURE|CANVAS|IMG)$/i;
+function pristine(){
+  if(doc)return doc;
+  doc=new DOMParser().parseFromString(SNAP.html,'text/html');
+  if(doc.getElementsByTagName('*').length!==SNAP.count){doc=null;alert('Edit mode cannot line up with this file. Ask Claude to check it.');}
+  return doc;
+}
+function twin(el){const i=SNAP.idx.get(el);return i===undefined||!pristine()?null:doc.getElementsByTagName('*')[i]}
+function clean(h){return h.replace(/\s+/g,' ').trim()}
+function editable(el){
+  for(let e=el;e&&e!==document.body;e=e.parentElement){
+    if(e.closest(LOCK))return null;
+    if(!TXT.test(e.tagName)||!SNAP.idx.has(e))continue;
+    if(![...e.children].some(c=>BLOCK.test(c.tagName))&&e.textContent.trim()){
+      const t=twin(e);if(!t)return null;
+      return clean(t.innerHTML)===clean(e.innerHTML)||e.dataset.emEdited?e:'gen';
+    }
+    if((e.tagName==='DIV'||e.tagName==='LI'))return null;
+  }
+  return null;
+}
+function movable(el){for(let e=el;e&&e!==document.body;e=e.parentElement){if(e.classList.contains('frame')||e.classList.contains('scene'))return null;if(SNAP.idx.has(e)&&!e.closest('script,style,.notes'))return e}return null}
+function mark(){dirty++;bar.querySelector('#emN').textContent='Unsaved changes'}
+function commit(el){const t=twin(el);if(!t)return;t.innerHTML=el.innerHTML;el.dataset.emEdited=1;mark()}
+function curFrame(){try{return cur.f}catch(e){return document.querySelector('.frame.show,.frame.active')}}
+function dedent(t){const L=t.replace(/^\s*\n|\s+$/g,'').split('\n');const m=Math.min(...L.filter(l=>l.trim()).map(l=>l.match(/^ */)[0].length));return L.map(l=>l.slice(m)).join('\n')}
+function loadNotes(){const f=curFrame(),a=f&&f.querySelector('aside.notes');notesBox.dataset.has=a?1:'';notesBox.value=a?dedent(a.textContent):'(no notes on this slide)';notesBox.disabled=!a;notesBox._a=a}
+function build(){
+  const css=document.createElement('style');css.textContent=
+  'body.em [data-em]{outline:2px dashed rgba(240,188,72,.55);outline-offset:4px;cursor:text}'+
+  'body.em [contenteditable]{outline:2px solid #F0BC48;outline-offset:4px}'+
+  '#emBar{position:fixed;left:0;right:0;top:0;z-index:99999;display:none;gap:14px;align-items:center;padding:8px 14px;background:#111;color:#eee;font:14px Outfit,system-ui,sans-serif;border-bottom:2px solid #F0BC48}'+
+  'body.em #emBar{display:flex}#emBar b{color:#F0BC48}#emBar button{font:inherit;padding:4px 12px;border-radius:6px;border:1px solid #F0BC48;background:#222;color:#F0BC48;cursor:pointer}#emBar #emN{margin-left:auto;color:#aaa}'+
+  '#emNotes{position:fixed;right:12px;bottom:12px;width:520px;height:220px;z-index:99999;display:none;background:#181818;color:#eee;border:1px solid #F0BC48;border-radius:8px;padding:10px;font:14px/1.45 system-ui,sans-serif;resize:both}body.em #emNotes{display:block}'+
+  '#emTip{position:fixed;z-index:99999;display:none;background:#F26A5D;color:#fff;padding:6px 10px;border-radius:6px;font:13px system-ui,sans-serif;pointer-events:none}';
+  document.head.appendChild(css);
+  bar=document.createElement('div');bar.id='emBar';
+  bar.innerHTML='<b>EDIT MODE</b><span>Click text to edit · Alt+drag to move · ←/→ change slide · notes bottom right</span><span id="emN">No changes</span><button id="emSave">Save (Ctrl+S)</button><button id="emExit">Done (E)</button>';
+  document.body.appendChild(bar);
+  notesBox=document.createElement('textarea');notesBox.id='emNotes';notesBox.spellcheck=true;document.body.appendChild(notesBox);
+  const tip=document.createElement('div');tip.id='emTip';document.body.appendChild(tip);
+  bar.querySelector('#emSave').onclick=save;bar.querySelector('#emExit').onclick=toggle;
+  notesBox.addEventListener('input',()=>{const a=notesBox._a;if(!a)return;const t=twin(a);if(!t)return;const v='\n      '+notesBox.value.replace(/\n/g,'\n      ')+'\n    ';a.textContent=v;t.textContent=v;mark()});
+  /* hover outline + click to edit */
+  document.addEventListener('mouseover',e=>{if(!on)return;document.querySelectorAll('[data-em]').forEach(x=>x.removeAttribute('data-em'));const t=editable(e.target);if(t&&t!=='gen')t.setAttribute('data-em','')},true);
+  document.addEventListener('click',e=>{
+    if(!on||bar.contains(e.target)||e.target===notesBox)return;
+    e.stopPropagation();e.preventDefault();
+    const t=editable(e.target);
+    if(t==='gen'||(!t&&e.target.closest(LOCK))){tip.textContent='This part is drawn by the slide code. Ask Claude to change it.';tip.style.left=e.clientX+12+'px';tip.style.top=e.clientY+12+'px';tip.style.display='block';clearTimeout(tip._t);tip._t=setTimeout(()=>tip.style.display='none',2200);return}
+    if(!t)return;
+    if(sel&&sel!==t)sel.removeAttribute('contenteditable');
+    sel=t;t.setAttribute('contenteditable','true');t.focus();
+  },true);
+  document.addEventListener('input',e=>{if(on&&e.target.isContentEditable&&e.target.closest('[contenteditable]')===sel)commit(sel)},true);
+  document.addEventListener('paste',e=>{if(!on||!e.target.isContentEditable)return;e.preventDefault();document.execCommand('insertText',false,(e.clipboardData||window.clipboardData).getData('text/plain'))},true);
+  /* Alt+drag to move */
+  let drag=null;
+  document.addEventListener('pointerdown',e=>{if(!on||!e.altKey)return;const m=movable(e.target);if(!m)return;e.preventDefault();e.stopPropagation();
+    const st=(m.style.translate||'0px 0px').split(' ').map(parseFloat);const r=document.getElementById('deck').getBoundingClientRect(),sc=r.width/1920||1;
+    drag={m,x0:e.clientX,y0:e.clientY,tx:st[0]||0,ty:st[1]||0,sc};},true);
+  addEventListener('pointermove',e=>{if(!drag)return;const x=Math.round(drag.tx+(e.clientX-drag.x0)/drag.sc),y=Math.round(drag.ty+(e.clientY-drag.y0)/drag.sc);drag.m.style.translate=x+'px '+y+'px';drag.v=x+'px '+y+'px'},true);
+  addEventListener('pointerup',()=>{if(!drag)return;if(drag.v){const t=twin(drag.m);if(t){t.style.translate=drag.v;mark()}}drag=null},true);
+  addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
+}
+function toggle(){
+  if(!bar)build();
+  if(!on&&!pristine())return;
+  on=!on;document.body.classList.toggle('em',on);
+  if(!on){if(sel){sel.removeAttribute('contenteditable');sel=null}document.querySelectorAll('[data-em]').forEach(x=>x.removeAttribute('data-em'))}
+  else loadNotes();
+}
+function html(){
+  const d=pristine();const b=d.body;
+  document.querySelectorAll('script[data-em-keep]').forEach(s=>{if(s.id==='emSnap')return;const n=d.createElement('script');for(const a of s.attributes)n.setAttribute(a.name,a.value);n.textContent=s.textContent;b.appendChild(d.createTextNode('\n'));b.appendChild(n)});
+  const out=('<!doctype html>\n'+d.documentElement.outerHTML+'\n').replace(/<(path|line|circle|rect|polyline|polygon|ellipse|stop|use)(\b[^>]*)><\/\1>/g,'<$1$2/>');
+  b.querySelectorAll('script[data-em-keep]').forEach(s=>{if(s.id!=='emSnap'){const p=s.previousSibling;s.remove();if(p&&p.nodeType===3)p.remove()}});
+  return out;
+}
+async function save(){
+  const name=decodeURIComponent(location.pathname.split('/').pop()||'deck.html');
+  const blob=new Blob([html()],{type:'text/html'});
+  try{
+    if(window.showSaveFilePicker){const h=await showSaveFilePicker({suggestedName:name,types:[{description:'Slide deck',accept:{'text/html':['.html']}}]});const w=await h.createWritable();await w.write(blob);await w.close();}
+    else{const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);}
+    dirty=0;bar.querySelector('#emN').textContent='Saved';
+  }catch(err){if(err&&err.name!=='AbortError')alert('Save failed: '+err.message)}
+}
+  /* keys: typing never reaches the slide controls */
+  addEventListener('keydown',e=>{
+    const typing=e.target.isContentEditable||(notesBox&&e.target===notesBox);
+    if(on&&(e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='s'){e.preventDefault();e.stopPropagation();save();return}
+    if(typing){e.stopPropagation();if(e.key==='Escape'){e.target.blur();if(sel){sel.removeAttribute('contenteditable');sel=null}}else if(e.key==='Enter'&&e.target!==notesBox){e.preventDefault();document.execCommand('insertLineBreak')}return}
+    if((e.key==='e'||e.key==='E')&&!e.ctrlKey&&!e.metaKey&&!e.altKey){e.stopPropagation();toggle();return}
+    if(on&&(e.key==='ArrowRight'||e.key==='ArrowLeft'||e.key===' '))setTimeout(loadNotes,50);
+  },true);
+window.__EM={toggle,html};
+})();
 </script>
 </body>
 </html>
