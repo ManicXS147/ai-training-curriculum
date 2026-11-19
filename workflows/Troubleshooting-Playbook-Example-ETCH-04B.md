@@ -2,7 +2,7 @@
 
 SYNTHETIC TRAINING DATA. Made up for the AI for Troubleshooting course. Not from any real tool, vendor, lot, product or person.
 
-Use this with Troubleshooting Playbook v0.5. Two things in this example are mocked: the **inputs** (the case files in the kit, and your answers when the AI interviews you) and the **technicians' findings**. Everything else is whatever your AI tool actually produces when you run the playbook: the 8D record, the hypotheses, the check plans, the reviews, the D7 actions and the lesson. Nothing below is a model output.
+Use this with Troubleshooting Playbook v0.6, in Gemini Enterprise. Two things in this example are mocked: the **inputs** (the case files in the kit, and your answers when the AI interviews you) and the **technicians' findings**. Everything else is whatever your AI tool actually produces when you run the playbook: the 8D record, the hypotheses, the check plans, the reviews, the D7 actions and the lesson. Nothing below is a model output.
 
 You play the engineer who picked up the problem at 7:00 a.m. on Monday, Nov 9: you've read the case brief and the shift notes, and nothing else yet.
 
@@ -19,7 +19,7 @@ You play the engineer who picked up the problem at 7:00 a.m. on Monday, Nov 9: y
 | 3. Cycle 1 | D4 | Check Plan, Technician Results, Hypothesis Update | Engineer's selections; findings bank, before the fix | Cycle 1 plan; record after cycle 1 |
 | 4. Cycle 2 | D4 to D6 | Same | Engineer's selections; findings bank | Cycle 2 plan; record after cycle 2 |
 | 5. Prevent recurrence | D7 | Prevent Recurrence, D7 Review | None | D7_Actions.md |
-| 6. Close and lesson | D8 | Close and Lesson | None | Lesson_Learned.md |
+| 6. Close and lesson | D8 | Close and Lesson, Lesson Review | None | Lesson_Learned.md |
 
 ---
 
@@ -99,7 +99,7 @@ Then run the Record Review in a new chat with the Review Gate, the record and yo
 
 ## Stage 2. Hypothesis Update with data and documents (D4)
 
-New chat. Paste the Hypothesis Update prompt with your record v1.0, and attach `alarm_history.csv`, `fdc_summary.csv`, `fdc_limits.csv`, `maintenance_log.csv`, `change_log.csv`, `manual_excerpt.txt` and `past_lessons.txt`. Use Gemini if you have a seat: the counts need code that actually runs.
+New chat. Paste the Hypothesis Update prompt with your record v1.0, and attach `alarm_history.csv`, `fdc_summary.csv`, `fdc_limits.csv`, `maintenance_log.csv`, `change_log.csv`, `manual_excerpt.txt` and `past_lessons.txt`. Gemini writes and runs the code the counts need.
 
 **What a good update contains:**
 - The supply-pressure hypothesis ruled out: the Saturday dip warned all four chambers, but only 04B alarms, before and after it.
@@ -170,6 +170,8 @@ The state of the tool matters. Use the "before the fix" note until a new seal ha
 | Kind of check | Before the fix | After the fix |
 |:---|:---|:---|
 | Hot leak check at process temperature (60 C, soak, test wafer) | "soaked 30 min at 60, test wafer from slot 25. backside held 10 torr fine the whole time. flow at 5 min was 1.48. thats way over." | "hot leak at 60 after 30 min soak 0.36." |
+| Read the as-found state from the tool screen (no reset) | "04B still stopped, no wafer on the chuck, chuck at 24 C, no new alarms since 05:30." | "chuck at 24 C, no alarms." |
+| Repeat the hot reading after unclamp and reclamp cycles | "unclamped and reclamped 3 times, 5 min each. 1.52, 1.57, 1.61. still going up." | "3 reclamps, 0.36, 0.37, 0.36." |
 | Leak check at room temperature | "leak check cold, 23 C, 0.43. passes." (This is the trap: a cold check passes on a bad seal.) | "cold check 0.31." |
 | Leak check with no temperature stated | "did a leak check, read 0.45, chuck was still cooling down, didnt look at the temp." (Untraceable on purpose: a good results review flags it.) | Same note, reading 0.33 |
 | MFC flow verify against the reference | "flow verify on the He MFC with the ref standard, within 1%. MFC looks fine to me." | Same |
@@ -181,7 +183,7 @@ The state of the tool matters. Use the "before the fix" note until a new seal ha
 | Lift the chuck, inspect the seal and surface | "locked out, cooled to 28, lifted the chuck. seal was rolled out of the groove at about 4 o'clock for maybe 3 cm, took photos. chuck surface looks clean, no scratches." | Not applicable |
 | Fit a new O-ring and reinstall per 7.4c to 7.4e | Not applicable | "new oring in, ran a finger all the way round, lowered straight, torqued 2 passes star pattern." |
 | Swap the MFC (if the engineer approved it) | "swapped to the old rev MFC. hot leak at 60 still 1.47. alarmed again after 9 runs." (A wasted swap: the frivolous-plan lesson.) | Not needed |
-| Qual: 25-wafer season, then monitor wafers | "season started, He leak alarm on run 9, stopped." | "ran the 25 wafer season, no alarms. monitor wafers in spec per the qual sheet. tool released." |
+| Qual: 25-wafer season, then monitor wafers | "season started, He leak alarm on run 9, stopped." | "ran the 25 wafer season, no alarms. monitor wafers in spec per the qual sheet. qual passed, called the engineer to release it." |
 | Anything not listed here | "didnt do that one, not sure what the step wanted. stopped and called." | Same |
 
 Two rules keep this honest whatever plan the AI writes:
@@ -215,6 +217,8 @@ New chat. Paste the Close and Lesson prompt with the record including D7.
 - The signature: one chamber only; leak above 1.0 sccm from the first run after chuck work; climbs run by run; each reset drops it and it climbs faster.
 - The earliest sign: 1.14 sccm on the first run after the PM, already above the 1.0 acceptance.
 - Every statement traced to a record section in the self-check table.
+
+**What a good Lesson Review catches:** a title without the alarm text or the tool type; a signature that would also fit a ruled-out hypothesis, such as the MFC; any statement the closed record doesn't support.
 
 A good closure summary also credits the night-shift operator who noticed on Friday that the flow looked higher than the A side: the earliest human catch.
 

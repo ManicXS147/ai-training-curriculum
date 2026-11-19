@@ -7,7 +7,9 @@ before the session and note what your Copilot actually returns.
 BEFORE THE SESSION
 - Send AI-for-Leaders-kit.zip with the invite, or put the folder on the shared
   drive and write the path on the whiteboard.
-- Run prompts 2, 3 and 4 yourself on the kit files. Save your outputs: if a
+- Run prompts 2, 3 and 4 yourself on the kit files, in Copilot Chat and in
+  Gemini, with the test sheet (cheat-sheets/AI-for-Leaders-Prompt-Test-Sheet).
+  Reference outputs from a dry run are in source/dry-run-2026-11-19/. Save your outputs: if a
   trainee's chat stalls, paste your brief so they can carry on.
 - Leaders who skipped AI Basics may need a hand opening Copilot Chat and
   uploading a file. Pair them with someone who has done it.
@@ -45,7 +47,7 @@ Ask the room before revealing.
 
 --------------------------------------------------------------------
 EXERCISE 2 · REVIEW THE BRIEF · 3:00
-new chat · consolidation_plan.txt · prompt 3 · paste the brief
+new chat · consolidation_plan.txt + decision_frame.txt · prompt 3 · paste the brief
 --------------------------------------------------------------------
 No fixed key: findings depend on each brief. Common, useful findings:
 - A claim with no quote (Lint, patched without a score).
@@ -53,7 +55,9 @@ No fixed key: findings depend on each brief. Common, useful findings:
 - An option not compared on every criterion (Lint, DB5).
 - A recommendation slipped into the brief (Lint, DB7).
 "NO FAILURES" is a valid answer. Ask: what did the review catch that you
-didn't?
+didn't? In the dry run (source/dry-run-2026-11-19/) the review caught a
+misread scope: "two tool sets" marked FIGURE FAILS when the plan is only
+unclear about it.
 
 --------------------------------------------------------------------
 EXERCISE 3 · CASE AGAINST · 3:00

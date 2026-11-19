@@ -1,6 +1,8 @@
-# Process Development Playbook: Plan an Experiment (draft v0.4)
+# Process Development Playbook: Plan an Experiment (draft v0.5)
 
-Draft for a trial run, 2026-11-14. Same structure as the Systems Engineering Playbook v2. Every prompt is written to the Prompt Evaluation Rubric v3.2 (reference/Prompt-Evaluation-Rubric.md). Gemini Enterprise only.
+Draft for the pilot, 2026-11-19. Same structure as the Systems Engineering Playbook v2. Every prompt is graded to the Prompt Evaluation Rubric v3.2 (reference/Prompt-Evaluation-Rubric.md). Gemini Enterprise only. Gemini has no content restrictions, so attach your real files.
+
+**Your copy.** The shared playbooks live in the AI training SharePoint folder. Save your own copy, and improve it each time you use it (see "Improving this playbook"). This is the one process development playbook handed out for now; the others follow the same format and come after the pilot.
 
 Do these procedures in sequence to turn what you know about a process question into a confirmed Experiment Brief and a Golden Run Sheet (`Golden_RunSheet_v1.1.md`) with its analysis plan fixed before any data exists:
 
@@ -29,9 +31,9 @@ Work and review never share a thread. Each artifact is fixed in the thread that 
 | Thread 2 (work) | Design Decision Menu, then Design Decision Record | Experiment Brief, limits file if you have one |
 | Review thread R1 (new) | Design Menu Review | Review gate block, Experiment Brief, Design Decision Menu |
 | Thread 3 (work) | Run Sheet v1.0, risk, Golden Run Sheet | Experiment Brief, Design Decision Record, limits file |
-| Review thread R2 (new) | Run Sheet Lint, then Design Review | Review gate block, Experiment Brief, Design Decision Record, Run Sheet v1.0 |
+| Review thread R2 (new) | Run Sheet Lint, then Design Review | Review gate block, Experiment Brief, Design Decision Record, Run Sheet v1.0, limits file |
 | Thread C (new, only when needed) | Brief Change | Experiment Brief, your change notes word for word |
-| Review thread R4 (new) | Run Sheet Lint, then Release Review | Review gate block, Experiment Brief, Design Decision Record, your risk selections, Golden Run Sheet |
+| Review thread R4 (new) | Run Sheet Lint, then Release Review | Review gate block, Experiment Brief, Design Decision Record, your risk selections, Golden Run Sheet, limits file |
 
 After each review, paste its patch block into the thread that built the artifact, apply it there, then move on.
 
@@ -213,8 +215,8 @@ Report every violation of checks B1 to B6, computed by code you write and execut
 
 <checks>
 - B1 IDs: every item has an ID of the form EB-<section>.<n> or OPEN-<n>; no ID repeats.
-- B2 Sources: every item ends with a bracketed source of the form M<n>, a file name, ASM-<n> or OPEN-<n>.
-- B3 Units: every number in sections 2, 3 and 5 is followed by a unit.
+- B2 Sources: every item ends with a bracketed source list; each entry is M<n>, a file or document name, ASM-<n> or OPEN-<n>.
+- B3 Units: every number in the item text of sections 2, 3 and 5 is followed by a unit, or the item names it as a count, ratio or index. IDs, step and document numbers, and bracketed sources are not numbers for this check.
 - B4 Placeholders: the text "TBD" appears nowhere.
 - B5 Sections: headings 1 to 8 are present and in order.
 - B6 Counts: items per section; OPEN-* items.
@@ -305,7 +307,7 @@ Produce a Design Decision Menu of distinct experiment designs that can answer th
 - Match design families to what the question needs: comparing settings, screening for main effects, estimating named interactions, or mapping curvature.
 - Keep every option inside the binding limits and the budget, citing the EB-* IDs behind each.
 - Give every OPEN-* item exactly one disposition: a menu category, or a row in the disposition table.
-- Stop after the selection prompt; the run sheet is built from the decision record in a later thread.
+- End at the selection prompt.
 </limits>
 
 <missing_data>
@@ -695,7 +697,7 @@ The selections, overrides and sign-off are binding as written. The last run shee
 </input_treatment>
 
 <goal>
-Produce Golden_RunSheet_v1.1.md: one complete, standalone document with every approved change applied, ready for the Release Review. Success: every Tier 1 delta row and every selection appears in the rows it changes, and nothing else changed.
+Produce Golden_RunSheet_v1.1.md: one complete, standalone document with every approved change applied, ready for an independent release review. Success: every Tier 1 delta row and every selection appears in the rows it changes, and nothing else changed.
 </goal>
 
 <limits>
@@ -707,7 +709,8 @@ Produce Golden_RunSheet_v1.1.md: one complete, standalone document with every ap
 </limits>
 
 <output>
-One fenced markdown block titled `# Golden Run Sheet (Golden_RunSheet_v1.1)` with the seven sections and table columns of Run Sheet v1.0.
+1. Change trace: | Row or ID | Change | Source (RDM-*, ASM-*, delta row) |
+2. One fenced markdown block titled `# Golden Run Sheet (Golden_RunSheet_v1.1)` with the seven sections and table columns of Run Sheet v1.0.
 </output>
 ```
 
@@ -772,6 +775,7 @@ When a prompt gave you something you had to fix by hand, fix the prompt, not jus
 
 | Version | Date | Change | Why |
 |:---|:---|:---|:---|
+| 0.5 | 2026-11-19 | Graded again to rubric v3.2 and dry-run on the worked example: Brief Lint B3 no longer counts IDs, step numbers or sources as numbers, and accepts named counts, ratios and indexes; B2 accepts a source list; limits file added to R2 and R4 in the thread map; design menu ends at the selection prompt without a process reference; Golden Run Sheet shows its change trace before the final block and names no later stage; SharePoint copy and "after the pilot" notes added. | Rubric v3.2 (working before the final block; no process references); B3 flagged every ID as a unit violation |
 | 0.4 | 2026-11-14 | Written to Prompt Evaluation Rubric v3.2: Experiment Brief Standard and Brief Lint added; four-way sort of specifics; R0 reviews against the person's own messages, not the transcript; each artifact fixed in the thread that built it; Design Decision Record handed to a new run sheet thread; person's review and Brief Change added as the Agile cycle; "Improving this playbook" added; filled examples removed from prompts. | Rubric v3.2 |
 
 ---
@@ -784,4 +788,4 @@ When a prompt gave you something you had to fix by hand, fix the prompt, not jus
 4. Thread 3: Run Sheet. R2: lint, then Design Review. Patch in Thread 3.
 5. Your review: walk the run sheet. Try one Brief Change on purpose (for example, add a response you forgot) to see the cycle restart.
 6. Thread 3: risk, select, Golden Run Sheet. R4: lint, then Release Review.
-7. Note where it helped, where it was slow, and where you overrode it. Those notes shape the in-class walkthrough and the Analyze and Qualify playbooks.
+7. Note where it helped, where it was slow, and where you overrode it. Those notes shape the in-class walkthrough and the playbooks that come after the pilot.
