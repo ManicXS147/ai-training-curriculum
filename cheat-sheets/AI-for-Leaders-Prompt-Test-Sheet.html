@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leaders Prompt Test Sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#212121;--white:#fff;--amber:#B7872D;--amber-t:#8C6619;--amber-d:#F0BC48;--rule:#cfcfcf;--grey:#5c5c5c;--crs:#4958A6}
+@page{size:Letter;margin:.45in 0 .55in}
+@page:first{margin-top:0}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html{background:#ddd}
+body{margin:0;font-family:'Outfit',Arial,sans-serif;color:var(--black);line-height:1.25;font-size:10.5pt}
+.doc{width:8.5in;max-width:100%;background:var(--white);margin:24px auto}
+@media print{html{background:#fff}.doc{margin:0;width:auto}}
+.eye{font-size:9pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+b{font-weight:700}
+p{margin:0 0 .06in}
+.head{background:var(--black);color:var(--white);padding:.36in .55in .28in;border-bottom:.07in solid var(--crs)}
+.head .eye{color:var(--amber-d)}
+.head h1{margin:.08in 0 .08in;font-size:30pt;font-weight:400;line-height:1.02;color:var(--white)}
+.head p{margin:0;font-size:12pt;line-height:1.3;color:var(--amber-d);max-width:6.8in}
+.main{padding:.12in .55in .1in}
+.data{display:flex;gap:.14in;align-items:baseline;padding:.04in 0 .1in;font-size:11pt;line-height:1.3}
+.data .eye{color:var(--amber-t);flex:none}
+.step{display:grid;grid-template-columns:1.45in 1fr;gap:.22in;border-top:1.5pt solid var(--black);padding:.09in 0;break-inside:avoid}
+.step .k .num{font-size:24pt;font-weight:400;line-height:.9;color:var(--amber)}
+.step .k h2{margin:.04in 0 .02in;font-size:13pt;font-weight:700;line-height:1.05}
+.step .k span{display:block;font-size:9pt;color:var(--grey)}
+.step .b{min-width:0}
+h3{margin:.02in 0 .02in;font-size:8.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-t)}
+ul{margin:0 0 .05in;padding:0;list-style:none}
+li{padding:.012in 0 .012in .18in;position:relative}
+li::before{content:"";position:absolute;left:0;top:.075in;width:.065in;height:.065in;background:var(--amber)}
+.run{font-size:10pt;margin:0 0 .04in}
+.dry{font-size:9pt;color:var(--grey)}
+.dry b{color:var(--black)}
+table{border-collapse:collapse;width:100%;font-size:10pt}
+th{font-size:8.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-align:left;padding:0 .1in .04in 0;border-bottom:1.5pt solid var(--black)}
+td{padding:.06in .1in .06in 0;border-bottom:1px solid var(--rule);vertical-align:top;height:.32in}
+.band{background:var(--black);color:var(--white);padding:.16in .55in .16in;margin-top:.1in;break-inside:avoid}
+.band .eye{color:var(--amber-d)}
+.band p{margin:.06in 0 0;font-size:11pt}
+.foot{display:flex;justify-content:space-between;padding:.09in .55in .14in;font-size:8pt;color:var(--grey)}
+@media print{.foot{display:none}}
+@media (max-width:700px){.step{grid-template-columns:1fr;gap:.06in}.head,.main,.band,.foot{padding-left:16px;padding-right:16px}}
+</style>
+</head>
+<body><div class="doc">
+<header class="head">
+  <div class="eye">AI for Leaders · Prompt test sheet · playbook v1.1</div>
+  <h1>Run every prompt before the pilot.</h1>
+  <p>One pass in Copilot Chat, one in Gemini. A prompt passes when every check holds. A miss means fix the prompt, not the output.</p>
+</header>
+<main class="main">
+  <div class="data"><span class="eye">Set up</span><span>Kit files from leaders-kit/. Prompts from playbook-prompts.txt v1.1. Sample inputs in leaders-kit/source/test-inputs.txt. <b>New chat for every prompt</b> except 3b. Reference answers: leaders-kit/source/dry-run-2026-11-19/.</span></div>
+
+  <section class="step">
+    <div class="k"><div class="num">1</div><h2>Frame</h2><span>Prompt 1 · round 1 only</span></div>
+    <div class="b">
+      <p class="run">Paste the prompt with the sample ramble in &lt;decision_talk&gt;.</p>
+      <ul>
+        <li>Status of all seven dimensions, each Clear, Fuzzy or Unknown</li>
+        <li>Specifics listed with a proposed sort, and none treated as settled</li>
+        <li>At most three questions, each with options A, B, C and D</li>
+        <li>No frame drafted yet</li>
+      </ul>
+      <p class="dry"><b>Dry run:</b> passed. Sorted the old implant move as an Example.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="k"><div class="num">2</div><h2>Build the brief</h2><span>Prompt 2 · new chat</span></div>
+    <div class="b">
+      <p class="run">Upload consolidation_plan.txt and decision_frame.txt. Paste the prompt and today's date.</p>
+      <ul>
+        <li>Titled Decision Brief v1.0, seven sections in order</li>
+        <li>$1.2M marked NO EVIDENCE or CANNOT RECOMPUTE; OPEN-1 kept</li>
+        <li>92% uptime is an assumption rated high impact</li>
+        <li>Audit in week 12 right after full production in week 11 shows as a risk</li>
+        <li>Customer requalification appears, found only through the frame</li>
+        <li>Every option has a cell for every criterion; no recommendation, no ranking</li>
+      </ul>
+      <p class="dry"><b>Dry run:</b> passed all six. Also found facilities work is 4 weeks, not 2.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="k"><div class="num">3</div><h2>Review the brief</h2><span>Prompt 3 · new chat</span></div>
+    <div class="b">
+      <p class="run">Upload consolidation_plan.txt and decision_frame.txt. Paste the prompt, then your brief.</p>
+      <ul>
+        <li>Three parts: lint failures, review findings with I, A and gate, patch block</li>
+        <li>Every finding quotes the plan or the frame, or says MISSING</li>
+        <li>Only Patch findings reach the patch block, with full rows</li>
+        <li>NO FAILURES is a pass if the brief is clean</li>
+      </ul>
+      <p class="dry"><b>Dry run:</b> passed. Caught "two tool sets" wrongly marked FIGURE FAILS.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="k"><div class="num">3b</div><h2>Fix the brief</h2><span>Back in the prompt 2 chat</span></div>
+    <div class="b">
+      <ul>
+        <li>Brief comes back as v1.1, with every table</li>
+        <li>Only the patched rows change</li>
+        <li>One change-log line per patched row, with the date</li>
+      </ul>
+      <p class="dry"><b>Dry run:</b> passed. Every other row identical.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="k"><div class="num">4</div><h2>Case against</h2><span>Prompt 4 · new chat</span></div>
+    <div class="b">
+      <p class="run">Upload my_leaning.txt. Paste the prompt and the brief. Horizon: the end of Q3.</p>
+      <ul>
+        <li>Case against is 200 words or fewer, every point with brief IDs</li>
+        <li>Points without an ID say OUTSIDE BRIEF; untested reasons say UNTESTED</li>
+        <li>Three pre-mortem failures, and a "what would change the decision" table</li>
+      </ul>
+      <p class="dry"><b>Dry run:</b> passed. Flagged "the savings look worth it" as UNTESTED.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="k"><div class="num">6</div><h2>Announcement</h2><span>Prompt 6 · new chat</span></div>
+    <div class="b">
+      <p class="run">Paste the prompt with the sample Decision Record and audience.</p>
+      <ul>
+        <li>250 words or fewer, six parts in order</li>
+        <li>Decision in the record's own words; nothing added</li>
+        <li>Gaps say Owner needed or Date needed; no brief IDs</li>
+      </ul>
+      <p class="dry"><b>Dry run:</b> passed, 209 words.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="k"><div class="num">M</div><h2>Meeting notes</h2><span>New chat</span></div>
+    <div class="b">
+      <p class="run">Upload ops_review_transcript.txt. Purpose: weekly operations review. Date: Tuesday, March 3.</p>
+      <ul>
+        <li>Vendor call with no owner is an open item</li>
+        <li>Friday go-live is CONDITIONAL on the overtime sign-off</li>
+        <li>The backordered vacuum pump and the chamber kit both appear</li>
+        <li>Every date is a calendar date plus the words used</li>
+        <li>A note to send, 250 words or fewer</li>
+      </ul>
+      <p class="dry"><b>Dry run:</b> passed all five.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="k"><div class="num">R</div><h2>Requirement card</h2><span>Interview, then review</span></div>
+    <div class="b">
+      <p class="run">Paste the interview prompt with the sample goal. Answer two rounds, confirm, then run the review prompt in a new chat.</p>
+      <ul>
+        <li>Round 1: six dimensions rated, specifics sorted, three A to D questions</li>
+        <li>Card: one "shall" per requirement, each citing your words</li>
+        <li>Review: findings quote your messages or say NO SUPPORT</li>
+      </ul>
+      <p class="dry"><b>Dry run:</b> round 1 passed. Card and review not yet run end to end.</p>
+    </div>
+  </section>
+
+  <section class="step">
+    <div class="k"><div class="num">✓</div><h2>Results</h2><span>Tick or note the miss</span></div>
+    <div class="b">
+      <table>
+        <tr><th>Prompt</th><th>Copilot Chat</th><th>Gemini</th><th>What missed</th></tr>
+        <tr><td>1 Frame</td><td></td><td></td><td></td></tr>
+        <tr><td>2 Build</td><td></td><td></td><td></td></tr>
+        <tr><td>3 Review</td><td></td><td></td><td></td></tr>
+        <tr><td>3b Fix</td><td></td><td></td><td></td></tr>
+        <tr><td>4 Case against</td><td></td><td></td><td></td></tr>
+        <tr><td>6 Announcement</td><td></td><td></td><td></td></tr>
+        <tr><td>Meeting notes</td><td></td><td></td><td></td></tr>
+        <tr><td>Requirement card</td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+  </section>
+</main>
+<div class="band"><span class="eye">When a check misses</span><p>Note the exact line that missed. Change the prompt, rerun it on the same input in the same tool, and add a change-log line to playbook-prompts.txt. Save your best Copilot output for each exercise as the class restart point.</p></div>
+<div class="foot"><span>© 2026 SkyWater Technology. Proprietary.</span><span>AI for Leaders · Prompt test sheet · Rev. November 2026</span></div>
+</div></body></html>

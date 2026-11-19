@@ -6,7 +6,8 @@ and events are made up and are not from any real fab. People are named by
 role, not by name.
 
 HOW TO USE IT
-1. Open Copilot Chat (the training invite explains how).
+1. Open Copilot Chat (the training invite explains how). Copilot Chat and
+   Gemini have no content restrictions, so at work you can paste the real plan.
 2. Start a NEW chat for each exercise.
 3. Upload the files the slide names, or open each one, copy all the text and
    paste it.
@@ -26,9 +27,11 @@ ops_review_transcript.txt  A meeting transcript to practise the meeting-notes
 EXERCISES
 Build the brief      new chat · consolidation_plan.txt + decision_frame.txt
                      · prompt 2
-Review the brief     new chat · consolidation_plan.txt · prompt 3 · your brief
+Review the brief     new chat · consolidation_plan.txt + decision_frame.txt
+                     · prompt 3 · your brief
 Case against         new chat · my_leaning.txt · prompt 4 · your brief
 
-Keep playbook-prompts.txt. Copy it into your own document. When a prompt
+Keep playbook-prompts.txt. The shared copy lives in the AI training
+SharePoint folder. Copy it into your own document. When a prompt
 misses something, change it, raise the version and log the change. That
 document is your playbook.

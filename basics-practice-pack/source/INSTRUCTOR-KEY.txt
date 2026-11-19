@@ -13,8 +13,8 @@ BEFORE THE SESSION
 
 QUICK RECOVERIES (any exercise)
 - Can't attach the file: paste the text instead.
-- Pasted something real from work: stop, delete that chat, use the pack file.
-  It's the section 05 habit, so say so kindly.
+- Pasted something real from work: that's fine in Copilot Chat (no content
+  restrictions), but the pack file keeps the room's answers comparable.
 - Long thread getting muddled: new chat, paste the notes again (move 6).
 - Neighbor got a different answer: expected. Same question, different wording
   each time (check 3). The facts should match the notes; the wording won't.

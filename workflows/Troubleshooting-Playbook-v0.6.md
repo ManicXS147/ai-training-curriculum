@@ -1,6 +1,10 @@
-# Troubleshooting Playbook (v0.5): the 8D loop
+# Troubleshooting Playbook (v0.6): the 8D loop
 
 Works a troubleshooting event through all eight 8D disciplines as a loop, with AI doing part of the work in every discipline. The worked case in the course is a tool down; the same prompts work for process troubleshooting (see the note below). One living artifact, `8D_Record.md`, holds the problem, the containment and the hypothesis register. Each cycle, the engineer sends the technicians a short check plan, and their findings come back into the same record to update the hypotheses. The loop repeats until the root cause is confirmed and the tool passes its qual. Every prompt meets the Prompt Evaluation Rubric v3.2 (ai-training/reference/Prompt-Evaluation-Rubric.md).
+
+**Tool: Gemini Enterprise.** The counts, the lint and the review checks need code that actually runs, and Gemini runs it. Gemini has no content restrictions: attach the real logs, work orders and procedure sections the prompt asks for.
+
+**Your copy.** The shared playbook lives in the team's SharePoint playbook folder. Save your own copy and improve it as you use it (see Improving This Playbook at the end).
 
 ## The Loop
 
@@ -35,7 +39,7 @@ The loop and every prompt stay the same; the unit of evidence changes. Where a t
 
 ## Why the loop needs a record
 
-Gemini Enterprise and Copilot Chat remember nothing between chats, so the record is the memory. Each cycle starts a new chat with only two things pasted in: the latest `8D_Record.md` and the newest evidence (data, document sections, or a confirmed `Results_Report.md`). Nothing else from earlier chats goes in, so stray details from old conversations can't leak into the hypotheses.
+Gemini remembers nothing between chats, so the record is the memory. Each cycle starts a new chat with only two things pasted in: the latest `8D_Record.md` and the newest evidence (data, document sections, or a confirmed `Results_Report.md`). Nothing else from earlier chats goes in, so stray details from old conversations can't leak into the hypotheses.
 
 ---
 
@@ -43,7 +47,7 @@ Gemini Enterprise and Copilot Chat remember nothing between chats, so the record
 
 | Thread | Who | Prompt | Paste or attach |
 |:---|:---|:---|:---|
-| Frame (once) | Engineer or lead tech | Frame the Event | Nothing. Pass-downs and notes when the interview asks |
+| Frame (once) | Engineer or lead tech | Frame the Event | Nothing; the interview lists what evidence exists |
 | Record review (after every Frame or Update) | Engineer | Record Review | Review Gate, the new `8D_Record.md`, the evidence or interview answers it came from, the previous record version if any |
 | Update (every cycle) | Engineer | Hypothesis Update | Latest `8D_Record.md`; new evidence attached |
 | Plan (every cycle) | Engineer | Check Plan: decision menu, then plan | Latest `8D_Record.md`; procedure sections for the likely steps |
@@ -53,6 +57,7 @@ Gemini Enterprise and Copilot Chat remember nothing between chats, so the record
 | Prevent (once, after the qual) | Engineer | Prevent Recurrence | `8D_Record.md` with the qual passed |
 | Prevent review | Engineer | D7 Review | Review Gate, `D7_Actions.md`, `8D_Record.md` |
 | Close (once) | Engineer | Close and Lesson | `8D_Record.md` with D7 filled |
+| Lesson review | Engineer | Lesson Review | Review Gate, `Lesson_Learned.md`, the closed `8D_Record.md` |
 
 After a review, paste its patch block into the chat that built the artifact, fix it there, and hand on only the fixed artifact.
 
@@ -65,7 +70,7 @@ After a review, paste its patch block into the chat that built the artifact, fix
 | `8D_Record.md` | D0 to D3 complete and sourced; problem statement in observable terms only (Kepner-Tregoe Is / Is Not); every hypothesis is a physical mechanism with a status, evidence for and against, a source for each, and the next discriminating check; a hypothesis changes status only on cited evidence; a cycle log; versioned with a change-log line per update | Record Review |
 | `Check_Plan.md` | Check Plan Standard: every step has action, reference, conditions, record with units, hypotheses it splits and a branch rule; every branch ends at a step, a stop-and-report point or the qual; a repair appears only for a confirmed hypothesis with engineer approval; every safety step cites its procedure | Mechanical Lint L1 to L8, Check Plan Review |
 | `D7_Actions.md` | Every action traces to the root cause or the escape point; each names what changes, how its effect is verified, and an owner; every other place the mechanism could occur is listed as TO CHECK | D7 Review |
-| `Lesson_Learned.md` | Symptom written in the words someone would search for; observable signature; confirmed cause and proof; the fix; the check that would have caught it sooner; nothing in it beyond what the closed record shows | Close and Lesson self-check, engineer sign-off |
+| `Lesson_Learned.md` | Symptom written in the words someone would search for; observable signature; confirmed cause and proof; the fix; the check that would have caught it sooner; nothing in it beyond what the closed record shows | Close and Lesson self-check, Lesson Review, engineer sign-off |
 | `Results_Report.md` | One result per step reached, tied by ID; readings with units and conditions; observation separate from interpretation; confirmed by the technician | Mechanical Lint L9 to L10, Results Review |
 
 ---
@@ -115,8 +120,8 @@ C 1 Disassembly, parts, or more than 4 hours down. C 2 Disassembly under 4 hours
 |:---|:---|
 | `HYP-<n>` | One hypothesis: a physical mechanism that could produce the symptom |
 | `CON-<n>` | One containment action |
-| `PDM-<category><option>` | One selected plan decision |
 | `STEP-<n>` | One check plan step; branches as `STEP-2a`, `STEP-2b` |
+| `SP-<n>` | One stop-and-report point in a check plan |
 | `RES-<n>` | One result, tied to exactly one `STEP-*` |
 | `ASM-<n>` | One working value chosen without a stated source |
 | `OPEN-<n>` | One unresolved item; it ends resolved, converted to an `ASM-*`, or carried to the next cycle |
@@ -147,16 +152,21 @@ Status definitions:
 - Clear: an explicit answer, and no second reasonable reading would change the problem statement or the hypotheses.
 - Fuzzy: answered, but vague, conflicting, or open to two readings that lead to different hypotheses.
 - Unknown: not yet discussed, or the person said they don't know.
+
+Ranking scales:
+Rank = E x C, each matched to its anchor.
+E 1 Guess only. E 2 One document or one data pattern is consistent. E 3 The data pattern matches and a document describes this mechanism. E 4 As 3, and a past event or a technician result with the same signature supports it. E 5 As 4, and the evidence rules out every competing hypothesis.
+C 1 Disassembly, parts, or more than 4 hours down. C 2 Disassembly under 4 hours, no parts. C 3 No disassembly; needs a test wafer, a procedure or a reference standard. C 4 Readable from the tool screen or a log with nothing stopped.
 </context>
 
 <goal>
-An 8D_Record.md v1.0 the person confirms: D0 to D3 complete, and a first hypothesis register listing every physical mechanism able to produce the symptom, so the search starts wide. Success: all six dimensions Clear, or every unresolved point recorded as an OPEN item, within four interview rounds.
+An 8D_Record.md v1.0, built to the 8D disciplines with a Kepner-Tregoe Is / Is Not for D2, that the person confirms: D0 to D3 complete, and a first hypothesis register listing every physical mechanism able to produce the symptom, so the search starts wide. Success: all six dimensions Clear, or every unresolved point recorded as an OPEN item, within four interview rounds.
 </goal>
 
 <limits>
 - Interview turns contain only the round summary, dimension status and questions; causes appear only as HYP-* items in the draft record.
 - Up to 3 questions per round, in plain language, each with options A, B and C as distinct, equally weighted outcomes, plus "D: None of these, or I don't know."
-- Request logs, pass-downs or work orders by round 2; sort each one with the person.
+- By round 2, ask which logs, pass-downs, work orders and documents exist; list them in the record as evidence for the first Hypothesis Update, which reads them.
 - Record items hold only what the person stated or confirmed; your own inferences become OPEN items.
 - Round 4 is the last round: anything still Fuzzy or Unknown becomes an OPEN item.
 - Hypotheses come from how this kind of subsystem works (flow, pressure, temperature, sealing, sensing, control, supply, limits or settings), so the list holds for any tool of the type. Every hypothesis starts as Open with E 1 unless the interview gave binding evidence.
@@ -190,6 +200,10 @@ Draft record (when all six are Clear, or after round 4):
    [NONE YET, or the approved fix]
    ## D6 Implement and Verify
    [NONE YET, or the qual result]
+   ## D7 Prevent Recurrence
+   [NONE YET, or the reviewed D7 actions with owners]
+   ## D8 Close
+   [NONE YET, or the signed closure and where the lesson is filed]
    ## Guesses Recorded
    | Guess | Who | HYP-n |
    ## Cycle Log
@@ -229,20 +243,20 @@ The next version of 8D_Record.md, in which every hypothesis the new evidence tou
 </goal>
 
 <limits>
-- A status changes only on cited evidence: a count from executed code, a quoted document line with document and section, or a RES-* ID. Where code cannot run, the count reads COUNT NOT VERIFIED and the status stays as it was.
+- A status changes only on cited evidence: a count from executed code, a quoted document line with document and section, or a RES-* ID. Where code cannot run, the count reads COUNT NOT VERIFIED and the status stays as it was. A claim whose line cannot be found in the attached documents reads NOT IN SOURCE and changes no status.
 - A hypothesis is Ruled out only when evidence contradicts it; one that is merely less likely stays Open with a lower rank.
 - A hypothesis is Confirmed only by a result that would differ if it were false (the fault returns or disappears with the mechanism), cited by RES-* ID.
 - Every Open hypothesis keeps a next discriminating check; when the evidence points to a simpler or cheaper check than the one listed, the simpler one replaces it.
 - When a hypothesis is confirmed, the record fills the root cause, the escape point if the evidence shows it, and leaves D5 as PROPOSED for the engineer.
 - When the evidence dates when the mechanism started, D3 lists the product run since then for disposition, citing the evidence.
 - When a result reads outside every open hypothesis, a new HYP-* is added from how the subsystem works.
-- IDs stay stable; new items take the next unused ID. Table cells contain no raw pipe characters.
+- IDs stay stable; new items take the next unused ID. A Cycle Log row records each update; its cycle number is the count of check plans whose results are in, so updates from data or documents alone stay in cycle 0. Table cells contain no raw pipe characters.
 </limits>
 
 <output>
 1. Working: for each piece of evidence, the hypotheses it touches, the code run or the quote found, and the status change it supports.
 2. 8D_Record.md with the version raised by 0.1, in one fenced markdown block, every section present, one new Cycle Log row, and one change-log line per change.
-3. Next step, exactly one of: (a) plan the next checks; (b) a hypothesis is confirmed: plan the approved fix and the qual; (c) qual passed: the tool or process is released; go to Prevent Recurrence; (d) every hypothesis is ruled out: reopen the Frame with this record.
+3. Next step, exactly one of: (a) plan the next checks; (b) a hypothesis is confirmed: plan the approved fix and the qual; (c) qual passed and signed by the engineer: the tool or process is released; go to Prevent Recurrence; (d) every hypothesis is ruled out: reopen the Frame with this record.
 4. The line: "Reply Confirmed, or list the item IDs to correct."
 </output>
 ```
@@ -311,6 +325,7 @@ A decision menu that puts every choice shaping this cycle's check plan in front 
 - Each category offers options A, B and C as distinct outcomes, with pros, cons and the failure impact if wrong.
 - Options include a repair only for a Confirmed hypothesis, and mark it as needing engineer approval.
 - Each category cites the HYP-* and OPEN-* IDs it comes from.
+- A downtime, cost or part availability the record does not state reads NOT IN SOURCE in the option that depends on it.
 - The response ends at the selection request.
 </limits>
 
@@ -332,15 +347,15 @@ Procedure and manual sections for the likely steps, binding sources:
 </context>
 
 <goal>
-A Check_Plan.md the technicians can execute alone on nights or weekends: it splits the selected open hypotheses, performs a repair only for a confirmed hypothesis the engineer approved, ends every branch at a step, a stop-and-report point or the qual, and returns the tool to production only on a passed qual.
+A Check_Plan.md, built to the check plan standard in the limits below, that the technicians can execute alone on nights or weekends: it splits the selected open hypotheses, performs a repair only for a confirmed hypothesis the engineer approved, ends every branch at a step, a stop-and-report point or the qual, and returns the tool to production only on a passed qual.
 </goal>
 
 <limits>
-- Every step states action, reference, conditions (temperature, state, pressure, soak time), what to record (value, units, as-found and as-left), the HYP-* IDs it splits, and its branch rule as "If [result], go to STEP-n; if [result], go to STEP-m."
+- Every step states action, reference, conditions (temperature, state, pressure, soak time), what to record (value, units, as-found and as-left), the HYP-* IDs it splits, and its branch rule as "If [result], go to STEP-n; if [result], go to SP-m." Every branch target is a STEP-*, an SP-* or "qual".
 - Safety steps, lockouts and interlocks come from the cited procedures; where a procedure is silent, the step reads NOT IN SOURCE and becomes a stop-and-report point.
 - A working value nobody stated becomes an ASM-* row marked ASSUMED. A spec, safety value or torque nobody stated reads NOT IN SOURCE and becomes an OPEN-* item.
 - Stop-and-report points name their triggering results; at each one the technician stops, reports, and the results go back into the Hypothesis Update.
-- Steps are numbered for this cycle only; the plan names its cycle number and the record version it came from.
+- Steps are numbered for this cycle only; the plan names its cycle number (check plans released so far, this one included) and the record version it came from.
 - Table cells contain no raw pipe characters.
 </limits>
 
@@ -353,7 +368,7 @@ A Check_Plan.md the technicians can execute alone on nights or weekends: it spli
    ## 2. Steps
    | STEP-n | Action | Reference | Conditions | Record (value, units) | Splits HYP-n | Branch |
    ## 3. Stop and Report Points
-   | Trigger | Who to call | What to report |
+   | SP-n | Trigger | Who to call | What to report |
    ## 4. Qual and Release Criteria
    [NOT THIS CYCLE, or the qual with its pass criteria]
    ## 5. Assumptions
@@ -367,11 +382,11 @@ A Check_Plan.md the technicians can execute alone on nights or weekends: it spli
 
 ## Mechanical Lint (plan review and results review threads)
 
-**Condition:** before the Check Plan Review, and before the Results Review. Use a model with code execution, or run an equivalent script and paste its output. A lint read by eye is not valid.
+**Condition:** before the Check Plan Review, and before the Results Review. New chat in Gemini, which writes and runs the script. A lint read by eye is not valid.
 
 ```xml
 <context>
-Artifacts to lint, attached as files: Check_Plan.md, and Results_Report.md when linting results.
+Artifacts to lint, attached as files: Check_Plan.md and the 8D_Record.md it came from; Results_Report.md too when linting results.
 </context>
 
 <goal>
@@ -381,21 +396,22 @@ A lint report produced by executed code that parses the Markdown tables, listing
 <limits>
 - L1 Table shape: every row has as many cells as its header.
 - L2 Placeholders: no cell is empty or holds TBD, TBA, "...", "omitted", "as needed" or "unchanged".
-- L3 Branch closure: every STEP-* has a Branch cell; every target is an existing STEP-*, "stop and report", or "qual".
+- L3 Branch closure: every STEP-* has a Branch cell; every target is an existing STEP-*, an SP-* listed in section 3, or "qual".
 - L4 Reachability: every STEP-* is reachable from STEP-1.
 - L5 Units: every Record cell naming a reading names its units.
 - L6 Conditions: every STEP-* with a reading has a filled Conditions cell.
 - L7 Hypothesis coverage: every HYP-* in section 1 appears in at least one Splits cell.
-- L8 Reference closure: every cited ASM-*, OPEN-* and PDM-* exists in its register or the selections.
+- L8 Reference closure: every cited ASM-* and SP-* exists in its section, and every cited OPEN-* exists in the plan's Open Items or the record.
 - L9 Results closure (results only): every RES-* names exactly one existing STEP-*; every STEP-* on the path taken has a RES-*.
 - L10 Results units (results only): every Reading cell has units and conditions.
-- L11 Counts: totals of STEP-*, stop-and-report points, HYP-*, ASM-*, OPEN-*, and for results, RES-* and flags.
+- L11 Counts: totals of STEP-*, SP-*, HYP-*, ASM-*, OPEN-*, and for results, RES-* and flags.
+- The report comes only from the script's printed output. When code cannot run, the whole response is the line "LINT NOT RUN: code execution unavailable."
 </limits>
 
 <output>
-1. Lint report: | Check | Row or ID | Violation |, one row per violation, or the line "Lint passed: zero violations in L1 to L10."
-2. L11 counts: one line per ID family.
-3. Script: one fenced code block.
+1. Script: one fenced code block, run.
+2. Lint report: | Check | Row or ID | Violation |, one row per violation, or the line "Lint passed: zero violations in L1 to L10."
+3. L11 counts: one line per ID family.
 </output>
 ```
 
@@ -438,6 +454,7 @@ Either a Plan Release Certificate, when the plan passes every check below, or re
 - Safety: every lockout, interlock and safety step the procedures require is present and cites its procedure.
 - Selections: every selection is reflected, and only selected options appear.
 - Sign-off integrity: every ASSUMED value is labeled as assumed; every carried-forward OPEN-* states what closes it.
+- A check the inputs cannot settle (a procedure section not attached, a condition the procedure does not state) is a finding marked NOT IN SOURCE, rated A = 2, naming the document that would settle it.
 </limits>
 
 <output>
@@ -478,6 +495,7 @@ A Results_Report.md the technician confirms, in which every step reached has one
 - Every reading and observation comes from the notes; anything missing reads UNKNOWN and becomes a question.
 - Flags cover: steps with no reading, readings without units or conditions, branches that differ from the plan's rule, and work outside the plan.
 - Up to 3 questions, each with options A to C and "D: I don't know."
+- One round of questions: after the technician answers, anything still missing stays UNKNOWN and stays flagged.
 - Table cells contain no raw pipe characters.
 </limits>
 
@@ -524,9 +542,10 @@ A results scorecard covering the checks below, with replacement rows for each Pa
 <limits>
 - Fidelity: every result matches the technician's notes.
 - Branch fidelity: each branch taken matches the plan's rule for the recorded result.
-- Conditions: each reading was taken under the plan's stated conditions.
+- Conditions: each reading was taken under the plan's stated conditions; a reading whose conditions the notes do not state is I = 3, A = 2.
 - Separation: every Observation cell holds only what was seen, measured or done.
 - Off-plan work: work outside the plan is flagged; a part swapped outside the plan is I = 5.
+- A result the notes neither support nor contradict reads UNKNOWN in the scorecard, with the question that would settle it.
 </limits>
 
 <output>
@@ -553,7 +572,7 @@ A D7_Actions.md the engineer can hand to the owners of procedures, limits and ot
 
 <limits>
 - Each action names what changes (a procedure step, a limit, a checklist, a training point, a sister tool), the root cause or escape point it answers, and how its effect would be verified.
-- Each action answers why the problem happened or why it went uncaught; an action that answers neither stays out.
+- Each action answers why the problem happened or why it went uncaught, citing the record section that shows it; an action that answers neither stays out.
 - Places where the record has no evidence read TO CHECK, not as findings.
 - Owners and dates are left blank for the engineer.
 - Table cells contain no raw pipe characters.
@@ -592,10 +611,12 @@ A sanitized D7_Actions.md in which every action traces to the record, with each 
 </goal>
 
 <limits>
-- Traceability: every action answers the confirmed root cause or the escape point as the record states them; an action with no trace is I = 4.
+- Traceability: every action answers the confirmed root cause, the escape point, or a gap the record documents that let the problem go uncaught; an action with no trace in the record is I = 4.
 - Coverage: the escape point has at least one action; a missing one is I = 4.
 - Verification: every action states an observable check of its effect.
 - Where else: every tool or step that shares the subsystem with the failed one is listed, marked TO CHECK.
+- Where-else rows may name tools or steps the record does not, when they share the subsystem; each stays TO CHECK and states what to look up. A row that states as fact something the record lacks is I = 3.
+- IDs stay stable; a deleted action leaves its ID unused.
 </limits>
 
 <output>
@@ -626,6 +647,7 @@ Two things the engineer can sign: a closure summary for the 8D (D8), and a Lesso
 - The lesson's title and first line use the words a person would type when the symptom appears: the alarm text, the reading, and the tool type.
 - Every statement in the lesson comes from the closed record; anything the record lacks reads NOT IN SOURCE.
 - The lesson states the earliest observable sign that would have pointed to the cause, from the record's data.
+- The Fix section opens with the check that confirms this cause and the reading that confirms it, before any repair.
 - Contributions name the role and what it did, from D1 and the cycle log.
 - Downtime and cycle counts come from the record.
 </limits>
@@ -645,13 +667,49 @@ Two things the engineer can sign: a closure summary for the 8D (D8), and a Lesso
 </output>
 ```
 
+### Lesson Review
+
+**Condition:** after the person confirms the lesson. New thread.
+
+```xml
+<review_gate>
+[PASTE REVIEW GATE BLOCK]
+</review_gate>
+
+<context>
+Lesson_Learned.md under review:
+[PASTE Lesson_Learned.md]
+
+Closed 8D_Record.md it came from:
+[PASTE 8D_Record.md]
+</context>
+
+<goal>
+A sanitized Lesson_Learned.md that the next person who sees the symptom finds with a search and can act on, in which every statement traces to the closed record, with each Patch finding corrected and each Keep finding left as written.
+</goal>
+
+<limits>
+- Findability: the title and first line hold the alarm text, the reading and the tool type as the record states them; a title missing any of the three is I = 3.
+- Fidelity: every statement matches the closed record; a statement the record does not support is I = 5.
+- Signature: the signature separates this cause from the ruled-out hypotheses in the record; one that would also fit a ruled-out hypothesis is I = 3.
+- Earliest sign: the earliest sign is a dated reading or observation from the record; a general statement is I = 3.
+- Actionability: a reader holding only the lesson knows what to check first and what reading confirms the cause.
+- A statement the record neither supports nor contradicts is marked NOT IN SOURCE in the scorecard.
+</limits>
+
+<output>
+1. Scorecard: | Check | Observation | I (1-5) | A (0-2) | Patch / Keep |, failed checks only.
+2. The corrected Lesson_Learned.md in one fenced markdown block, or the line "No patches; lesson stands."
+</output>
+```
+
 **Engineer sign-off:** the engineer signs the closure, files the lesson where the team searches for past events, and the record's change log takes its final line.
 
 ---
 
 ## Improving This Playbook
 
-After each event, write one line on what you had to correct. Change the prompt that caused it, rerun the changed prompt on the same input before saving it, and add a change-log line below.
+Work on your own copy, saved from the SharePoint playbook folder. After each event, write one line on what you had to correct. Change the prompt that caused it, rerun the changed prompt on the same input before saving it, and add a change-log line below.
 
 ## Change Log
 
@@ -659,3 +717,4 @@ After each event, write one line on what you had to correct. Change the prompt t
 |:---|:---|:---|:---|
 | 2026-11-14 | v0.5 | Rebuilt as an iterative 8D loop around one living, versioned 8D_Record.md: Frame (D0 to D3), Hypothesis Update every cycle with data, documents or technician results (D4), Check Plan per cycle with fix only for a confirmed hypothesis (D5) and the qual (D6), Technician Results feeding back into the same record; optional D7 handoff | Andrew: the workflow is iterative and follows 8D; technician findings go back into the same workflow to update the hypotheses |
 | 2026-11-14 | v0.5 | Every 8D discipline gets an AI step: D7 Prevent Recurrence with its review in the main flow; new D8 Close and Lesson prompt; D3 containment updated from evidence; process-troubleshooting note | Andrew: go through all of the steps of 8D with AI to show its versatility; reference process troubleshooting |
+| 2026-11-19 | v0.6 | Gemini Enterprise only; Gemini has no content restrictions; shared copy in the SharePoint folder, people improve their own copy. Rubric v3.2 pass: Frame and Check Plan goals name their standard; the Frame carries the ranking scales and lists evidence for the first update instead of asking for files mid-interview; a named label for each kind of uncertainty in Hypothesis Update (NOT IN SOURCE), Decision Menu, Lint (LINT NOT RUN), Check Plan Review, Technician Results (one round, then UNKNOWN), Results Review and D7 Review; lint script now comes before its report; stop-and-report points get SP-* IDs the lint can close; the lint gets the record attached; the record template carries D7 and D8 sections; D7 actions cite the record section they answer and the D7 Review keeps IDs stable; the lesson's Fix opens with the confirming check; cycles count check plans, so the first plan is cycle 1; new Lesson Review so the D8 handoff has an anchored review | Andrew, 2026-11-19: Troubleshooting is Gemini only; data wording; playbook location and ownership; bring the playbook up to the current rubric |

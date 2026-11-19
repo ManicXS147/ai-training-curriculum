@@ -911,20 +911,20 @@ body[data-course="leaders"] .intro-card .bignum{-webkit-text-stroke-width:3px}
     <span class="pill tag-ex in">Setup check · 2 min</span>
     <div class="ho">
       <ol class="in d1">
-        <li>Open <code>Gemini Enterprise</code> or <code>Copilot Chat</code>. New chat.</li>
+        <li>Open <code>Gemini Enterprise</code>. New chat.</li>
         <li>Open the case kit folder</li>
         <li>Upload <code>case_brief.txt</code></li>
         <li>Ask for a two-sentence summary</li>
       </ol>
       <div class="in d2">
         <div class="pc"><span class="pk">Setup prompt</span>In two sentences, what is this case about, and what does my manager want today?</div>
-        <p class="out" data-step="1"><b>Everything in the kit is made up.</b> No real tool, alarm or work order. Use it freely today.</p>
+        <p class="out" data-step="1"><b>Everything in the kit is made up.</b> No real tool, alarm or work order, built to read like one.</p>
       </div>
     </div>
     <aside class="notes">
-      Two minutes. Press Next to start the timer. Everyone opens Gemini Enterprise, or Copilot Chat if you don't have a Gemini seat, finds the case kit, uploads the brief and asks for a summary. Hands up if anything fails: can't sign in, can't find the kit, can't upload. Fix it now, not in the middle of an exercise.
+      Two minutes. Press Next to start the timer. Everyone opens Gemini Enterprise, finds the case kit, uploads the brief and asks for a summary. Hands up if anything fails: no seat, can't sign in, can't find the kit, can't upload. Fix it now, not in the middle of an exercise.
 
-      (Space.) Say it plainly: every file in the kit is synthetic. No real tool, alarm, work order or person. That's why you can upload all of it today.
+      (Space.) Say it plainly: every file in the kit is synthetic. No real tool, alarm, work order or person. It reads like a real event so the practice feels real.
     </aside>
   </div>
 
@@ -1107,7 +1107,7 @@ body[data-course="leaders"] .intro-card .bignum{-webkit-text-stroke-width:3px}
     <aside class="notes">
       Seven minutes. Press Next to start the timer. Everyone's AI will ask different questions in a different order; that's expected. They match each question to a topic in the worked example and paste that response. If nothing fits, "D: I don't know" is a real answer and should become an open item.
 
-      Walk the room. Common snags: the AI names a cause in the problem statement, or treats the MFC as evidence. Point them to the step 4 check. Copilot users: the interview works fine; the counting comes later.
+      Walk the room. Common snags: the AI names a cause in the problem statement, or treats the MFC as evidence. Point them to the step 4 check.
     </aside>
   </div>
 
@@ -1174,7 +1174,7 @@ body[data-course="leaders"] .intro-card .bignum{-webkit-text-stroke-width:3px}
     <aside class="notes">
       Long chats drift. A 2025 study across many models found an average 39% drop when the same task was handed over in pieces across many turns instead of all at once. Early wrong turns stick. (Space.)
 
-      So the playbook never relies on chat memory. One document, the 8D record, carries everything. Each cycle starts a new chat with the latest record and only the new evidence. It's a bit more pasting, and it works the same in Gemini and Copilot. The principle goes well beyond troubleshooting: when the work matters, keep the state in a document you control.
+      So the playbook never relies on chat memory. One document, the 8D record, carries everything. Each cycle starts a new chat with the latest record and only the new evidence. It's a bit more pasting, and it works in any chat tool. The principle goes well beyond troubleshooting: when the work matters, keep the state in a document you control.
     </aside>
   </div>
 
@@ -1190,13 +1190,13 @@ body[data-course="leaders"] .intro-card .bignum{-webkit-text-stroke-width:3px}
       </ol>
       <div class="in d2">
         <div class="pc"><span class="pk">Look for</span>Which causes were ruled out, and by what? Which went up? Is every count backed by code that ran?</div>
-        <p class="out">Gemini if you have a seat: counts need code that actually runs.</p>
+        <p class="out">Counts need code that actually runs. Gemini runs it.</p>
       </div>
     </div>
     <aside class="notes">
       Four minutes. Press Next to start the timer. Attach all seven case files except the brief and shift notes. A good update rules out the supply dip (it warned every chamber, only 04B alarms), weakens the MFC (05A has the same part and runs clean), and raises the seal from the cold sign-off check, the manual, and an old lesson. The seal goes up; it is not confirmed.
 
-      Copilot users: if it can't run code, the counts should read COUNT NOT VERIFIED, and nothing should change on an unverified count. Ask the room: what did yours rule out?
+      If Gemini didn't run code for a count, the count should read COUNT NOT VERIFIED, and nothing should change on it. Ask the room: what did yours rule out?
     </aside>
   </div>
 
@@ -1335,7 +1335,7 @@ body[data-course="leaders"] .intro-card .bignum{-webkit-text-stroke-width:3px}
     </div>
     <p class="why" data-step="1">Build reviews of AI work using AI. <b>Each catches what the other can't.</b> <span class="mut">(R)</span></p>
     <aside class="notes">
-      Two checks, in this order. The lint is a short script the AI writes and runs: does every reading have units, does every branch go somewhere, does every ID exist. Reading by eye misses these; code doesn't. It needs a tool that runs code, so Gemini. (Space.) Then the review in a new chat, with the plan, the record and your selections: could two techs do different things with this step? Is there a cheaper check that splits the same causes? Is any repair ahead of its confirmation?
+      Two checks, in this order. The lint is a short script the AI writes and runs: does every reading have units, does every branch go somewhere, does every ID exist. Reading by eye misses these; code doesn't. Gemini writes it and runs it. (Space.) Then the review in a new chat, with the plan, the record and your selections: could two techs do different things with this step? Is there a cheaper check that splits the same causes? Is any repair ahead of its confirmation?
 
       We'll skip running these today to save time; they're in the playbook, and the worked example says what a good review catches. That's R.
     </aside>
@@ -1634,7 +1634,7 @@ body[data-course="leaders"] .intro-card .bignum{-webkit-text-stroke-width:3px}
   </div>
 
   <div class="frame center" data-title="Make the playbook better" data-topic="Make the playbook better">
-    <p class="eyebrow in">The playbook is yours to improve</p>
+    <p class="eyebrow in">Your copy of the playbook is yours to improve</p>
     <div class="scard wide in d1">
       <div><i>1</i>After each event, write one line on what you had to correct</div>
       <div><i>2</i>Change the prompt that caused it</div>
@@ -1642,33 +1642,33 @@ body[data-course="leaders"] .intro-card .bignum{-webkit-text-stroke-width:3px}
       <div><i>4</i>Log the change</div>
     </div>
     <aside class="notes">
-      The playbook isn't finished; it gets better every time someone uses it. After an event, write one line on what you had to fix by hand. Change the prompt that caused it. Then rerun the changed prompt on the same input, because a fix for one problem often breaks something else. Log it at the bottom of the playbook, so everyone knows what changed and why.
+      Save your own copy from the SharePoint playbook folder. It isn't finished; it gets better every time you use it. After an event, write one line on what you had to fix by hand. Change the prompt that caused it. Then rerun the changed prompt on the same input, because a fix for one problem often breaks something else. Log it at the bottom of your copy, so you know what changed and why.
     </aside>
   </div>
 
   <div class="frame center" data-title="With real data" data-topic="With real data">
     <p class="eyebrow in">When you do this with real data</p>
     <div class="scard wide in d1">
-      <div><i>1</i>Describe the situation. Leave out names you don't need.</div>
+      <div><i>1</i>Gemini has no content restrictions. Attach the real files.</div>
       <div><i>2</i>A person decides every hold, fix and recipe change</div>
       <div><i>3</i>Confirm on the tool what the data only suggests</div>
     </div>
     <aside class="notes">
-      Today everything was synthetic, so it all went in. On the job, three habits keep it easy. Most questions work just as well with the situation described and product and customer names left out. A person decides every hold, fix and recipe change; the AI drafts, you decide. And anything the data only suggests, like a seal that isn't seated, gets confirmed on the tool before it goes in the record as fact.
+      On the job, three habits. Gemini has no content restrictions, so attach the real logs, work orders and procedure sections, the same way you did with the kit today. A person decides every hold, fix and recipe change; the AI drafts, you decide. And anything the data only suggests, like a seal that isn't seated, gets confirmed on the tool before it goes in the record as fact.
     </aside>
   </div>
 
   <div class="frame center" data-title="Take it with you" data-topic="Take it with you">
     <p class="eyebrow in">Take it with you</p>
     <div class="grid4" style="margin-top:44px">
-      <div class="card in d1"><span class="k">playbook.md</span><h3>The 8D loop</h3><p>Every prompt, ready to paste</p></div>
+      <div class="card in d1"><span class="k">SharePoint folder</span><h3>The 8D playbook</h3><p>Save your own copy</p></div>
       <div class="card in d2"><span class="k">Cheat sheet</span><h3>The loop on a page</h3><p>And what to check at each step</p></div>
       <div class="card in d3"><span class="k">Case kit</span><h3>Practice again</h3><p>Try a different plan</p></div>
       <div class="card in d4"><span class="k">For process engineers</span><h3>AI for Process Development</h3><p>DOEs and experiment data</p></div>
     </div>
     <p class="why" data-step="1">This week: <b>frame one real event with the playbook.</b> Tell me what worked.</p>
     <aside class="notes">
-      Everything stays with you: the playbook, the cheat sheet, and the kit to practice on. Run it again with a different plan and see what the findings bank does to it. Process engineers: AI for Process Development takes the same habits into DOEs and experiment data. (Space.) One ask: in the next week, frame one real event with the playbook, even a small one, and tell me what worked and what didn't. That feedback shapes the next round of the playbook.
+      Everything stays with you. The shared playbook is in the SharePoint playbook folder: save your own copy. The cheat sheet and the kit to practice on are yours too. Run it again with a different plan and see what the findings bank does to it. Process engineers: AI for Process Development takes the same habits into DOEs and experiment data. (Space.) One ask: in the next week, frame one real event with the playbook, even a small one, and tell me what worked and what didn't. That feedback shapes the next round of the playbook.
     </aside>
   </div>
 

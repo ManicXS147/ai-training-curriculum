@@ -79,7 +79,7 @@ table.log td{height:.3in;border-bottom:1px solid var(--rule)}
   .row{grid-template-columns:1fr;gap:.06in}
   .head h1{font-size:26pt}
 }
-</style></head><body><div class="doc"><header class="head"><div class="eye">AI for Troubleshooting · Cheat sheet</div><h1>The 8D, run as a loop.</h1><p>Frame it, update it, plan a check, run it, repeat until the qual passes. Then prevent and close. Every prompt is in playbook.md in your case kit. Works in Gemini Enterprise or Copilot Chat.</p></header><main class="main"><div class="part eye">The loop</div><div class="duo" style="grid-template-columns:6fr 6fr"><section class="row wide"><div class="k"><div class="num">1</div><h2>Frame the event</h2><span>D0 to D3</span></div><div class="b">
+</style></head><body><div class="doc"><header class="head"><div class="eye">AI for Troubleshooting · Cheat sheet</div><h1>The 8D, run as a loop.</h1><p>Frame it, update it, plan a check, run it, repeat until the qual passes. Then prevent and close. Every prompt is in the 8D playbook in the SharePoint playbook folder. Runs in Gemini Enterprise.</p></header><main class="main"><div class="part eye">The loop</div><div class="duo" style="grid-template-columns:6fr 6fr"><section class="row wide"><div class="k"><div class="num">1</div><h2>Frame the event</h2><span>D0 to D3</span></div><div class="b">
 
 <p><b>Let it interview you.</b> Describe it in your own words; it asks up to three questions a round and marks each part Clear, Fuzzy or Unknown.</p>
 <p>Every specific gets sorted: <b>binding</b> (has a source), <b>example</b>, <b>background</b>, or <b>guess</b>. A guess becomes a cause to test, never evidence.</p>
@@ -95,7 +95,7 @@ table.log td{height:.3in;border-bottom:1px solid var(--rule)}
 <p>Every cycle: <b>new chat, the latest 8D record, only the new evidence.</b> The record is the memory; old chats stay closed.</p>
 <h3>Check</h3>
 <ul>
-<li>Counts come from code that ran. Otherwise: COUNT NOT VERIFIED, and nothing changes.</li>
+<li>Counts come from code Gemini ran. Otherwise: COUNT NOT VERIFIED, and nothing changes.</li>
 <li>Claims quote the line, with document and section</li>
 <li><b>Ruled out</b> only when evidence contradicts it</li>
 <li><b>Confirmed</b> only by a result that would differ if you were wrong</li>
@@ -127,7 +127,7 @@ table.log td{height:.3in;border-bottom:1px solid var(--rule)}
 <tr><td><b>D5 Fix</b></td><td>The fix for the confirmed cause</td><td>Confirmed first, or required by the procedure anyway</td></tr>
 <tr><td><b>D6 Verify</b></td><td>The qual with its pass criteria, agreed before the work</td><td>The tool returns to production here</td></tr>
 <tr><td><b>D7 Prevent</b></td><td>Actions for the root cause and the escape point, and "where else could this happen?"</td><td>Every action answers one of the two, has a way to verify it, and a named owner</td></tr>
-<tr><td><b>D8 Close</b></td><td>A closure summary and a lesson learned</td><td>Symptom in the words people search; the earliest sign; every line traced to the record</td></tr>
+<tr><td><b>D8 Close</b></td><td>A closure summary and a lesson learned</td><td>Symptom in the words people search; the earliest sign; every line traced to the record; reviewed in a new chat</td></tr>
 </table></div>
 </div></section><div class="part eye">Check it</div><div class="duo" style="grid-template-columns:7fr 5fr"><section class="row wide"><div class="k"><div class="num">6</div><h2>Red flags</h2></div><div class="b">
 
@@ -153,17 +153,18 @@ table.log td{height:.3in;border-bottom:1px solid var(--rule)}
 </div></section></div><div class="duo" style="grid-template-columns:6fr 6fr"><section class="row wide"><div class="k"><div class="num">8</div><h2>With real data</h2></div><div class="b">
 
 <ol>
-<li><b>Describe the situation.</b> Leave out names you don't need.</li>
+<li><b>Attach the real files.</b> Gemini has no content restrictions.</li>
 <li><b>A person decides</b> every hold, fix and recipe change.</li>
 <li><b>Confirm on the tool</b> what the data only suggests.</li>
 </ol>
 </div></section><section class="row wide"><div class="k"><div class="num">9</div><h2>Make the playbook better</h2></div><div class="b">
 
 <ol>
+<li><b>Save your own copy</b> from the SharePoint folder.</li>
 <li>After each event, write one line on what you had to correct.</li>
 <li>Change the prompt that caused it.</li>
 <li><b>Rerun it on the same input</b> before you save it.</li>
-<li>Log the change at the bottom of the playbook.</li>
+<li>Log the change at the bottom of your copy.</li>
 </ol>
 </div></section></div><section class="band"><span class="eye">Try it this week</span>
 

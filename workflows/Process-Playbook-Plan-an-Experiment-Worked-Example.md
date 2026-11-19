@@ -1,8 +1,8 @@
-# Plan an Experiment: Worked Example (course kit, v0.4)
+# Plan an Experiment: Worked Example (course kit, v0.5)
 
 SYNTHETIC TRAINING DATA. This example uses the course project (a faster cap nitride on PECVD-03). No real tool, lot, product or person.
 
-Use it with `Process-Playbook-Plan-an-Experiment-v0.4.md`. It gives you:
+Use it with `Process-Playbook-Plan-an-Experiment-v0.5.md`. It gives you:
 
 1. **Your messages for Thread 1**, ready to paste, so the interview moves fast.
 2. **Your answers to the sort and the menus.**
