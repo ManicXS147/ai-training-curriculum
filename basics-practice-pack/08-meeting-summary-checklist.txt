@@ -1,0 +1,9 @@
+MEETING SUMMARY CHECKLIST · sample standard          [practice file · invented]
+
+A meeting summary has:
+1. A subject line with the meeting's name and date
+2. Decisions made (or "No decisions")
+3. Actions, each with ONE owner and a due date
+4. Open questions, and who will answer each one
+5. The next meeting's date
+6. Under 150 words. Outcomes only, not who said what.

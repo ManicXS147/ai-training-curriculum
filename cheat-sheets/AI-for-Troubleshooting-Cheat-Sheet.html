@@ -1,0 +1,189 @@
+<title>AI for Troubleshooting Cheat Sheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F4EE;--card:#FFFFFF;--ink:#212121;--muted:#5F5B53;--line:#E3DED2;--amber:#B7872D;--amber-ink:#8A641B;--soft:#F7EEDA;--red:#C2463A;--green:#007F68;--head:#212121;--head-ink:#FFFFFF;--head-amber:#F0BC48}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#171717;--card:#212121;--ink:#F3F0E9;--muted:#B3ADA2;--line:#3B3833;--amber:#F0BC48;--amber-ink:#F0BC48;--soft:#352C17;--red:#F26A5D;--green:#2CC9A8;--head:#212121;--head-ink:#FFFFFF}}
+:root[data-theme="dark"]{--bg:#171717;--card:#212121;--ink:#F3F0E9;--muted:#B3ADA2;--line:#3B3833;--amber:#F0BC48;--amber-ink:#F0BC48;--soft:#352C17;--red:#F26A5D;--green:#2CC9A8;--head:#212121;--head-ink:#FFFFFF}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;font-size:16px;line-height:1.45;-webkit-text-size-adjust:100%}
+.top{background:var(--head);color:var(--head-ink);padding:36px max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px));border-bottom:4px solid var(--head-amber)}
+.top>div,.grid,.foot{max-width:1180px;margin:0 auto}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--head-amber);margin:0 0 10px}
+h1{font-size:clamp(28px,4.4vw,40px);font-weight:600;line-height:1.1;margin:0 0 10px;text-wrap:balance}
+.lede{font-size:18px;margin:0;color:#D9D5CC;max-width:62ch}
+.wrap{padding:22px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.card{grid-column:span 12;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px 16px;break-inside:avoid;min-width:0}
+@media(min-width:820px){.s6{grid-column:span 6}.s4{grid-column:span 4}.s8{grid-column:span 8}.s5{grid-column:span 5}.s7{grid-column:span 7}}
+.part{grid-column:span 12;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-ink);margin:10px 0 -4px;display:flex;align-items:center;gap:12px}
+.part::after{content:"";flex:1;height:1px;background:var(--line)}
+h2{font-size:20px;font-weight:700;line-height:1.2;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
+h2 .n{flex:none;font-size:13px;font-weight:700;color:var(--amber-ink);border:1.5px solid var(--amber);border-radius:50%;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;transform:translateY(-2px)}
+h3{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+p{margin:0 0 8px}
+.card>:last-child{margin-bottom:0}
+.note{color:var(--muted);font-size:14.5px}
+ul,ol{margin:0 0 8px;padding-left:20px}
+li{margin:0 0 4px}
+ol.big{list-style:none;padding:0;counter-reset:k}
+ol.big>li{counter-increment:k;position:relative;padding-left:30px;margin-bottom:9px}
+ol.big>li::before{content:counter(k);position:absolute;left:0;top:1px;font-weight:700;color:var(--amber-ink);font-size:15px;width:20px;text-align:center}
+ol.big b{font-weight:600}
+.say{display:block;background:var(--soft);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:7px 11px;margin:5px 0 8px;font-size:15px}
+li .say{margin:4px 0 2px}
+.no{color:var(--red);font-weight:600}.yes{color:var(--green);font-weight:600}
+.tw{overflow-x:auto;margin:0 0 8px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 6px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
+td{padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td:last-child,th:last-child{padding-right:0}
+td b{font-weight:600}
+.four{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;margin:0 0 8px}
+.four dt{font-weight:700;color:var(--amber-ink)}.four dd{margin:0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 8px}
+.steps>div{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.steps b{display:block;font-weight:700;font-size:15px}
+.steps .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);display:block;margin-bottom:2px}
+.steps span{font-size:14.5px;color:var(--muted)}
+.fill{display:grid;grid-template-columns:auto 1fr;gap:0 14px;margin:4px 0 8px}
+.fill dt{font-weight:700;padding:9px 0 0}.fill dd{margin:0;border-bottom:1px solid var(--muted);padding:9px 0 5px;color:var(--muted);font-size:14.5px}
+.key{background:var(--head);color:var(--head-ink);border-color:var(--head-amber)}
+.key .steps>div{border-color:#4a463f}.key .steps span{color:#D9D5CC}
+.key h2 .n,.key h3,.key .note{color:var(--head-amber)}.key h2 .n{border-color:var(--head-amber)}
+.key ol.big>li::before{color:var(--head-amber)}
+.foot{padding:18px max(16px,env(safe-area-inset-right,0px)) 30px max(16px,env(safe-area-inset-left,0px));color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media print{:root{--bg:#fff;--card:#fff;--ink:#212121;--muted:#55514A;--line:#D8D2C4;--amber:#B7872D;--amber-ink:#8A641B;--soft:#F7EEDA;--red:#C2463A;--green:#007F68}
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{font-size:14.5px}.top{padding-top:22px;padding-bottom:20px}.wrap{padding-top:14px}.grid{gap:11px}.card{padding:13px 15px 11px}}
+/* course look (2026-11-11): matches the deck's accent; text stays amber */
+.top{border-bottom-color:#F26A5D;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20420%20200%27%20fill%3D%27none%27%20stroke%3D%27%23F26A5D%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.5%27%3E%3Cpath%20d%3D%27M60%20100%20H360%27/%3E%3Cpath%20d%3D%27M360%2078%20L400%20100%20L360%20122%20Z%27/%3E%3Cpath%20d%3D%27M100%2020%20L160%20100%27/%3E%3Cpath%20d%3D%27M100%20180%20L160%20100%27/%3E%3Cpath%20d%3D%27M180%2020%20L240%20100%27/%3E%3Cpath%20d%3D%27M180%20180%20L240%20100%27/%3E%3Cpath%20d%3D%27M260%2020%20L320%20100%27/%3E%3Cpath%20d%3D%27M260%20180%20L320%20100%27/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right max(16px,calc(50% - 600px)) center;background-size:auto 88%}
+@media(max-width:700px){.top{background-size:auto 60%;background-position:right 8px bottom 8px}}
+/* course palette (v2): course background tones and a complementary accent */
+:root{--bg:#FBF5F3;--head:#221a19;--head-amber:#4FD1D9;--amber:#0F7C84;--amber-ink:#0A5C62;--soft:#DDF3F4}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1b1413;--card:#261d1c;--line:#3d3230;--head:#221a19;--amber:#4FD1D9;--amber-ink:#4FD1D9;--soft:#15373a}}
+:root[data-theme="dark"]{--bg:#1b1413;--card:#261d1c;--line:#3d3230;--head:#221a19;--amber:#4FD1D9;--amber-ink:#4FD1D9;--soft:#15373a}
+@media print{:root{--bg:#fff;--card:#fff;--amber:#0F7C84;--amber-ink:#0A5C62;--soft:#DDF3F4}}
+</style>
+<header class="top"><div>
+<p class="eyebrow">AI for Troubleshooting · Cheat sheet</p>
+<h1>The 8D, run as a loop.</h1>
+<p class="lede">Frame it, update it, plan a check, run it, repeat until the qual passes. Then prevent and close. Every prompt is in playbook.md in your case kit. Works in Gemini Enterprise or Copilot Chat.</p>
+</div></header>
+<div class="wrap"><main class="grid">
+
+<div class="part">The loop</div>
+
+<section class="card s6">
+<h2><span class="n">1</span>Frame the event · D0 to D3</h2>
+<p><b>Let it interview you.</b> Describe it in your own words; it asks up to three questions a round and marks each part Clear, Fuzzy or Unknown.</p>
+<p>Every specific gets sorted: <b>binding</b> (has a source), <b>example</b>, <b>background</b>, or <b>guess</b>. A guess becomes a cause to test, never evidence.</p>
+<h3>Check</h3>
+<ul>
+<li>No cause in the problem statement</li>
+<li>Containment covers <b>everything that ran</b> since the change, not just the tool</li>
+<li>Causes listed from how the subsystem works, wider than anyone's hunch</li>
+<li>Review in a <b>new chat</b>, with only your own answers</li>
+</ul>
+</section>
+
+<section class="card s6">
+<h2><span class="n">2</span>Update the causes · D4</h2>
+<p>Every cycle: <b>new chat, the latest 8D record, only the new evidence.</b> The record is the memory; old chats stay closed.</p>
+<h3>Check</h3>
+<ul>
+<li>Counts come from code that ran. Otherwise: COUNT NOT VERIFIED, and nothing changes.</li>
+<li>Claims quote the line, with document and section</li>
+<li><b>Ruled out</b> only when evidence contradicts it</li>
+<li><b>Confirmed</b> only by a result that would differ if you were wrong</li>
+<li>The simplest check that splits the most causes comes next</li>
+</ul>
+</section>
+
+<section class="card s7">
+<h2><span class="n">3</span>Plan a check · D4 to D6</h2>
+<p><b>Decision menu first:</b> which causes this cycle splits, downtime, parts, when to stop and call. You pick; the plan follows.</p>
+<div class="steps">
+<div><span class="k">Conditions</span><span>On every reading: temperature, soak, setpoint</span></div>
+<div><span class="k">Confirmation</span><span>No repair until a cause is confirmed</span></div>
+<div><span class="k">Branches</span><span>Every result goes to a step, a call, or the qual</span></div>
+<div><span class="k">Safety</span><span>Cited from the procedure, never made up</span></div>
+</div>
+<p><b>Lint</b> with code (units, branches, IDs), then <b>review</b> in a new chat. Then the engineer signs the release certificate.</p>
+</section>
+
+<section class="card s5">
+<h2><span class="n">4</span>Run it and report</h2>
+<p>The tech's notes, as written, become a results report tied to each step.</p>
+<ul>
+<li>Observation apart from interpretation</li>
+<li>Every reading with units and conditions</li>
+<li>Off-plan work flagged</li>
+<li>The tech confirms it before it goes back into the update</li>
+</ul>
+</section>
+
+<section class="card s12">
+<h2><span class="n">5</span>Finish · D5 to D8</h2>
+<div class="tw"><table>
+<tr><th>D</th><th>Ask AI for</th><th>You check</th></tr>
+<tr><td><b>D5 Fix</b></td><td>The fix for the confirmed cause</td><td>Confirmed first, or required by the procedure anyway</td></tr>
+<tr><td><b>D6 Verify</b></td><td>The qual with its pass criteria, agreed before the work</td><td>The tool returns to production here</td></tr>
+<tr><td><b>D7 Prevent</b></td><td>Actions for the root cause and the escape point, and "where else could this happen?"</td><td>Every action answers one of the two, has a way to verify it, and a named owner</td></tr>
+<tr><td><b>D8 Close</b></td><td>A closure summary and a lesson learned</td><td>Symptom in the words people search; the earliest sign; every line traced to the record</td></tr>
+</table></div>
+</section>
+
+<div class="part">Check it</div>
+
+<section class="card s7">
+<h2><span class="n">6</span>Red flags</h2>
+<div class="tw"><table>
+<tr><th><span class="no">Slow down</span></th><th><span class="yes">Ask instead</span></th></tr>
+<tr><td>A cause in the problem statement</td><td>"Rewrite it with no cause."</td></tr>
+<tr><td>A count that doesn't match the file</td><td>"Run code for the count. Which rows did you leave out?"</td></tr>
+<tr><td>A part swap before any check</td><td>"What cheaper check splits the same causes?"</td></tr>
+<tr><td>A reading with no temperature or units</td><td>"What conditions, and what gets recorded?"</td></tr>
+<tr><td>A torque, limit or bulletin you can't find</td><td>"Quote the line." No line, no step.</td></tr>
+<tr><td>"Confirmed" after one consistent result</td><td>"What else would read the same?"</td></tr>
+<tr><td>A D7 action with no owner</td><td>"Who owns it, and how do we know it worked?"</td></tr>
+</table></div>
+</section>
+
+<section class="card s5">
+<h2><span class="n">7</span>Three lessons</h2>
+<dl class="four">
+<dt>H</dt><dd>You step in: supply the facts, pick each cycle, decide what's a repair.</dd>
+<dt>R</dt><dd>You check it: code for counts, quotes for claims, a new chat for reviews.</dd>
+<dt>O</dt><dd>You sign it: containment, plan, actions, lesson.</dd>
+</dl>
+<h3>Process troubleshooting</h3>
+<p>Same loop and prompts. Lots, wafers and sites instead of chamber runs; a lot hold; metrology or a split lot as the check; release criteria as the qual.</p>
+</section>
+
+<section class="card s6">
+<h2><span class="n">8</span>With real data</h2>
+<ol class="big">
+<li><b>Describe the situation.</b> Leave out names you don't need.</li>
+<li><b>A person decides</b> every hold, fix and recipe change.</li>
+<li><b>Confirm on the tool</b> what the data only suggests.</li>
+</ol>
+</section>
+
+<section class="card s6">
+<h2><span class="n">9</span>Make the playbook better</h2>
+<ol class="big">
+<li>After each event, write one line on what you had to correct.</li>
+<li>Change the prompt that caused it.</li>
+<li><b>Rerun it on the same input</b> before you save it.</li>
+<li>Log the change at the bottom of the playbook.</li>
+</ol>
+</section>
+
+<section class="card key">
+<h2><span class="n">★</span>Try it this week</h2>
+<p>Frame one real event with the playbook, even a small one. Tell Andrew what worked and what didn't. Process engineers: AI for Process Development takes these habits into DOEs and experiment data.</p>
+</section>
+
+</main></div>
+<footer class="foot"><span>© 2026 SkyWater Technology. Proprietary.</span><span>AI for Troubleshooting · November 2026 · Case examples are synthetic training data.</span></footer>

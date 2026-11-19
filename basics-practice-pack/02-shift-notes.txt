@@ -1,0 +1,21 @@
+NIGHT SHIFT NOTES · Bay 3 (etch and clean)          [practice file · invented]
+Tue night into Wed
+
+- ETCH-04 down since about 01:40. Alarm 2217, RF generator fault. Reset it
+  twice, came back both times, then faulted again. Left it DOWN and tagged.
+  Vendor FSE maybe Thurs?? Lead to confirm with day shift.
+- The 3 lots queued for ETCH-04 moved to the ETCH-02 queue (lead's call).
+  ETCH-02 running fine, about 40 min behind.
+- CVD-02 PM done 23:30. Vent and pump-down 10 min per SOP, ok. Base pressure
+  in the log = reached. Seasoning wafers: ran 2 of 3. The 3rd still has to
+  run before the tool is released!!
+- WET-01 bath change done on time. Nothing open.
+- Particle check on ETCH-02 at 03:00 passed.
+- MET-01 (metrology) slow again. Restarted the software at 02:15, fine after.
+  IT ticket? Not sure if someone already put one in.
+- Break room coffee machine still broken lol
+- New tech on shift (week 2) shadowed me on the CVD-02 PM. Still needs
+  sign-off on the vent procedure.
+- Chemical delivery came early. Receiving signed for it, nothing for us.
+- Reminder from day lead: safety walk Thursday 9 a.m., they want 1 person
+  from nights?

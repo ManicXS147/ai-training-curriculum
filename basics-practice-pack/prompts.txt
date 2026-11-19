@@ -1,0 +1,77 @@
+AI BASICS · PRACTICE PROMPTS
+Copy a prompt, then paste the file's text under it (or attach the file).
+Everything in this pack is invented for training.
+
+====================================================================
+SECTION 02 · Prompt A or B?  (5 minutes)
+====================================================================
+FLOOR: use 02-shift-notes.txt     OFFICE: use 02-project-notes.txt
+
+Step 1 · new chat · Prompt A
+  Turn these notes into a pass-down.
+  (Office: Turn these notes into a status update.)
+
+Step 2 · new chat · Prompt B
+  FLOOR:
+  Here are my shift notes. The reader is the next shift lead. Keep only open
+  items and what changed. Three bullets, open items first.
+  OFFICE:
+  Here are my project notes. The reader is my manager. Keep only what changed,
+  what's at risk, and what I need. Three bullets, the ask first.
+
+Step 3 · same chat as Prompt B · add one move
+  Use the same shape as this example. If my notes don't say something, write
+  "not in notes" instead of guessing.
+  (Paste 02-example-pass-down.txt or 02-example-status-update.txt under it.)
+
+Then: which version would you actually send?
+
+====================================================================
+SECTION 06 · Brainstorm in three turns  (4 minutes)
+====================================================================
+Use a small annoyance from your own week, with no names, customers or part
+numbers in it. Stuck? Use the spare: "Our weekly team meeting runs 20 minutes
+over and half the room isn't needed for most of it."
+
+Turn 1 · go wide
+  Give me ten ideas to fix this: [your annoyance]
+Turn 2 · go different
+  Five more, and make them a different kind from these. At least two should
+  cost nothing.
+Turn 3 · narrow
+  Pick the one that fits [your real constraint, e.g. no budget, 12 people].
+  What's its weak spot, and what's the smallest first step I could try this
+  week?
+
+====================================================================
+SECTION 07 · Draft and shape  (5 minutes)  · KEEP THIS CHAT OPEN
+====================================================================
+FLOOR: use 07-lesson-notes.txt    OFFICE: use 07-meeting-notes.txt
+
+Step 1 · draft
+  FLOOR:  Turn these notes into a one-point lesson for new techs.
+  OFFICE: Turn these notes into a summary email to the people who were there,
+          plus the shipping lead.
+Step 2 · shape (two edits, one at a time)
+  Shorter. Lead with the most common mistake.   (Office: Shorter. Actions first.)
+  Write it for someone in their first week.     (Office: Write it so the shipping
+                                                 lead, who missed the meeting,
+                                                 knows what they're being asked.)
+Step 3 · protect one line
+  Keep my line about [pick one line you like] word for word. Change nothing
+  else.
+Finish: add your own last line, for example
+  "Drafted with AI from my notes. I checked the steps against them."
+
+====================================================================
+SECTION 08 · Review race  (4 minutes)  · same chat as 07, or paste your draft
+====================================================================
+Step 1 · ask it to be the reader
+  Read this as [a tech in their first week / the shipping lead]. List three
+  problems. Quote the line each one is on. Don't rewrite it.
+Step 2 · check it against the standard
+  Here is our checklist. Which items are missing or thin in my draft? Don't
+  rewrite it.
+  (Paste 08-one-point-lesson-checklist.txt or 08-meeting-summary-checklist.txt.)
+Step 3 · you decide
+  Fix the one problem that matters most, yourself. Would you sign it now?

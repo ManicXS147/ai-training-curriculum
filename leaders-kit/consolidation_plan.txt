@@ -1,0 +1,32 @@
+PLAN · CONSOLIDATE ETCH ONTO ONE LINE
+Drafted with AI for the operations staff meeting
+
+Goal
+Move the two etch tool sets from Line A and Line B onto Line B by the end of
+Q3 to save $1.2M a year in floor space, utilities and support.
+
+Why now
+- Line A etch runs at about half its capacity.
+- Line B has room for the extra tools after last year's layout change.
+- One line means one support team, one spares stock and one set of PMs.
+
+Assumptions
+- Line B etch uptime stays at 92%, its current level, after the move.
+- Facilities work (exhaust, gas lines, power) fits in a two-week shutdown.
+- Staffing moves with the tools; no new hires are needed.
+
+Timeline
+- Weeks 1-2   Facilities design and quotes
+- Weeks 3-6   Facilities work on Line B
+- Weeks 7-8   Two-week shutdown: move and install the Line A tools
+- Weeks 9-10  Tool qualification on Line B
+- Week 11     Full production on Line B
+- Week 12     Q3 customer audit
+
+Savings
+$1.2M a year from the second line's floor space, utilities and support.
+
+Ask
+Approve the plan and the facilities spend at Friday's staff meeting.
+
+(Training material. Everything in this file is invented.)

@@ -1,0 +1,13 @@
+date_time,equipment,chamber,change_type,details,by
+2026-10-19 16:40,ETCH-04,A,PM,Quarterly PM incl. chuck seal replacement (WO-58112).,Crew A
+2026-10-22 13:40,ETCH-05,-,Material,Process gas cylinder changed (WO-58190).,LP
+2026-10-27 13:00,ETCH-04,A,PM,Wet clean (WO-58301).,JR
+2026-10-29 01:00,ETCH-04,B,PM,Wet clean (WO-58322).,DK
+2026-10-29 13:00,ETCH-05,B,PM,Wet clean (WO-58330).,AK
+2026-10-30 10:00,ETCH-05,B,Recipe,VIA-ETCH-07 endpoint window widened for P-440 (engineering change EC-1187).,Process eng
+2026-10-31 13:00,ETCH-05,A,PM,Wet clean (WO-58377).,AK
+2026-11-03 09:00,FAB,-,Facilities,Cleanroom bay 3 temperature +0.6 C for 2 h during HVAC filter change. Within spec.,Facilities
+2026-11-05 10:40,ETCH-05,A,Part,He backside MFC replaced with new rev per vendor notice (WO-58461).,LP
+2026-11-06 05:50,ETCH-04,A+B,Software,"Tool controller patch loaded on ETCH-04, both chambers (WO-58472).",Equipment SW
+2026-11-06 07:05,ETCH-04,B,PM,"Chuck PM: chuck seal replaced, He backside MFC replaced with new rev (WO-58470).",Crew B
+2026-11-07 22:35,FAB,-,Facilities,"He supply header 2 pressure dip, 30 to about 21 psi, 22:35 to 23:20. Feeds ETCH-04 and ETCH-05. Cause: bulk He trailer switchover.",Facilities

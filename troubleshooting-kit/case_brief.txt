@@ -1,0 +1,38 @@
+SYNTHETIC TRAINING DATA. Made up for the AI for Troubleshooting course. Not from any real tool, vendor, lot, product or person.
+
+CASE BRIEF: ETCH-04 B KEEPS GOING DOWN
+
+Situation (Monday, Nov 9, 2026, 7:00 a.m.)
+ETCH-04 chamber B is down again on "He backside flow high." It came back from a chuck PM on Friday
+morning and has gone down repeatedly since. Each reset gets it running again for a few hours.
+The night shift is sure the cause is the new helium MFC installed at the PM.
+
+You are the engineer or technician who just picked this up. Your manager wants three things today:
+  1. A clear problem statement and an Is / Is Not.
+  2. The most likely cause, backed by data, before anyone orders parts.
+  3. An 8D started, with containment.
+
+What you have (all in this folder)
+  case_brief.txt        This page
+  shift_notes.txt       Pass-down notes from the etch area, unedited
+  alarm_history.csv     Three weeks of alarms on every ETCH-04 and ETCH-05 chamber
+  maintenance_log.csv   PMs, work orders, parts and the checks recorded at sign-off
+  fdc_summary.csv       FDC sensor summary for every lot run, every chamber, two weeks
+  fdc_limits.csv        FDC warning and alarm limits for each chamber
+  change_log.csv        Every logged change: PMs, parts, software, facilities
+  manual_excerpt.txt    The electrostatic chuck chapter of the tool manual
+  past_lessons.txt      Lessons learned from earlier problems (use it in exercise 5)
+  8D_template.docx      A blank 8D
+
+Terms
+  Tool down     The chamber is stopped by an alarm or interlock and can't run product
+  Chamber       ETCH-04 and ETCH-05 each have two process chambers, A and B
+  PM            Preventive maintenance
+  ESC / chuck   Electrostatic chuck: holds the wafer by electrostatic force during etch
+  He backside   Helium fed under the wafer to cool it against the chuck. A seal at the chuck edge
+                keeps it there. "He leak" is the flow needed to hold backside pressure, in sccm:
+                the higher it is, the more helium is escaping past the wafer or the seal.
+  MFC           Mass flow controller: meters a gas flow
+  FDC           Fault detection and classification: sensors logged on every run, with limits
+  Interlock     A hard limit that stops the chamber (here, He leak at 4.0 sccm)
+  Containment   Short-term action that stops bad product from moving on while you find the cause

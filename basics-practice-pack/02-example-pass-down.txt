@@ -1,0 +1,14 @@
+EXAMPLE PASS-DOWN · a good shape to copy           [practice file · invented]
+(Different shift, different tools. Copy the shape, not the facts.)
+
+To: Day shift lead      From: Swing shift      Mon
+
+OPEN, needs action
+1. LITHO-03 down since 18:20, alarm 3104 (stage error). Vendor called back,
+   on site 08:00 confirmed. Lots moved to LITHO-01.
+2. DRY-02 needs one more qualification wafer before release.
+
+CHANGED
+- IMP-01 back up 21:05 after the source change. First lot passed.
+
+Nothing else open.

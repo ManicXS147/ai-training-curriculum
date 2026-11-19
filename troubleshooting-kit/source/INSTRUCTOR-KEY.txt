@@ -1,0 +1,87 @@
+AI FOR TROUBLESHOOTING · INSTRUCTOR KEY (do not hand out)
+Case: ETCH-04 B repeat "He backside flow high" downs after a chuck PM. Everything is synthetic.
+
+TIMELINE (2026)
+  Thu Nov 5 09:00-10:40  ETCH-05 A: He MFC replaced with the new rev. No chuck work. (WO-58461)
+  Thu Nov 5 20:00        ETCH-04 B down for chuck PM. Seal O-ring replaced, new-rev He MFC fitted. (WO-58470)
+  Fri Nov 6 05:00-05:50  Tool software patch on ETCH-04, both chambers. (WO-58472)
+  Fri Nov 6 07:05        04B PM signed off: He leak 0.41 sccm at 22 C. Manual 7.6 says check at 60 C after a 30 min soak.
+  Fri Nov 6 07:46        First run after the PM: He leak 1.14 sccm (manual: above 1.0 at temperature = seal not seated).
+  Sat Nov 7 02:10        Down 1, HE-101 (19.0 h after release, 10 runs)
+  Sat Nov 7 14:20        Down 2, HE-101 (10.8 h, 7 runs)
+  Sat Nov 7 22:35-23:20  Facility He header dip. HE-310 supply-low WARNING on all four chambers.
+  Sun Nov 8 00:55        Down 3, ESC-220 clamp fault (8.9 h, 6 runs). Logged under ESC, not HE.
+  Sun Nov 8 09:00        Down 4, HE-101 (6.5 h, 4 runs). Held for engineering until Mon 00:40. MFC zero check "OK".
+  Mon Nov 9 05:30        Down 5, HE-101 (4.8 h, 3 runs). Still down at 07:00. About 22 h lost since Saturday.
+
+THE ANSWER
+  Cause: the chuck seal was not fully seated at reassembly. It held for the cold sign-off check and opened as
+  the chuck heated and cycled. The He leak climbs run by run until the 4.0 sccm interlock trips. A reset
+  (dechuck, rechuck, pump/purge) settles the seal for a while: the leak drops back to about 1.2-1.5 and climbs
+  again, faster each time (10, 7, 6, 4, 3 runs). Confirm by inspection: the data points at the seal; only
+  opening the chamber proves it.
+  Escape: fdc_limits.csv has no He leak WARNING limit on the B chambers (ETCH-04 B and ETCH-05 B; "tool
+  default, interlock only"). The A chambers warn at 2.0 sccm. A warning would have flagged Fri 15:50
+  (lot L26-4698), 10.3 h before the first down, and 2.4 to 5.2 h before each later one.
+  Second escape: the PM sign-off check is done cold. Crew A checked hot on 04A's Oct 19 PM; crew B checked cold.
+  The procedure doesn't force it.
+  Prior knowledge: past_lessons.txt lesson 2024-031 is the same failure on ETCH-02 A, with an open action
+  (warning limits on every chamber, hot leak check in the ESC PM). Owner left in 2025.
+
+NUMBERS YOU CAN QUOTE
+  alarm_history.csv: 46 alarms, 19 Oct to 9 Nov. 5 rows are subsystem ESC (an AI that filters on "He" or
+    on subsystem HE reports 41). 9 HE-101 in total: 5 one-offs before the PM (single wafer each: chipped,
+    warped, off center, particle; two of them on 04B), 4 after the PM, all on 04B.
+  04B HE-101: 1 in the week before the PM (Nov 1, a particle), 4 in the three days after.
+  Since the first new MFC (Nov 5 10:40) to Mon 07:00:
+    New-MFC chambers (04B + 05A): 4 alarms in 79 runs = 5.1 per 100.  Old-MFC (04A + 05B): 0 in 101.
+    Split by chamber: 04B 4 in 34 runs. 05A 0 in 49 runs, He leak flat at about 0.51.
+    Patched chamber 04A: 0 in 50 runs.
+  04B He leak before the PM: mean 0.60 sccm. Other chambers 0.5 to 0.65, flat for two weeks.
+  He supply during the dip: about 21 psi on every chamber that was running. Only 04B's leak climbs, and
+    its climb started 39 hours before the dip.
+  Backside pressure on 04B sags below 9.5 Torr only near the top of each climb (above about 3.5 sccm).
+  Chuck temperature stays at 60 C on every run.
+
+RED HERRINGS PLANTED
+  New He MFC: the night shift's hunch. Cleared by 05A (same rev, no chuck work, runs clean). A bad MFC gives
+    a step change right after the swap, not a climb that resets (manual 7.9). The Sunday zero check only
+    tests zero, not span, so it proves nothing either way.
+  Software patch: on both ETCH-04 chambers; 04A runs clean.
+  Facility He dip: every chamber got a supply WARNING (HE-310), a different code from HE-101. The night
+    shift blamed the 00:55 clamp fault on it, but the leak was already climbing.
+  ESC-220 clamp fault: the fifth down, logged under another code. The pass-down counts four.
+  Also in the files: cleanroom bay 3 +0.6 C on Nov 3 (within spec, all chambers), a recipe change on 05B
+    (other chamber), gas cylinder change on ETCH-05.
+
+8D TRAPS TO LOOK FOR
+  D3: containment must cover every lot that ran on 04B since the PM: 30 lot runs across P-110, P-220,
+    P-330 and P-440, with the 17 above 2.0 sccm first (5 of them aborted at the interlock). "None needed,
+    the tool is down" is the trap. Also check ETCH-05 B: same missing limit.
+  D4: "seal not seated" is a HYPOTHESIS until the chamber is opened. "MFC failure" contradicts 05A.
+    A vendor bulletin number the AI invents is a source that doesn't exist.
+  D5: replacing the MFC (or the whole chuck) doesn't act on the cause. Reseat or replace the seal, then do
+    the hot leak check (7.6) before release.
+  D6: hot leak check at or below 1.0 sccm, then He leak flat under 1.0 for at least two days of runs.
+  D7: warning limits on 04B and 05B (and every chamber), hot leak check made mandatory in the chuck PM
+    procedure, and a check that every chamber has every limit its sister has.
+
+THE 8D LOOP IN CLASS (deck rebuilt 2026-11-15)
+  Trainees run the playbook (playbook.md). Only the inputs and the technicians' findings are mocked, in
+  worked_example.md: interview responses, the engineer's selections for each cycle, and a findings bank keyed
+  to the kind of check. Every AI output is the trainee's real output.
+  Cycle 1 (no chamber opening): hot leak 1.48 sccm at 60 C, backside pressure held 10 Torr, flow verify
+    within 1%. Rules out flow measurement and pressure control; the seal stays Open (a damaged chuck face
+    would read the same). The AI often calls it Confirmed here: that is the teaching moment.
+  Cycle 2: seal found rolled out of the groove at about 4 o'clock; new O-ring per manual 7.4c (required at
+    every chuck removal); hot leak 0.36 sccm at 60 C; qual passed. Now the seal is Confirmed.
+  Restart points (real outputs from your own test run, for trainees who go off track): TO BE CAPTURED.
+
+REALISM POINTS FOR ANDREW TO CHECK
+  He leak units and levels (normal about 0.5-0.6 sccm, 1.0 acceptance, 4.0 interlock, 10 Torr backside).
+  Whether a reset (dechuck/rechuck, pump/purge) plausibly drops the leak back for a while.
+  Alarm codes and wording (HE-101, HE-310, ESC-220 are invented).
+
+REGENERATE THE DATA
+  gen_kit.py (seeded) writes alarm_history.csv, fdc_summary.csv and fdc_limits.csv and prints these numbers.
+  The text files, maintenance_log.csv, change_log.csv and 8D_template.docx were written by hand.

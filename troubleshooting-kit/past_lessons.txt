@@ -1,0 +1,36 @@
+SYNTHETIC TRAINING DATA. Made up for the AI for Troubleshooting course. Not from any real tool, vendor, lot, product or person.
+
+LESSONS LEARNED (exported from old 8Ds and emails)
+
+LESSON 2023-114: Scratches after slurry filter change (CMP-01)
+Symptom: Arc-shaped scratches on post-CMP inspection, all products.
+Signature in the data: Started within one shift of a slurry filter change. Only CMP-01.
+Cause: Filter seated without the gasket; slurry agglomerates passed through.
+Fix: Reseat filter with gasket. Added gasket photo to the filter-change checklist.
+Where else to look: Every CMP tool's filter-change checklist.
+
+LESSON 2024-031: Repeat He backside flow alarms after ESC work (ETCH-02 A)
+Symptom: He backside flow high alarms kept coming back a day after an ESC PM. Resets cleared it for a few
+  hours each time.
+Signature in the data: Only one chamber. He leak climbed run by run after the PM; each reset dropped it,
+  then it climbed again, faster each time.
+Cause: Chuck seal pinched at reassembly. The cold leak check at sign-off passed; the seal opened once the
+  chuck reached temperature.
+Fix: Reseated the seal with a new O-ring. Hot leak check passed at 0.5 sccm.
+Open action from this 8D: set FDC He leak warning limits on every etch chamber, and add a hot leak check
+  to the ESC PM. Owner left the company in 2025; status unknown.
+Where else to look: Any chamber where the chuck was lifted at a PM.
+
+LESSON 2024-077: Repeat RF reflected power alarms after match unit swap (ETCH-03 A)
+Symptom: RF reflected power warnings on most runs after a match unit was replaced.
+Signature in the data: Started on the first run after the swap and stayed flat. A step, not a climb.
+Cause: New match unit shipped with the wrong preset table.
+Fix: Loaded the correct presets. Added a preset check to the match swap procedure.
+Where else to look: Any tool that received a match unit from the same batch.
+
+LESSON 2025-009: Robot handoff errors after a facilities shutdown (all transfer modules)
+Symptom: "Wafer not detected" warnings on several tools the morning after a weekend shutdown.
+Signature in the data: Many tools at once, all on the same facilities circuit, all within a day of restart.
+Cause: Transfer sensors drifted while the tools were cold; they recovered after warm-up.
+Fix: Added a sensor recalibration step to the post-shutdown restart checklist.
+Where else to look: Any restart checklist that skips sensor checks.

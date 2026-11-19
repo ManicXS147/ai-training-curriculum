@@ -1,0 +1,15 @@
+NOTES FOR A ONE-POINT LESSON                        [practice file · invented]
+Topic: putting a tool down in the tracking system. For new techs, one page.
+
+- tool alarms and you can't clear it with the first OCAP steps -> put it DOWN
+  in the tracking system. don't just leave it sitting idle
+- pick the right down code (unscheduled / equipment fault). not "idle", not "PM"
+- comment field: alarm number, time, what you tried. people skip this!!
+  then day shift has no idea what happened
+- check for lots in the tool and in its queue -> tell the lead so they can
+  move them
+- hang the DOWN tag on the front of the tool
+- call equipment on-call if it's a hard down. check soon if it doesn't come back
+- when it's fixed: put it UP with a comment saying what fixed it. first lot
+  after = monitor lot
+- most common mistake: comment left empty, or just "down"

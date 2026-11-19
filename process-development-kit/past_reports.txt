@@ -1,0 +1,43 @@
+SYNTHETIC TRAINING DATA. Made up for the AI for Process Development course. Not from any real tool, lot, product or person.
+
+PAST TECH REPORTS: PECVD NITRIDE AND OXIDE
+Exported from the document system. Four reports, oldest first.
+
+------------------------------------------------------------
+TR-2021-014  Nitride deposition rate DOE on PECVD-01 (sister tool)
+Author: process engineering, thin films. Date: 2021-04-19
+Goal: raise nitride deposition rate 15 percent.
+What we did: 2^(4-1) fractional factorial, 8 wafers, power / pressure / SiH4 / spacing.
+Findings:
+- Power and SiH4 were the biggest rate knobs. Tighter spacing also raised rate.
+- Uniformity got worse at high power. We could not tell whether pressure changed that,
+  because in our design the power x pressure interaction was confounded with SiH4 x spacing.
+- At 3.3 Torr the plasma went unstable (reflected power alarms on 3 of 4 tries).
+  We set 3.5 Torr as the floor for this chamber type.
+Outcome: project paused for the 2021 capacity freeze. Never restarted.
+Open question: does lower pressure fix uniformity at high power? Needs a design that can see it.
+
+------------------------------------------------------------
+TR-2022-031  Oxide uniformity and showerhead spacing on PECVD-02
+Author: process engineering, thin films. Date: 2022-08-02
+Tighter spacing improved edge thickness on TEOS oxide but raised particle adders after
+showerhead cleans. Not tested on nitride. Recommended a particle check whenever spacing
+goes below 350 mil.
+
+------------------------------------------------------------
+TR-2023-007  Silane-rich nitride for rate: downstream effect at step 47
+Author: integration. Date: 2023-03-28
+A rate change raised SiH4 flow by 18 percent on a cap nitride. Rate went up 12 percent and
+every inline spec passed. Three weeks later, step 47 (HF pre-clean) left the nitride thicker
+than expected on 3 lots: the film's HF wet etch rate had dropped 14 percent, and the step 47
+dip time is set for today's film.
+Lesson: any cap nitride recipe change must measure HF wet etch rate (100:1 HF) and keep it
+within 10 percent of the process of record, or step 47 must be retuned in the same change.
+
+------------------------------------------------------------
+TR-2025-003  PECVD-03 B heater replacement and chamber matching
+Author: equipment engineering. Date: 2025-06-11
+Heater on chamber B replaced after a thermocouple failure. Since then, chamber B thickness
+uniformity runs higher and noisier than chamber A on every recipe. Within spec on the POR.
+Recommendation: check chamber B separately in any new recipe qualification. A heater
+leveling procedure was proposed but not done.

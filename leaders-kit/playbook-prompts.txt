@@ -1,0 +1,362 @@
+AI FOR LEADERS · PLAYBOOK PROMPTS · v1.0
+=========================================
+
+Copy each prompt whole, from the line after "COPY FROM HERE" to the line
+before "COPY TO HERE". Start a new chat for every numbered prompt. Fill in
+the [brackets]. Everything in square brackets is yours to replace.
+
+Keep this file. Copy it into your own document. When a prompt misses
+something, change it, raise the version, add a line to the change log at the
+bottom, and rerun it on the same input before you keep the change.
+
+------------------------------------------------------------------------
+SHARPEN A DECISION
+Use it when you face a decision that lands on others.
+Chats: A frame · B build (and fix) · C review · D case against · E announce
+------------------------------------------------------------------------
+
+1 · FRAME THE DECISION (chat A)
+Condition: use when you face a decision that lands on others.
+In class: skip this. decision_frame.txt and my_leaning.txt are its output.
+
+COPY FROM HERE
+<decision_talk>
+[Talk freely: the decision, why now, the options you see, who it affects, and what you lean toward]
+</decision_talk>
+<inputs>
+- decision_talk and my answers: free talk. Sort every specific I mention as BINDING, EXAMPLE, BACKGROUND or GUESS, and restate examples generally.
+</inputs>
+<goal>
+Interview me, then translate my answers into a Decision Frame that a separate chat can analyze without talking to me. Success: every dimension is Clear or carried as an open item, and I confirm the frame.
+</goal>
+<dimensions>
+1. Decision: the question, in one sentence.
+2. Options: each option, including doing nothing.
+3. Deadline: when it must be decided, and why.
+4. Blast radius: who and what it lands on.
+5. Reversibility: what undoing it would cost.
+6. Criteria: what a good outcome looks like, and how it would be measured.
+7. Leaning: which option I favor now, and why.
+</dimensions>
+<status_definitions>
+Clear: an explicit answer with one reasonable reading.
+Fuzzy: answered, but vague, conflicting, or open to two readings.
+Unknown: not yet discussed, or I said I don't know.
+</status_definitions>
+<limits>
+- Each round: the status of dimensions 1 to 7, then up to 3 questions, each with options A, B, C and D ("None of these, or I don't know").
+- Exit: when all seven are Clear, or after round 5. Every remaining Fuzzy or Unknown becomes an open item.
+</limits>
+<output>
+During the interview:
+1. Status: dimensions 1 to 7, each Clear, Fuzzy or Unknown.
+2. Questions.
+At the end:
+1. Specifics: | Detail | BINDING / EXAMPLE / BACKGROUND / GUESS | Restated |
+2. Decision Frame, dimensions 1 to 6: | Dimension | Answer | My words |
+3. Leaning, as its own block, so it can be left out of the brief.
+4. Open items: | ID (OPEN-n) | What is unresolved |
+5. Final line: "Reply Confirmed, or list the dimensions to correct."
+</output>
+COPY TO HERE
+
+
+2 · BUILD THE BRIEF (chat B, new)
+Condition: use with a confirmed frame. Leave your leaning out.
+In class: upload consolidation_plan.txt and decision_frame.txt, then paste.
+
+COPY FROM HERE
+<source_material>
+[Upload or paste the plan, proposal or work the decision rests on]
+</source_material>
+<decision_frame>
+[Upload or paste the confirmed Decision Frame, dimensions 1 to 6]
+</decision_frame>
+<inputs>
+- source_material: the source for every claim, figure and assumption.
+- decision_frame: sets the question, options and criteria; adds no facts.
+</inputs>
+<goal>
+Translate the source material into a Decision Brief that meets the Decision Brief Standard, so I can decide with the evidence, assumptions and gaps in view. Success: every item passes DB1 to DB7.
+</goal>
+<standard>
+DB1 [Lint] Every claim the decision rests on is listed, with its quote.
+DB2 [Review] Every claim shows its evidence and where it is, or NO EVIDENCE.
+DB3 [Review] Every figure is recomputed, and a mismatch shows both values.
+DB4 [Review] Every assumption is tied to a quote or marked NOT IN SOURCE, and is rated for impact and certainty with the anchors.
+DB5 [Lint] Every option in the frame is compared on every criterion in the frame.
+DB6 [Review] Information that is absent and could change the decision is an open item.
+DB7 [Lint] The brief contains no recommendation.
+</standard>
+<limits>
+- Labels: NO EVIDENCE, FIGURE FAILS, NOT IN SOURCE, SOURCE TO OPEN.
+- Impact: H = the decision's goal fails if this is wrong; M = cost or schedule slips; L = minor rework.
+- Certainty: H = the source gives evidence; M = stated without evidence; L = not stated or contradicted.
+</limits>
+<output>
+1. Claims: | ID (CL-n) | Claim | Quote | Evidence | Where | Label |
+2. Figures: | ID (FG-n) | Quote | Stated | Recomputed |
+3. Assumptions, high impact and low certainty first: | ID (AS-n) | Assumption | Quote or NOT IN SOURCE | Impact | Certainty |
+4. Options: | Option | one column per criterion | AS IDs it depends on |
+5. Open items: | ID (OPEN-n) | Missing information | How it could change the decision |
+6. Sources to open: | Source | Why |
+</output>
+COPY TO HERE
+
+
+3 · REVIEW THE BRIEF (chat C, new)
+Condition: use after the brief is built. Never in the chat that built it.
+In class: upload consolidation_plan.txt, paste this, then paste your brief
+inside <artifact>.
+
+COPY FROM HERE
+<source>
+[Upload or paste what the brief was built from]
+</source>
+<artifact>
+[Paste the Decision Brief]
+</artifact>
+<standard>
+DB1 [Lint] Every claim the decision rests on is listed, with its quote.
+DB2 [Review] Every claim shows its evidence and where it is, or NO EVIDENCE.
+DB3 [Review] Every figure is recomputed, and a mismatch shows both values.
+DB4 [Review] Every assumption is tied to a quote or marked NOT IN SOURCE, and is rated for impact and certainty with the anchors.
+DB5 [Lint] Every option in the frame is compared on every criterion in the frame.
+DB6 [Review] Information that is absent and could change the decision is an open item.
+DB7 [Lint] The brief contains no recommendation.
+</standard>
+<gate>
+Impact (I):
+1 Cosmetic: wording only; meaning unchanged.
+2 Local: one item is weaker than it should be; nothing depends on it.
+3 Misleading: an owner, date, figure or status is unclear, and someone could act on it.
+4 Wrong: an owner, date, figure or decision differs from the source, or a conditional item is shown as final.
+5 Missing or invented: something in the source has no item, or an item has no source.
+Ambiguity (A):
+0 Two readers would read the item the same way.
+1 Two readers would read it the same way with small differences.
+2 Two readers could read it differently, or it can't be checked.
+Patch when I is 4 or 5, or when I is 3 and A is 2. Keep in every other case.
+</gate>
+<inputs>
+- source: the ground truth for what was written.
+- artifact: the item under review.
+- standard: the rules it must meet; rules marked Lint are mechanical, rules marked Review need judgment.
+</inputs>
+<goal>
+Find every place the artifact fails its standard against the source. Success: each failure has evidence and a corrected row, and Review findings carry a gate result.
+</goal>
+<limits>
+- Check Lint rules row by row and patch every Lint failure without scoring it.
+- Rate each Review finding with the gate.
+- Evidence is the quoted source line, or MISSING plus what is missing.
+- Keep existing IDs; number new items from the next unused ID.
+- List failures only. When nothing fails, output only: NO FAILURES.
+</limits>
+<output>
+1. Lint failures: | ID | Rule | Evidence | Corrected row |
+2. Review findings: | ID | Rule | Evidence | I | A | Gate |
+3. Patch block: | ID | Corrected or added row |
+</output>
+COPY TO HERE
+
+
+3b · FIX THE BRIEF (back in chat B)
+Condition: use when the review returns a patch block.
+
+COPY FROM HERE
+<patch_block>
+[Paste the patch block]
+</patch_block>
+<goal>
+Apply every patch row to the artifact above. Success: each patched ID matches its patch row, and every other row is unchanged.
+</goal>
+<output>
+1. The full artifact, version raised by 0.1, same tables as before.
+2. Change log: | Version | Date | Change | Why |
+</output>
+COPY TO HERE
+
+
+4 · CASE AGAINST (chat D, new)
+Condition: use after the brief is fixed.
+In class: upload my_leaning.txt, paste this, then paste your brief inside
+<decision_brief>. Horizon: the end of Q3.
+
+COPY FROM HERE
+<decision_brief>
+[Paste the fixed Decision Brief]
+</decision_brief>
+<leaning>[The option you favor and why, in your own words]</leaning>
+<horizon>[When the outcome will be known]</horizon>
+<inputs>
+- decision_brief: the only source of facts.
+- leaning: the position to test.
+- horizon: the time window for the pre-mortem.
+</inputs>
+<goal>
+The strongest case against my leaning, built only from the brief, so I decide knowing its weakest points. Success: every point cites brief IDs, and the result names the evidence that would change the decision.
+</goal>
+<limits>
+- Cite a brief ID for every point; label a point with no ID OUTSIDE BRIEF.
+- Case against: 200 words or fewer.
+</limits>
+<output>
+1. Case against: numbered points, each with its brief IDs.
+2. Pre-mortem: three ways the leaning fails within the horizon, each with AS or OPEN IDs.
+3. What would change the decision: | Evidence | Option it favors | How to get it |
+</output>
+COPY TO HERE
+
+
+5 · DECIDE (you)
+Open every source the brief lists under "Sources to open". Test the
+highest-impact, lowest-certainty assumption yourself. Then decide.
+
+
+6 · DECISION RECORD (you) and ANNOUNCEMENT (chat E, new)
+Write the record yourself, in your own words:
+
+  Decision:
+  Why (with brief IDs):
+  What would change my mind:
+  Who it lands on:
+  Owners and dates:
+  Still open:
+
+Then, in a new chat:
+
+COPY FROM HERE
+<decision_record>
+[Paste your Decision Record]
+</decision_record>
+<audience>[Who receives it]</audience>
+<inputs>
+- decision_record: the only source of content, in my words.
+- audience: sets who is addressed and the wording; adds no content.
+</inputs>
+<goal>
+An announcement each reader can act on and challenge. Success: the decision, the reasons, what changes for the reader, owners and dates, open items and how to raise a concern all appear, and all match the record.
+</goal>
+<limits>
+- 250 words or fewer.
+- State the decision in the record's own words.
+- Open items appear as open, with their owner or "Owner needed".
+</limits>
+<output>
+Subject: [Decision], [date]
+1. The decision.
+2. Why.
+3. What changes for you.
+4. Owners and dates.
+5. Still open.
+6. How to raise a concern.
+</output>
+COPY TO HERE
+Read it, correct it, and send it under your name.
+
+
+7 · NEXT CYCLE (you)
+When the outcome is known, put it next to the brief. What did the brief
+miss? What did you have to bring yourself? Change the prompt that should
+have caught it, raise the version, add a change-log line, and rerun it on
+the same input before you keep it.
+
+
+------------------------------------------------------------------------
+CAPTURE IT · MEETING NOTES (one saved prompt)
+Condition: use after any meeting where something was decided or assigned.
+Record only in Teams, and say so before you start. Practise at home with
+ops_review_transcript.txt.
+------------------------------------------------------------------------
+
+COPY FROM HERE
+<transcript>
+[Upload or paste the meeting transcript]
+</transcript>
+<meeting>
+<purpose>[What the meeting was for, one line, or NOT STATED]</purpose>
+<date>[Meeting date]</date>
+</meeting>
+<inputs>
+- transcript: the only source for what was said; record only what it contains.
+- meeting: background for headings and wording only.
+</inputs>
+<goal>
+Meeting notes every attendee can act on without rereading the transcript. Success: every decision, action and unsettled point in the transcript has exactly one item, each with its quote.
+</goal>
+<limits>
+- Decisions: what was decided, who decided, and the condition or "None stated".
+- Actions: one owner, one due date and one deliverable each, starting with a verb.
+- Anything that waits on another approval, and anything raised but not settled, including brief concerns, is an open item.
+- Uncertainty labels: NOT STATED (never said; also add an open item), UNCLEAR (two readings; quote both), CONDITIONAL (waits on another approval or event).
+- Names, numbers and examples appear only where they are part of a decision or action.
+</limits>
+<output>
+1. Decisions: | ID (DEC-n) | Decision | Decided by | Condition | Quote |
+2. Actions: | ID (ACT-n) | Action | Owner | Due | Deliverable | Quote |
+3. Open items: | ID (OPEN-n) | Item | Raised by | Label | Quote |
+4. Note to send, 250 words or fewer: decisions, then actions by owner, then what's still open.
+</output>
+COPY TO HERE
+Read the notes against what you heard, then send them under your name.
+Keep the transcript.
+
+
+------------------------------------------------------------------------
+REQUIREMENT CARD (interview)
+Condition: use when a goal needs a tool that doesn't exist yet. New chat.
+------------------------------------------------------------------------
+
+COPY FROM HERE
+<goal_statement>
+[The goal or problem, in your own words]
+</goal_statement>
+<inputs>
+- goal_statement and my answers: free talk. Sort every specific I mention (system, product, number, name) as BINDING, EXAMPLE, BACKGROUND or GUESS, and restate examples generally.
+</inputs>
+<goal>
+Interview me, then translate my answers into a Requirement Card a builder can design from without talking to me. Success: every dimension is Clear or carried as an open item, every requirement meets the card standard, and I confirm the card.
+</goal>
+<dimensions>
+1. Job: what it must answer, draft or decide.
+2. Users: who uses it, and when.
+3. Sources: the documents and data it needs.
+4. Rules: limits on data and users.
+5. Sign-off: who is accountable for its output.
+6. Measure: what gets faster or better, and how we would know.
+</dimensions>
+<status_definitions>
+Clear: an explicit answer with one reasonable reading.
+Fuzzy: answered, but vague, conflicting, or open to two readings.
+Unknown: not yet discussed, or I said I don't know.
+</status_definitions>
+<limits>
+- Each round: the status of dimensions 1 to 6, then up to 3 questions, each with options A, B, C and D ("None of these, or I don't know").
+- Exit: when all six are Clear, or after round 5. Every remaining Fuzzy or Unknown becomes an open item.
+- Card standard: each requirement is one EARS statement ("When [trigger], the [capability] shall [response]"), singular, verifiable and solution-free per INCOSE rules; it names a product only when that product is BINDING.
+</limits>
+<output>
+During the interview:
+1. Status: dimensions 1 to 6, each Clear, Fuzzy or Unknown.
+2. Questions.
+At the end:
+1. Specifics: | Detail | BINDING / EXAMPLE / BACKGROUND / GUESS | Restated |
+2. Requirements: | ID (REQ-n) | Requirement | Dimension | My words |
+3. Open items: | ID (OPEN-n) | What is unresolved |
+4. Final line: "Reply Confirmed, or list the IDs to correct."
+</output>
+COPY TO HERE
+
+
+------------------------------------------------------------------------
+BEFORE YOU SHARE A PROMPT
+Run it through the Prompt Grader (in your Leader's Playbook) in a new chat.
+Rerun the revised prompt on the same input before you save it.
+------------------------------------------------------------------------
+
+CHANGE LOG
+| Version | Date | Prompt | Change | Why |
+| 1.0 | | all | First version, from AI for Leaders | |
+
+(Training material.)

@@ -1,0 +1,8 @@
+parameter,unit,min,max,POR,note
+RF power,W,300,600,500,Hardware limit 600 W on this chamber type
+Chamber pressure,Torr,3.5,5.0,4.0,Below 3.5 Torr the plasma is unstable (TR-2021-014)
+SiH4 flow,sccm,100,300,200,
+NH3 flow,sccm,2000,2000,2000,Fixed for this project. Not in scope.
+Electrode spacing,mil,300,500,400,
+Heater temperature,C,400,400,400,Fixed. Changing it needs a new chamber qual.
+Deposition time,s,20,120,60,Set to hit 3000 A target thickness

@@ -1,0 +1,464 @@
+<title>AI for Leaders Playbook</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F4EE;--card:#FFFFFF;--ink:#212121;--muted:#5F5B53;--line:#E3DED2;--amber:#B7872D;--amber-ink:#8A641B;--soft:#F7EEDA;--red:#C2463A;--green:#007F68;--head:#212121;--head-ink:#FFFFFF;--head-amber:#F0BC48}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#171717;--card:#212121;--ink:#F3F0E9;--muted:#B3ADA2;--line:#3B3833;--amber:#F0BC48;--amber-ink:#F0BC48;--soft:#352C17;--red:#F26A5D;--green:#2CC9A8;--head:#212121;--head-ink:#FFFFFF}}
+:root[data-theme="dark"]{--bg:#171717;--card:#212121;--ink:#F3F0E9;--muted:#B3ADA2;--line:#3B3833;--amber:#F0BC48;--amber-ink:#F0BC48;--soft:#352C17;--red:#F26A5D;--green:#2CC9A8;--head:#212121;--head-ink:#FFFFFF}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Outfit',system-ui,sans-serif;font-size:16px;line-height:1.45;-webkit-text-size-adjust:100%}
+.top{background:var(--head);color:var(--head-ink);padding:36px max(16px,env(safe-area-inset-right,0px)) 32px max(16px,env(safe-area-inset-left,0px));border-bottom:4px solid var(--head-amber)}
+.top>div,.grid,.foot{max-width:1180px;margin:0 auto}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--head-amber);margin:0 0 10px}
+h1{font-size:clamp(28px,4.4vw,40px);font-weight:600;line-height:1.1;margin:0 0 10px;text-wrap:balance}
+.lede{font-size:18px;margin:0;color:#D9D5CC;max-width:62ch}
+.wrap{padding:22px max(16px,env(safe-area-inset-right,0px)) 8px max(16px,env(safe-area-inset-left,0px))}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:16px}
+.card{grid-column:span 12;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px 16px;break-inside:avoid;min-width:0}
+@media(min-width:820px){.s6{grid-column:span 6}.s4{grid-column:span 4}.s8{grid-column:span 8}.s5{grid-column:span 5}.s7{grid-column:span 7}}
+.part{grid-column:span 12;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-ink);margin:10px 0 -4px;display:flex;align-items:center;gap:12px}
+.part::after{content:"";flex:1;height:1px;background:var(--line)}
+h2{font-size:20px;font-weight:700;line-height:1.2;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
+h2 .n{flex:none;font-size:13px;font-weight:700;color:var(--amber-ink);border:1.5px solid var(--amber);border-radius:50%;width:24px;height:24px;display:inline-flex;align-items:center;justify-content:center;transform:translateY(-2px)}
+h3{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+p{margin:0 0 8px}
+.card>:last-child{margin-bottom:0}
+.note{color:var(--muted);font-size:14.5px}
+ul,ol{margin:0 0 8px;padding-left:20px}
+li{margin:0 0 4px}
+ol.big{list-style:none;padding:0;counter-reset:k}
+ol.big>li{counter-increment:k;position:relative;padding-left:30px;margin-bottom:9px}
+ol.big>li::before{content:counter(k);position:absolute;left:0;top:1px;font-weight:700;color:var(--amber-ink);font-size:15px;width:20px;text-align:center}
+ol.big b{font-weight:600}
+.say{display:block;background:var(--soft);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:7px 11px;margin:5px 0 8px;font-size:15px}
+li .say{margin:4px 0 2px}
+.no{color:var(--red);font-weight:600}.yes{color:var(--green);font-weight:600}
+.tw{overflow-x:auto;margin:0 0 8px}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 10px 6px 0;border-bottom:1.5px solid var(--ink);vertical-align:bottom}
+td{padding:7px 10px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td:last-child,th:last-child{padding-right:0}
+td b{font-weight:600}
+.four{display:grid;grid-template-columns:auto 1fr;gap:5px 14px;margin:0 0 8px}
+.four dt{font-weight:700;color:var(--amber-ink)}.four dd{margin:0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:0 0 8px}
+.steps>div{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.steps b{display:block;font-weight:700;font-size:15px}
+.steps .k{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink);display:block;margin-bottom:2px}
+.steps span{font-size:14.5px;color:var(--muted)}
+.fill{display:grid;grid-template-columns:auto 1fr;gap:0 14px;margin:4px 0 8px}
+.fill dt{font-weight:700;padding:9px 0 0}.fill dd{margin:0;border-bottom:1px solid var(--muted);padding:9px 0 5px;color:var(--muted);font-size:14.5px}
+.key{background:var(--head);color:var(--head-ink);border-color:var(--head-amber)}
+.key .steps>div{border-color:#4a463f}.key .steps span{color:#D9D5CC}
+.key h2 .n,.key h3,.key .note{color:var(--head-amber)}.key h2 .n{border-color:var(--head-amber)}
+.key ol.big>li::before{color:var(--head-amber)}
+.foot{padding:18px max(16px,env(safe-area-inset-right,0px)) 30px max(16px,env(safe-area-inset-left,0px));color:var(--muted);font-size:12.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media print{:root{--bg:#fff;--card:#fff;--ink:#212121;--muted:#55514A;--line:#D8D2C4;--amber:#B7872D;--amber-ink:#8A641B;--soft:#F7EEDA;--red:#C2463A;--green:#007F68}
+*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{font-size:14.5px}.top{padding-top:22px;padding-bottom:20px}.wrap{padding-top:14px}.grid{gap:11px}.card{padding:13px 15px 11px}}
+/* course look (2026-11-11): matches the deck's accent; text stays amber */
+.top{border-bottom-color:#4958A6;background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%20420%20200%27%20fill%3D%27none%27%20stroke%3D%27%234958A6%27%20stroke-width%3D%271.4%27%20stroke-opacity%3D%270.5%27%3E%3Cpath%20d%3D%27M0%20190%20C150%20186%20260%20120%20420%2090%27/%3E%3Cpath%20d%3D%27M0%20176%20C150%20172%20260%20100%20420%2070%27/%3E%3Cpath%20d%3D%27M0%20162%20C150%20158%20260%2080%20420%2050%27/%3E%3Cpath%20d%3D%27M0%20148%20C150%20144%20260%2060%20420%2030%27/%3E%3Cpath%20d%3D%27M0%20134%20C150%20130%20260%2040%20420%2010%27/%3E%3Cpath%20d%3D%27M0%20120%20C150%20116%20260%2020%20420%20-10%27/%3E%3Cpath%20d%3D%27M0%20106%20C150%20102%20260%200%20420%20-30%27/%3E%3Cpath%20d%3D%27M0%2092%20C150%2088%20260%20-20%20420%20-50%27/%3E%3Cpath%20d%3D%27M0%2078%20C150%2074%20260%20-40%20420%20-70%27/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right max(16px,calc(50% - 600px)) center;background-size:auto 88%}
+@media(max-width:700px){.top{background-size:auto 60%;background-position:right 8px bottom 8px}}
+/* course palette (v2): course background tones and a complementary accent */
+:root{--bg:#F4F6FB;--head:#171d30;--head-amber:#F5A04E;--amber:#B8641A;--amber-ink:#8E4A10;--soft:#FCEBD9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#11162a;--card:#1a2138;--line:#2c3552;--head:#171d30;--amber:#F5A04E;--amber-ink:#F5A04E;--soft:#3a2a1a}}
+:root[data-theme="dark"]{--bg:#11162a;--card:#1a2138;--line:#2c3552;--head:#171d30;--amber:#F5A04E;--amber-ink:#F5A04E;--soft:#3a2a1a}
+@media print{:root{--bg:#fff;--card:#fff;--amber:#B8641A;--amber-ink:#8E4A10;--soft:#FCEBD9}}
+.say{white-space:normal}
+.say ol{margin:4px 0 4px;padding-left:20px}
+.log{width:100%;font-size:14px}
+.log td{height:24px}
+
+.pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word;font-size:12.5px;line-height:1.4;background:var(--soft);border-left:3px solid var(--amber);border-radius:0 6px 6px 0;padding:10px 12px;margin:6px 0 8px}
+.cond{font-size:14.5px;margin:0 0 6px}.cond b{color:var(--amber-ink)}
+.who{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber-ink)}
+.pb{break-before:page}
+@media print{.pre{font-size:11.5px}}
+</style>
+
+<body>
+<header class="top"><div>
+<p class="eyebrow">AI for Leaders · Your playbook · v1.0</p>
+<h1>Sharpen a decision</h1>
+<p class="lede">Your decisions land on more people than anyone else's. Use AI for insight, not decisions: it finds the evidence, the gaps and the case against; you frame, decide and sign. Copy this playbook into your own document and improve it every time it misses.</p>
+</div></header>
+<div class="wrap"><main class="grid">
+
+<div class="part">The workflow</div>
+
+<section class="card s12" style="grid-column:span 12">
+<h2><span class="n">7</span>Seven steps, and why each one is there</h2>
+<div class="tw"><table>
+<tr><th>Step</th><th>Who · chat</th><th>What happens</th><th>Why it's there</th><th>Principle</th></tr>
+<tr><td><b>1 Frame it</b></td><td>You · A</td><td>An interview fills seven dimensions: decision, options, deadline, blast radius, undo cost, criteria, leaning. You confirm the frame.</td><td>AI can only analyze the question you hand it. Your leaning is written down, then kept out of the brief.</td><td>You own the question. Keep your preference out of the analysis.</td></tr>
+<tr><td><b>2 Build the brief</b></td><td>AI · B (new)</td><td>From the source and the frame, without your leaning: claims, figures, assumptions, options, gaps, sources to open. No recommendation.</td><td>AI is fast and thorough at insight. The no-recommendation rule keeps the judgment with you.</td><td>Ask for insight against a standard, not for an answer.</td></tr>
+<tr><td><b>3 Review it</b></td><td>AI · C (new), fix in B</td><td>The review prompt checks the brief against the source and the standard. Paste the patch block back into B and fix it there.</td><td>A chat shouldn't grade its own work. A written standard makes the review checkable.</td><td>Review fresh, against the source and the standard.</td></tr>
+<tr><td><b>4 Case against</b></td><td>AI · D (new)</td><td>The fixed brief and your leaning go in. The strongest case against, a pre-mortem, and what would change your mind come out.</td><td>With a high blast radius, hearing only what you want is expensive.</td><td>Use AI to argue with you, not agree with you.</td></tr>
+<tr><td><b>5 Decide</b></td><td>You</td><td>Open the sources the brief flagged. Test the riskiest assumption yourself. Decide.</td><td>The decision and the facts it rests on are yours.</td><td>Step in where the stakes are.</td></tr>
+<tr><td><b>6 Own it</b></td><td>You, then AI · E (new)</td><td>Write the Decision Record in your words. AI turns it into an announcement. You sign it.</td><td>People can act on, and challenge, a decision that says why and how to raise a concern.</td><td>You own what goes out.</td></tr>
+<tr><td><b>7 Improve</b></td><td>You</td><td>When the outcome is known, compare it with the brief. Change the prompt that should have caught the miss, raise the version, log it, rerun it on the same input.</td><td>Playbooks get better from real misses.</td><td>Improve from real misses, and log every change.</td></tr>
+</table></div>
+<p class="note">Only the artifact moves to the next chat, never the conversation. Fix an artifact in the chat that built it.</p>
+</section>
+
+<section class="card s6">
+<h2><span class="n">S</span>Decision Brief standard</h2>
+<ol class="big">
+<li><b>[Lint]</b> Every claim the decision rests on is listed, with its quote.</li>
+<li><b>[Review]</b> Every claim shows its evidence and where it is, or NO EVIDENCE.</li>
+<li><b>[Review]</b> Every figure is recomputed; a mismatch shows both values.</li>
+<li><b>[Review]</b> Every assumption is tied to a quote or NOT IN SOURCE, rated for impact and certainty.</li>
+<li><b>[Lint]</b> Every option is compared on every criterion.</li>
+<li><b>[Review]</b> Missing information that could change the decision is an open item.</li>
+<li><b>[Lint]</b> The brief contains no recommendation.</li>
+</ol>
+<p class="note">Lint rules are mechanical and always patched. Review rules need judgment and go through the gate.</p>
+</section>
+
+<section class="card s6">
+<h2><span class="n">G</span>Review Gate</h2>
+<h3>Impact</h3>
+<p>1 Cosmetic · 2 Local · 3 Misleading (unclear, and someone could act on it) · 4 Wrong (differs from the source, or conditional shown as final) · 5 Missing or invented</p>
+<h3>Ambiguity</h3>
+<p>0 Two readers read it the same · 1 Small differences · 2 Could read it differently, or can't be checked</p>
+<h3>Gate</h3>
+<p><b>Patch</b> when Impact is 4 or 5, or Impact 3 with Ambiguity 2. <b>Keep</b> in every other case.</p>
+<h3>Decision Record (you write it)</h3>
+<dl class="fill"><dt>Decision</dt><dd>&nbsp;</dd><dt>Why (brief IDs)</dt><dd>&nbsp;</dd><dt>Would change my mind</dt><dd>&nbsp;</dd><dt>Who it lands on</dt><dd>&nbsp;</dd><dt>Owners and dates</dt><dd>&nbsp;</dd><dt>Still open</dt><dd>&nbsp;</dd></dl>
+</section>
+
+<div class="part pb">The prompts · copy each whole, into a new chat</div>
+
+<section class="card s12" style="grid-column:span 12">
+<h2><span class="n">1</span>Frame the decision · chat A</h2>
+<p class="cond"><b>Condition:</b> you face a decision that lands on others.</p><div class="pre">&lt;decision_talk&gt;
+[Talk freely: the decision, why now, the options you see, who it affects, and what you lean toward]
+&lt;/decision_talk&gt;
+&lt;inputs&gt;
+- decision_talk and my answers: free talk. Sort every specific I mention as BINDING, EXAMPLE, BACKGROUND or GUESS, and restate examples generally.
+&lt;/inputs&gt;
+&lt;goal&gt;
+Interview me, then translate my answers into a Decision Frame that a separate chat can analyze without talking to me. Success: every dimension is Clear or carried as an open item, and I confirm the frame.
+&lt;/goal&gt;
+&lt;dimensions&gt;
+1. Decision: the question, in one sentence.
+2. Options: each option, including doing nothing.
+3. Deadline: when it must be decided, and why.
+4. Blast radius: who and what it lands on.
+5. Reversibility: what undoing it would cost.
+6. Criteria: what a good outcome looks like, and how it would be measured.
+7. Leaning: which option I favor now, and why.
+&lt;/dimensions&gt;
+&lt;status_definitions&gt;
+Clear: an explicit answer with one reasonable reading.
+Fuzzy: answered, but vague, conflicting, or open to two readings.
+Unknown: not yet discussed, or I said I don&#x27;t know.
+&lt;/status_definitions&gt;
+&lt;limits&gt;
+- Each round: the status of dimensions 1 to 7, then up to 3 questions, each with options A, B, C and D (&quot;None of these, or I don&#x27;t know&quot;).
+- Exit: when all seven are Clear, or after round 5. Every remaining Fuzzy or Unknown becomes an open item.
+&lt;/limits&gt;
+&lt;output&gt;
+During the interview:
+1. Status: dimensions 1 to 7, each Clear, Fuzzy or Unknown.
+2. Questions.
+At the end:
+1. Specifics: | Detail | BINDING / EXAMPLE / BACKGROUND / GUESS | Restated |
+2. Decision Frame, dimensions 1 to 6: | Dimension | Answer | My words |
+3. Leaning, as its own block, so it can be left out of the brief.
+4. Open items: | ID (OPEN-n) | What is unresolved |
+5. Final line: &quot;Reply Confirmed, or list the dimensions to correct.&quot;
+&lt;/output&gt;</div>
+</section>
+<section class="card s12" style="grid-column:span 12">
+<h2><span class="n">2</span>Build the brief · chat B (new)</h2>
+<p class="cond"><b>Condition:</b> you have a confirmed frame. Leave your leaning out.</p><div class="pre">&lt;source_material&gt;
+[Upload or paste the plan, proposal or work the decision rests on]
+&lt;/source_material&gt;
+&lt;decision_frame&gt;
+[Upload or paste the confirmed Decision Frame, dimensions 1 to 6]
+&lt;/decision_frame&gt;
+&lt;inputs&gt;
+- source_material: the source for every claim, figure and assumption.
+- decision_frame: sets the question, options and criteria; adds no facts.
+&lt;/inputs&gt;
+&lt;goal&gt;
+Translate the source material into a Decision Brief that meets the Decision Brief Standard, so I can decide with the evidence, assumptions and gaps in view. Success: every item passes DB1 to DB7.
+&lt;/goal&gt;
+&lt;standard&gt;
+DB1 [Lint] Every claim the decision rests on is listed, with its quote.
+DB2 [Review] Every claim shows its evidence and where it is, or NO EVIDENCE.
+DB3 [Review] Every figure is recomputed, and a mismatch shows both values.
+DB4 [Review] Every assumption is tied to a quote or marked NOT IN SOURCE, and is rated for impact and certainty with the anchors.
+DB5 [Lint] Every option in the frame is compared on every criterion in the frame.
+DB6 [Review] Information that is absent and could change the decision is an open item.
+DB7 [Lint] The brief contains no recommendation.
+&lt;/standard&gt;
+&lt;limits&gt;
+- Labels: NO EVIDENCE, FIGURE FAILS, NOT IN SOURCE, SOURCE TO OPEN.
+- Impact: H = the decision&#x27;s goal fails if this is wrong; M = cost or schedule slips; L = minor rework.
+- Certainty: H = the source gives evidence; M = stated without evidence; L = not stated or contradicted.
+&lt;/limits&gt;
+&lt;output&gt;
+1. Claims: | ID (CL-n) | Claim | Quote | Evidence | Where | Label |
+2. Figures: | ID (FG-n) | Quote | Stated | Recomputed |
+3. Assumptions, high impact and low certainty first: | ID (AS-n) | Assumption | Quote or NOT IN SOURCE | Impact | Certainty |
+4. Options: | Option | one column per criterion | AS IDs it depends on |
+5. Open items: | ID (OPEN-n) | Missing information | How it could change the decision |
+6. Sources to open: | Source | Why |
+&lt;/output&gt;</div>
+</section>
+<section class="card s12" style="grid-column:span 12">
+<h2><span class="n">3</span>Review the brief · chat C (new)</h2>
+<p class="cond"><b>Condition:</b> the brief is built. Never in the chat that built it.</p><div class="pre">&lt;source&gt;
+[Upload or paste what the brief was built from]
+&lt;/source&gt;
+&lt;artifact&gt;
+[Paste the Decision Brief]
+&lt;/artifact&gt;
+&lt;standard&gt;
+DB1 [Lint] Every claim the decision rests on is listed, with its quote.
+DB2 [Review] Every claim shows its evidence and where it is, or NO EVIDENCE.
+DB3 [Review] Every figure is recomputed, and a mismatch shows both values.
+DB4 [Review] Every assumption is tied to a quote or marked NOT IN SOURCE, and is rated for impact and certainty with the anchors.
+DB5 [Lint] Every option in the frame is compared on every criterion in the frame.
+DB6 [Review] Information that is absent and could change the decision is an open item.
+DB7 [Lint] The brief contains no recommendation.
+&lt;/standard&gt;
+&lt;gate&gt;
+Impact (I):
+1 Cosmetic: wording only; meaning unchanged.
+2 Local: one item is weaker than it should be; nothing depends on it.
+3 Misleading: an owner, date, figure or status is unclear, and someone could act on it.
+4 Wrong: an owner, date, figure or decision differs from the source, or a conditional item is shown as final.
+5 Missing or invented: something in the source has no item, or an item has no source.
+Ambiguity (A):
+0 Two readers would read the item the same way.
+1 Two readers would read it the same way with small differences.
+2 Two readers could read it differently, or it can&#x27;t be checked.
+Patch when I is 4 or 5, or when I is 3 and A is 2. Keep in every other case.
+&lt;/gate&gt;
+&lt;inputs&gt;
+- source: the ground truth for what was written.
+- artifact: the item under review.
+- standard: the rules it must meet; rules marked Lint are mechanical, rules marked Review need judgment.
+&lt;/inputs&gt;
+&lt;goal&gt;
+Find every place the artifact fails its standard against the source. Success: each failure has evidence and a corrected row, and Review findings carry a gate result.
+&lt;/goal&gt;
+&lt;limits&gt;
+- Check Lint rules row by row and patch every Lint failure without scoring it.
+- Rate each Review finding with the gate.
+- Evidence is the quoted source line, or MISSING plus what is missing.
+- Keep existing IDs; number new items from the next unused ID.
+- List failures only. When nothing fails, output only: NO FAILURES.
+&lt;/limits&gt;
+&lt;output&gt;
+1. Lint failures: | ID | Rule | Evidence | Corrected row |
+2. Review findings: | ID | Rule | Evidence | I | A | Gate |
+3. Patch block: | ID | Corrected or added row |
+&lt;/output&gt;</div>
+<h3>Then fix it · back in chat B</h3><div class="pre">&lt;patch_block&gt;
+[Paste the patch block]
+&lt;/patch_block&gt;
+&lt;goal&gt;
+Apply every patch row to the artifact above. Success: each patched ID matches its patch row, and every other row is unchanged.
+&lt;/goal&gt;
+&lt;output&gt;
+1. The full artifact, version raised by 0.1, same tables as before.
+2. Change log: | Version | Date | Change | Why |
+&lt;/output&gt;</div>
+</section>
+<section class="card s12" style="grid-column:span 12">
+<h2><span class="n">4</span>Case against · chat D (new)</h2>
+<p class="cond"><b>Condition:</b> the brief is fixed.</p><div class="pre">&lt;decision_brief&gt;
+[Paste the fixed Decision Brief]
+&lt;/decision_brief&gt;
+&lt;leaning&gt;[The option you favor and why, in your own words]&lt;/leaning&gt;
+&lt;horizon&gt;[When the outcome will be known]&lt;/horizon&gt;
+&lt;inputs&gt;
+- decision_brief: the only source of facts.
+- leaning: the position to test.
+- horizon: the time window for the pre-mortem.
+&lt;/inputs&gt;
+&lt;goal&gt;
+The strongest case against my leaning, built only from the brief, so I decide knowing its weakest points. Success: every point cites brief IDs, and the result names the evidence that would change the decision.
+&lt;/goal&gt;
+&lt;limits&gt;
+- Cite a brief ID for every point; label a point with no ID OUTSIDE BRIEF.
+- Case against: 200 words or fewer.
+&lt;/limits&gt;
+&lt;output&gt;
+1. Case against: numbered points, each with its brief IDs.
+2. Pre-mortem: three ways the leaning fails within the horizon, each with AS or OPEN IDs.
+3. What would change the decision: | Evidence | Option it favors | How to get it |
+&lt;/output&gt;</div>
+</section>
+<section class="card s12" style="grid-column:span 12">
+<h2><span class="n">6</span>Announcement · chat E (new)</h2>
+<p class="cond"><b>Condition:</b> you've decided and written your Decision Record.</p><div class="pre">&lt;decision_record&gt;
+[Paste your Decision Record]
+&lt;/decision_record&gt;
+&lt;audience&gt;[Who receives it]&lt;/audience&gt;
+&lt;inputs&gt;
+- decision_record: the only source of content, in my words.
+- audience: sets who is addressed and the wording; adds no content.
+&lt;/inputs&gt;
+&lt;goal&gt;
+An announcement each reader can act on and challenge. Success: the decision, the reasons, what changes for the reader, owners and dates, open items and how to raise a concern all appear, and all match the record.
+&lt;/goal&gt;
+&lt;limits&gt;
+- 250 words or fewer.
+- State the decision in the record&#x27;s own words.
+- Open items appear as open, with their owner or &quot;Owner needed&quot;.
+&lt;/limits&gt;
+&lt;output&gt;
+Subject: [Decision], [date]
+1. The decision.
+2. Why.
+3. What changes for you.
+4. Owners and dates.
+5. Still open.
+6. How to raise a concern.
+&lt;/output&gt;</div>
+<p class="note">Read it, correct it, and send it under your name.</p>
+</section>
+
+<div class="part pb">More in your playbook</div>
+
+<section class="card s12" style="grid-column:span 12">
+<h2><span class="n">M</span>Meeting notes · one saved prompt</h2>
+<p class="cond"><b>Condition:</b> after any meeting where something was decided or assigned. Record only in Teams, and say so before you start. Read the notes against what you heard, then send them under your name. Keep the transcript.</p><div class="pre">&lt;transcript&gt;
+[Upload or paste the meeting transcript]
+&lt;/transcript&gt;
+&lt;meeting&gt;
+&lt;purpose&gt;[What the meeting was for, one line, or NOT STATED]&lt;/purpose&gt;
+&lt;date&gt;[Meeting date]&lt;/date&gt;
+&lt;/meeting&gt;
+&lt;inputs&gt;
+- transcript: the only source for what was said; record only what it contains.
+- meeting: background for headings and wording only.
+&lt;/inputs&gt;
+&lt;goal&gt;
+Meeting notes every attendee can act on without rereading the transcript. Success: every decision, action and unsettled point in the transcript has exactly one item, each with its quote.
+&lt;/goal&gt;
+&lt;limits&gt;
+- Decisions: what was decided, who decided, and the condition or &quot;None stated&quot;.
+- Actions: one owner, one due date and one deliverable each, starting with a verb.
+- Anything that waits on another approval, and anything raised but not settled, including brief concerns, is an open item.
+- Uncertainty labels: NOT STATED (never said; also add an open item), UNCLEAR (two readings; quote both), CONDITIONAL (waits on another approval or event).
+- Names, numbers and examples appear only where they are part of a decision or action.
+&lt;/limits&gt;
+&lt;output&gt;
+1. Decisions: | ID (DEC-n) | Decision | Decided by | Condition | Quote |
+2. Actions: | ID (ACT-n) | Action | Owner | Due | Deliverable | Quote |
+3. Open items: | ID (OPEN-n) | Item | Raised by | Label | Quote |
+4. Note to send, 250 words or fewer: decisions, then actions by owner, then what&#x27;s still open.
+&lt;/output&gt;</div>
+</section>
+<section class="card s12" style="grid-column:span 12">
+<h2><span class="n">R</span>Requirement card · interview</h2>
+<p class="cond"><b>Condition:</b> a goal needs a tool that doesn't exist yet. Bring the card to the people who build tools; they pick the tool.</p><div class="pre">&lt;goal_statement&gt;
+[The goal or problem, in your own words]
+&lt;/goal_statement&gt;
+&lt;inputs&gt;
+- goal_statement and my answers: free talk. Sort every specific I mention (system, product, number, name) as BINDING, EXAMPLE, BACKGROUND or GUESS, and restate examples generally.
+&lt;/inputs&gt;
+&lt;goal&gt;
+Interview me, then translate my answers into a Requirement Card a builder can design from without talking to me. Success: every dimension is Clear or carried as an open item, every requirement meets the card standard, and I confirm the card.
+&lt;/goal&gt;
+&lt;dimensions&gt;
+1. Job: what it must answer, draft or decide.
+2. Users: who uses it, and when.
+3. Sources: the documents and data it needs.
+4. Rules: limits on data and users.
+5. Sign-off: who is accountable for its output.
+6. Measure: what gets faster or better, and how we would know.
+&lt;/dimensions&gt;
+&lt;status_definitions&gt;
+Clear: an explicit answer with one reasonable reading.
+Fuzzy: answered, but vague, conflicting, or open to two readings.
+Unknown: not yet discussed, or I said I don&#x27;t know.
+&lt;/status_definitions&gt;
+&lt;limits&gt;
+- Each round: the status of dimensions 1 to 6, then up to 3 questions, each with options A, B, C and D (&quot;None of these, or I don&#x27;t know&quot;).
+- Exit: when all six are Clear, or after round 5. Every remaining Fuzzy or Unknown becomes an open item.
+- Card standard: each requirement is one EARS statement (&quot;When [trigger], the [capability] shall [response]&quot;), singular, verifiable and solution-free per INCOSE rules; it names a product only when that product is BINDING.
+&lt;/limits&gt;
+&lt;output&gt;
+During the interview:
+1. Status: dimensions 1 to 6, each Clear, Fuzzy or Unknown.
+2. Questions.
+At the end:
+1. Specifics: | Detail | BINDING / EXAMPLE / BACKGROUND / GUESS | Restated |
+2. Requirements: | ID (REQ-n) | Requirement | Dimension | My words |
+3. Open items: | ID (OPEN-n) | What is unresolved |
+4. Final line: &quot;Reply Confirmed, or list the IDs to correct.&quot;
+&lt;/output&gt;</div>
+</section>
+<section class="card s12" style="grid-column:span 12">
+<h2><span class="n">P</span>Prompt Grader · before you share a prompt</h2>
+<p class="cond"><b>Condition:</b> before a prompt goes to your team, or after you change one. New chat. Rerun the revised prompt on the same input before you save it.</p>
+<div class="pre">&lt;rubric&gt;
+Score each criterion 1 to 3. A criterion with nothing to act on scores 3 if the prompt states that case and how to handle it.
+
+| Criterion | 1 — Legacy | 2 — Developing | 3 — Standard |
+| --- | --- | --- | --- |
+| 1. Context | Vague, or includes material the task doesn&#x27;t use. | Right material, but not delimited, or long material follows the goal with no restatement. | Only material the task uses, each piece labeled and delimited. Long material first; goal and output after. |
+| 2. Goal | Scripts the model&#x27;s reasoning (&quot;think step by step&quot;). | Goal mixed with procedure the task doesn&#x27;t need. | States the goal and success criteria. Steps only where their order is part of the result or a person takes part. |
+| 3. Limits | Vague bans (&quot;don&#x27;t be wordy&quot;) or no limits. | Basic limits; edge cases open. | Positive, specific limits. A named label or action for each kind of uncertainty. Claims cite sources when sources exist. |
+| 4. Output | Open, or described casually. | General form only (&quot;use a table&quot;). | Parts in order, each part&#x27;s form and limits, any labels or IDs. Working before the final block. JSON only for programs. |
+| 5. Signal | Filler, personas, threats, tips. | Some padding. | Every sentence serves context, goal, limits or output. Definitions needed to stand alone stay. |
+| 6. Inputs and handoffs | Demands a specification from the person, or takes a raw chat or summary. | Treats every detail from a person as binding, or the next step can&#x27;t check the output. | States how each input is treated. A person&#x27;s free talk fills a stated rubric: named dimensions, each rated Clear, Fuzzy or Unknown against written definitions, with an exit rule; anything unresolved becomes an open item. Specifics are sorted as binding, example, background or guess; examples restated generally. The handoff translates what the person wants into a finite, testable artifact built to a named standard for its type (requirements: INCOSE rules, EARS syntax); it is a translation, never a summary; it lists open items and is confirmed by the person. A rubric encoding that standard checks it: a lint for mechanical rules, an anchored review for judgment. The next prompt takes only the artifact, in a new thread. |
+
+Rules:
+
+- Name no particular system, product, site, vendor or person; specifics arrive as inputs.
+- Remove unwanted details from the input instead of telling the model to ignore them.
+- A ban naming one exact item (&quot;never write TBD&quot;) is allowed.
+- Show formats with empty templates, not filled examples.
+- State artifacts directly, without process references (&quot;from Stage 4&quot;).
+- Review in a new thread, with the output, the artifact it came from, and the person&#x27;s words only.
+- Fix a thread&#x27;s own artifact in that thread; hand on only the fixed artifact.
+- Follow the Agile cycle: build from the artifact, the person reviews the result, new or changed requirements go into the artifact as a versioned patch with a change-log line, and the next cycle starts a new thread from the revised artifact.
+- Before saving a changed prompt, rerun it on the same input.
+&lt;/rubric&gt;
+
+&lt;prompt_under_review&gt;
+[PASTE THE PROMPT TO GRADE]
+&lt;/prompt_under_review&gt;
+
+&lt;purpose&gt;
+[One line: what the prompt is for and who runs it. Write NOT STATED if unknown.]
+&lt;/purpose&gt;
+
+&lt;goal&gt;
+Grade the prompt under review against every rubric criterion and rule, and write a revised prompt that does the same job and scores 3 on all six criteria. Success: every score below 3 has evidence and a fix, and the revised prompt changes only what the fixes require.
+&lt;/goal&gt;
+
+&lt;limits&gt;
+- Use the rubric cell wording as the anchor for each score.
+- Evidence is the exact quoted line, or MISSING plus what is missing.
+- When the purpose is NOT STATED and a score depends on it, write ASSUMED and the purpose you assumed.
+- Keep the prompt&#x27;s task, inputs and intended output. Record each change in the change list, outside the revised prompt.
+- Revised prompt length: the original length plus only what the fixes add.
+&lt;/limits&gt;
+
+&lt;output&gt;
+1. Scorecard: table with columns Criterion | Score (1-3) | Evidence | Fix; rows 1 to 6, then one row per rule broken.
+2. Change list: numbered, one line per change, each naming its criterion or rule.
+3. Revised prompt: one fenced code block, ready to paste.
+4. Open items: decisions the person must make before saving the revised prompt, or NONE.
+5. Retest: one line naming the input to rerun the revised prompt on before saving.
+&lt;/output&gt;</div>
+</section>
+<section class="card s12" style="grid-column:span 12">
+<h2><span class="n">L</span>Change log</h2>
+<table class="log"><tr><th>Version</th><th>Date</th><th>Prompt</th><th>Change</th><th>Why</th></tr>
+<tr><td>1.0</td><td></td><td>All</td><td>First version, from AI for Leaders</td><td></td></tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table>
+</section>
+
+</main></div>
+<footer class="foot"><span>© 2026 SkyWater Technology. Proprietary.</span><span>Training material. Prompts written to the Prompt Evaluation Rubric v3.2.</span></footer>
+</body>

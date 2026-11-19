@@ -1,0 +1,17 @@
+SYNTHETIC TRAINING DATA. Made up for the AI for Process Development course. Not from any real tool, lot, product or person.
+
+PROCESS FLOW: STEPS THAT TOUCH THE CAP NITRIDE (step 38)
+From the route. Only steps that touch or depend on this film are listed.
+
+Step 38  CAP-NIT DEP      PECVD-03 A/B. Recipe CAPNIT-POR. 3000 A silicon nitride.
+Step 39  CAP-NIT MEAS     Ellipsometer, 49-point map. Thickness and RI.
+                          Metrology recipe NIT-CAP-49 fits thickness with RI held fixed at 2.00.
+Step 41  VIA LITHO        Resist coats directly on the nitride. Exposure dose set for today's
+                          nitride thickness and reflectivity.
+Step 44  VIA ETCH         Etches through the nitride. Endpoint on the nitride-to-oxide change.
+                          Overetch time set for 3000 A of today's film.
+Step 47  HF PRE-CLEAN     100:1 HF dip, timed. Dip time is set for today's nitride wet etch rate.
+Step 52  ANNEAL           420 C, 30 min in forming gas. Hydrogen leaves the nitride and stress
+                          shifts. Today's film moves about +40 MPa (less compressive).
+Step 60  FINAL PASSIVATION  Sits on the cap nitride. Film stress stack checked at wafer bow
+                          inspection, step 61.

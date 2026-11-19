@@ -1,0 +1,78 @@
+AI FOR LEADERS · KIT · INSTRUCTOR KEY · v8 (Sharpen a decision)
+Not for trainees. Keep it out of the zip you send with the invite.
+All content is invented. "What to expect" lines describe what to look for;
+they are illustrations, not captured Copilot output. Run each prompt yourself
+before the session and note what your Copilot actually returns.
+
+BEFORE THE SESSION
+- Send AI-for-Leaders-kit.zip with the invite, or put the folder on the shared
+  drive and write the path on the whiteboard.
+- Run prompts 2, 3 and 4 yourself on the kit files. Save your outputs: if a
+  trainee's chat stalls, paste your brief so they can carry on.
+- Leaders who skipped AI Basics may need a hand opening Copilot Chat and
+  uploading a file. Pair them with someone who has done it.
+
+QUICK RECOVERIES (any exercise)
+- Can't upload the file: open it, copy all, paste the text instead.
+- Prompt too long to paste with the files: upload the files first, then paste
+  the prompt on its own.
+- Answer comes back as prose, not tables: reply "Use the output format in the
+  prompt."
+- Neighbor got a different answer: expected. The quotes should match the
+  file; the wording won't.
+- Short on time after the review: skip the fix (3b) and use the brief as it
+  is for the case against.
+
+--------------------------------------------------------------------
+EXERCISE 1 · BUILD THE BRIEF · 3:00
+new chat · consolidation_plan.txt + decision_frame.txt · prompt 2
+--------------------------------------------------------------------
+Four planted flaws the brief should surface (slide 2.4):
+1. UPTIME (assumption): Line B etch uptime stays at 92% after it takes on
+   Line A's tools, with the same support team. Expect it under Assumptions,
+   high impact, low or medium certainty.
+2. $1.2M, NO SOURCE (claim): the savings figure appears twice with no basis.
+   Expect NO EVIDENCE, and often a SOURCE TO OPEN (finance).
+3. NO SLACK (assumption): qualification ends week 10, full production week
+   11, customer audit week 12. Any slip lands on the audit.
+4. CUSTOMER REQUALIFICATION (open item): the plan never mentions it. The
+   brief can find it ONLY because decision_frame.txt names "customers whose
+   product runs on the moved tools" in the blast radius and "no customer
+   surprises" in the criteria. If no brief finds it, that is the lesson:
+   AI checks the page; the leader brings what's off it.
+Also check DB7: any brief that recommends an option fails its own standard.
+Ask the room before revealing.
+
+--------------------------------------------------------------------
+EXERCISE 2 · REVIEW THE BRIEF · 3:00
+new chat · consolidation_plan.txt · prompt 3 · paste the brief
+--------------------------------------------------------------------
+No fixed key: findings depend on each brief. Common, useful findings:
+- A claim with no quote (Lint, patched without a score).
+- The $1.2M listed as a fact rather than NO EVIDENCE (Impact 4 or 5).
+- An option not compared on every criterion (Lint, DB5).
+- A recommendation slipped into the brief (Lint, DB7).
+"NO FAILURES" is a valid answer. Ask: what did the review catch that you
+didn't?
+
+--------------------------------------------------------------------
+EXERCISE 3 · CASE AGAINST · 3:00
+new chat · my_leaning.txt · prompt 4 · paste the brief · horizon: end of Q3
+--------------------------------------------------------------------
+The leaning is "approve as written". Expect the case against to lean on:
+the unsourced savings, the uptime assumption with the same support team, no
+slack before the audit, and (if the brief found it) requalification.
+Watch for OUTSIDE BRIEF points: treat them as questions to check, not facts.
+Example decision for slide 4.2 (one of several reasonable answers): approve
+with changes, moving the shutdown after the customer audit, with the spend
+released once finance sources the $1.2M and customer quality confirms
+whether requalification is needed.
+
+--------------------------------------------------------------------
+TAKE HOME · MEETING NOTES · ops_review_transcript.txt
+--------------------------------------------------------------------
+Not used in class. If a leader asks: meeting Tuesday, March 3. The notes
+prompt should catch a vendor call with no owner, a Friday go-live that still
+waits on finance sign-off, a quiet worry about a backordered spare vacuum
+pump before Saturday's PM, and an audit dated both "the 12th" and "next
+Thursday".

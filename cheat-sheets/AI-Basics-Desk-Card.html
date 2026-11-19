@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Basics Quick Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#212121;--white:#fff;--amber:#B7872D;--amber-d:#F0BC48;--rule:#cfcfcf;--grey:#5c5c5c}
+@page{size:Letter;margin:0}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html{background:#ddd}
+body{margin:0;font-family:'Outfit',Arial,sans-serif;color:var(--black);line-height:1.2}
+.page{width:8.5in;height:11in;background:var(--white);margin:24px auto;display:flex;flex-direction:column;overflow:hidden}
+@media print{html{background:#fff}.page{margin:0}}
+.eye{font-size:10pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+/* header */
+.head{background:var(--black);color:var(--white);padding:.42in .55in .34in;border-bottom:.07in solid var(--amber-d)}
+.head .eye{color:var(--amber-d)}
+.head h1{margin:.08in 0 .06in;font-size:36pt;font-weight:400;line-height:1;color:var(--white)}
+.head p{margin:0;font-size:15pt;color:var(--amber-d)}
+/* body */
+.main{flex:1;padding:.2in .55in 0;display:flex;flex-direction:column}
+.data{display:flex;gap:.14in;align-items:baseline;padding:.04in 0 .16in;font-size:13.5pt}
+.data .eye{color:var(--amber);flex:none}
+.step{display:grid;grid-template-columns:1.55in 1fr;gap:.25in;border-top:1.5pt solid var(--black);padding:.15in 0 .15in;flex:1}
+.step .k .num{font-size:36pt;font-weight:400;line-height:.9;color:var(--amber)}
+.step .k h2{margin:.05in 0 .03in;font-size:20pt;font-weight:700;line-height:1}
+.step .k span{font-size:11pt;color:var(--grey)}
+.step ul{margin:0;padding:0;list-style:none;align-self:center}
+.step li{font-size:13.5pt;padding:.035in 0 .035in .2in;position:relative}
+.step li::before{content:"";position:absolute;left:0;top:.115in;width:.075in;height:.075in;background:var(--amber)}
+.step li b{font-weight:700}
+/* bottom */
+.uses{background:var(--black);color:var(--white);padding:.2in .55in .18in}
+.uses .eye{color:var(--amber-d)}
+.uses .row{display:grid;grid-template-columns:repeat(3,1fr);gap:.25in;margin-top:.09in}
+.uses .row div{font-size:13pt;border-left:2pt solid var(--amber-d);padding-left:.12in}
+.uses .row b{display:block;font-size:15pt;font-weight:700;margin-bottom:2px}
+.foot{display:flex;justify-content:space-between;padding:.09in .55in .14in;font-size:8pt;color:var(--grey)}
+</style>
+</head>
+<body>
+<section class="page">
+
+  <header class="head">
+    <div class="eye">AI Basics · Quick reference</div>
+    <h1>Good answers from AI chat</h1>
+    <p>Ask well. Refine it. Check it. Send it clean.</p>
+  </header>
+
+  <div class="main">
+    <div class="data"><span class="eye">First</span><span>Describe the situation. Leave out names, customers, and part or lot numbers.</span></div>
+
+    <div class="step">
+      <div class="k"><div class="num">1</div><h2>Ask</h2><span>Four parts, one message</span></div>
+      <ul>
+        <li><b>Context:</b> what happened, and what you have</li>
+        <li><b>Audience:</b> who the answer is for</li>
+        <li><b>Constraints:</b> what to stay inside</li>
+        <li><b>Format:</b> the shape you want back</li>
+        <li>Attach the source and have it quote the line it used</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <div class="k"><div class="num">2</div><h2>Refine</h2><span>Keep the conversation going</span></div>
+      <ul>
+        <li>Go wide, then different, then narrow</li>
+        <li>Ask for the weak spots, not a grade</li>
+        <li>Change one thing at a time: length, reader, or format</li>
+        <li>Say what it should leave alone</li>
+        <li>If it drifts, start a new chat with a short summary</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <div class="k"><div class="num">3</div><h2>Check</h2><span>More at stake, more checks</span></div>
+      <ul>
+        <li>Open the source it quotes</li>
+        <li>Check numbers and units against the spec</li>
+        <li>Ask again in a new chat and compare</li>
+        <li>Explain it back in your own words</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <div class="k"><div class="num">4</div><h2>Send</h2><span>Make it easy on the reader</span></div>
+      <ul>
+        <li>Lead with what happened and end with the ask</li>
+        <li>Cut what the reader doesn't need</li>
+        <li>Say where AI helped and what you checked</li>
+        <li>Send it when you'd sign it</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="uses">
+    <div class="eye">Three good uses, every day</div>
+    <div class="row">
+      <div><b>Brainstorm</b>Ideas, options, and what could go wrong</div>
+      <div><b>Write</b>Your notes into a clean first draft</div>
+      <div><b>Review</b>A first read of your own work</div>
+    </div>
+  </div>
+
+  <div class="foot"><span>© 2026 SkyWater Technology. Proprietary.</span><span>AI Basics · Rev. November 2026 · Works in any AI chat tool</span></div>
+</section>
+</body>
+</html>

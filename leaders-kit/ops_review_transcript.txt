@@ -1,0 +1,93 @@
+WEEKLY OPERATIONS REVIEW · TRANSCRIPT
+Tuesday, March 3 · recorded with everyone's OK
+Speakers are named by role. (Training material. Everything in this file is invented.)
+
+[00:00:05] Operations manager: Okay, we're recording, everyone's fine with that. Same agenda as always: last week's actions, tools, the dispatch change, the audit, anything else. Let's keep it short.
+
+[00:00:21] Operations manager: Last week's actions. Quality, the control plan update?
+
+[00:00:26] Quality lead: Drafted. I need the process lead to look at the new limits on the clean step before it goes out. I'd like to release it by Tuesday the 10th.
+
+[00:00:38] Process lead: I can review it Thursday. I'll send comments by end of day Thursday.
+
+[00:00:44] Operations manager: Good. So control plan to release on the 10th, process reviews Thursday. Equipment, the PM backlog?
+
+[00:00:52] Equipment lead: Down from fourteen open PMs to nine. The big one is ETCH-02. It's due its quarterly PM and we keep pushing it because it's our busiest tool. I want to take it down this Saturday, the 7th, day shift, eight hours.
+
+[00:01:10] Planning: Saturday works if we load ETCH-03 heavier on Friday night. I'll rebuild the Saturday plan around it.
+
+[00:01:17] Operations manager: Then that's decided. ETCH-02 PM Saturday the 7th, planning adjusts the load. Anything that could stop it?
+
+[00:01:24] Equipment lead: Parts are here except the chamber kit, which is on site. We're fine.
+
+[00:01:30] Operations manager: Okay. Chiller on the furnace bay. Where are we?
+
+[00:01:35] Equipment lead: Still running warm. The vendor sent a quote for the replacement compressor, but it's about thirty percent higher than last time, and the quote expires next week.
+
+[00:01:47] Finance partner: That's a lot higher. Did they say why?
+
+[00:01:50] Equipment lead: Not in the quote.
+
+[00:01:52] Operations manager: Someone should call the vendor and ask what changed before the quote runs out. We can't approve it blind.
+
+[00:01:59] Finance partner: Agreed. I'm not approving thirty percent on a PDF.
+
+[00:02:04] Operations manager: Okay. Moving on. The dispatch change. Planning?
+
+[00:02:09] Planning: The new dispatch rules are tested on the simulator. They cut queue time at litho by about an hour a lot in the simulation. I'd like to go live Friday on day shift so we can watch it with people on site.
+
+[00:02:24] Operations manager: I like Friday. Let's plan on Friday.
+
+[00:02:27] Finance partner: One thing. Going live needs the extra overtime for the two schedulers on Friday and Saturday. I still need to sign off on the overtime. I'll look at it this week.
+
+[00:02:38] Operations manager: Fine, fine. So Friday go-live, planning owns it. Process, anything on your side for Friday?
+
+[00:02:44] Process lead: Only that we shouldn't change dispatch and run the clean-step limits change the same day. One change at a time.
+
+[00:02:51] Planning: The limits change goes in after the control plan on the 10th, so they won't overlap.
+
+[00:02:57] Operations manager: Good. Technicians, how's nights?
+
+[00:03:01] Technician lead (nights): Mostly quiet. We had two alarms on IMP-01, both cleared on reset. Logged them. Training's going fine on the new hires, two of them are signed off on the wet benches now.
+
+[00:03:15] Operations manager: Great news.
+
+[00:03:17] Technician lead (nights): The other thing, for Saturday, the spare vacuum pump for ETCH-02... I'm not sure it ships before the PM. The order shows backordered. Probably fine. Anyway.
+
+[00:03:28] Operations manager: Okay. The customer audit. Quality?
+
+[00:03:32] Quality lead: The audit is on the 12th. They want to see the control plan, the last six months of excursions, and the training records for the clean step.
+
+[00:03:43] Operations manager: So the control plan has to be out before then. The 10th is tight but okay.
+
+[00:03:48] Quality lead: I'll build the excursion summary. Training records, I need someone from the floor to pull them.
+
+[00:03:55] Technician lead (nights): I can pull the night shift records. Days, I don't know who.
+
+[00:04:00] Operations manager: I'll ask the day shift lead. We'll sort that out.
+
+[00:04:04] Process lead: Should we do a dry run of the audit? Last time the questions on the clean step caught us out.
+
+[00:04:10] Operations manager: Yes, good idea. Quality, can you set up a dry run?
+
+[00:04:14] Quality lead: Sure. Let's do it Monday the 9th, an hour, same people as this meeting.
+
+[00:04:20] Operations manager: Done. Dry run Monday the 9th.
+
+[00:04:23] Planning: Quick one on the audit: do they want to walk the line? Because if it's Thursday we have the dispatch change still settling in.
+
+[00:04:31] Quality lead: They asked for a line walk, yes.
+
+[00:04:34] Operations manager: Fine. Let's make sure the line looks good for next Thursday then. Anything else?
+
+[00:04:39] Process lead: The new etch recipe trial. We have three lots ready. I want to hold them until after the PM, so we're not mixing a fresh chamber with a recipe change.
+
+[00:04:48] Equipment lead: Makes sense to me.
+
+[00:04:50] Operations manager: Agreed. Hold the three trial lots until after the ETCH-02 PM. Process owns the hold.
+
+[00:04:56] Finance partner: For the record, I also still owe you the Q2 spares budget. That's due on the 20th.
+
+[00:05:02] Operations manager: Thanks. Okay, I think that's everything. Same time next week.
+
+[00:05:06] (Recording ends.)

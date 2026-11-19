@@ -1,0 +1,13 @@
+ONE-POINT LESSON CHECKLIST · sample standard         [practice file · invented]
+
+A one-point lesson has:
+1. A title that names the task
+2. Who it is for
+3. Why it matters: one line on what goes wrong if it's skipped
+4. Numbered steps, 7 or fewer, each starting with a verb
+5. Every time and number stated exactly (no "soon", no "a while")
+6. The most common mistake, called out
+7. Who to call if it doesn't work
+8. The lesson's owner and its next review date
+
+It fits on one page, in plain words, with every acronym spelled out once.

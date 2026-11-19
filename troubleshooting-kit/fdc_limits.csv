@@ -1,0 +1,25 @@
+tool,chamber,parameter,warning_low,warning_high,alarm_low,alarm_high,source
+ETCH-04,A,he_leak_sccm,,2.0,,4.0,chamber qual 2023
+ETCH-04,A,he_pressure_torr,9.5,10.5,9.0,11.0,chamber qual 2023
+ETCH-04,A,chuck_temp_c,58.5,61.5,57.0,63.0,chamber qual 2023
+ETCH-04,A,he_supply_psi,25,,20,,facilities 2022
+ETCH-04,A,rf_reflected_w,,15,,30,chamber qual 2023
+ETCH-04,A,chamber_pressure_mtorr,28,32,25,35,chamber qual 2023
+ETCH-04,B,he_leak_sccm,,,,4.0,tool default (interlock only)
+ETCH-04,B,he_pressure_torr,9.5,10.5,9.0,11.0,chamber qual 2023
+ETCH-04,B,chuck_temp_c,58.5,61.5,57.0,63.0,chamber qual 2023
+ETCH-04,B,he_supply_psi,25,,20,,facilities 2022
+ETCH-04,B,rf_reflected_w,,15,,30,chamber qual 2023
+ETCH-04,B,chamber_pressure_mtorr,28,32,25,35,chamber qual 2023
+ETCH-05,A,he_leak_sccm,,2.0,,4.0,chamber qual 2023
+ETCH-05,A,he_pressure_torr,9.5,10.5,9.0,11.0,chamber qual 2023
+ETCH-05,A,chuck_temp_c,58.5,61.5,57.0,63.0,chamber qual 2023
+ETCH-05,A,he_supply_psi,25,,20,,facilities 2022
+ETCH-05,A,rf_reflected_w,,15,,30,chamber qual 2023
+ETCH-05,A,chamber_pressure_mtorr,28,32,25,35,chamber qual 2023
+ETCH-05,B,he_leak_sccm,,,,4.0,tool default (interlock only)
+ETCH-05,B,he_pressure_torr,9.5,10.5,9.0,11.0,chamber qual 2023
+ETCH-05,B,chuck_temp_c,58.5,61.5,57.0,63.0,chamber qual 2023
+ETCH-05,B,he_supply_psi,25,,20,,facilities 2022
+ETCH-05,B,rf_reflected_w,,15,,30,chamber qual 2023
+ETCH-05,B,chamber_pressure_mtorr,28,32,25,35,chamber qual 2023

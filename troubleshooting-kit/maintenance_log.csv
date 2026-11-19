@@ -1,0 +1,15 @@
+start,signed_off,tool,chamber,work_order,type,description,parts,checks_at_signoff,by
+2026-10-19 06:00,2026-10-19 16:40,ETCH-04,A,WO-58112,Quarterly PM,ESC lifted for clean. Chuck seal O-ring replaced. Focus ring replaced. Wet clean. 25-wafer season.,Chuck seal kit; focus ring,"He leak 0.52 sccm at 60 C after 30 min soak, PASS (limit 1.0). Season OK.","Crew A (JR, MT)"
+2026-10-22 13:00,2026-10-22 13:40,ETCH-05,-,WO-58190,Gas cylinder change,"Process gas cylinder changed, leak checked, purged.",Gas cylinder,Fitting leak check PASS.,LP
+2026-10-27 08:00,2026-10-27 13:00,ETCH-04,A,WO-58301,Wet clean,"Chamber wet clean, 10-wafer season.",Lid O-ring,Season OK.,JR
+2026-10-28 20:00,2026-10-29 01:00,ETCH-04,B,WO-58322,Wet clean,"Chamber wet clean, 10-wafer season.",Lid O-ring,Season OK.,DK
+2026-10-29 08:00,2026-10-29 13:00,ETCH-05,B,WO-58330,Wet clean,"Chamber wet clean, 10-wafer season.",Lid O-ring,Season OK.,AK
+2026-10-31 08:00,2026-10-31 13:00,ETCH-05,A,WO-58377,Wet clean,"Chamber wet clean, 10-wafer season.",Lid O-ring,Season OK.,AK
+2026-11-05 09:00,2026-11-05 10:40,ETCH-05,A,WO-58461,Part replacement,He backside MFC replaced with new rev per vendor notice. No chuck work.,He MFC (new rev),"MFC zero and span verify PASS. He leak 0.51 sccm, PASS.",LP
+2026-11-05 20:00,2026-11-06 07:05,ETCH-04,B,WO-58470,Chuck PM,ESC lifted for clean. Chuck seal O-ring replaced. Lift pin bellows inspected OK. He backside MFC replaced with new rev while open. Reassembled. 25-wafer season.,Chuck seal kit; He MFC (new rev),"He leak 0.41 sccm at 22 C at sign-off, PASS (limit 1.0). MFC zero verify PASS. Season OK.","Crew B (DK, SN)"
+2026-11-06 05:00,2026-11-06 05:50,ETCH-04,A+B,WO-58472,Software,Tool controller patch loaded on ETCH-04 (both chambers). 04A paused for load and restart.,-,Restart and recipe check PASS on 04A.,Equipment SW (RB)
+2026-11-07 02:20,2026-11-07 03:30,ETCH-04,B,WO-58488,Unscheduled: alarm reset,"He backside flow high. Reset, dechuck/rechuck test wafer, returned to production.",-,"Test wafer clamped, He flow 1.2 sccm at idle.",night shift (TC)
+2026-11-07 14:30,2026-11-07 16:00,ETCH-04,B,WO-58495,Unscheduled: alarm reset,"He backside flow high, second time since PM. Reset, test wafer, returned to production.",-,Test wafer clamped OK.,day shift (MO)
+2026-11-08 01:00,2026-11-08 02:30,ETCH-04,B,WO-58503,Unscheduled: alarm reset,"ESC clamp fault, backside pressure not reached. Assumed related to facilities He dip. Reset.",-,Test wafer clamped OK.,night shift (TC)
+2026-11-08 09:10,2026-11-09 00:40,ETCH-04,B,WO-58509,Unscheduled: hold for engineering,"He backside flow high, third time since PM. MFC zero check done: 0.02 sccm at zero, OK. On-call engineer: reset and run, plan MFC swap back to old rev Monday.",-,MFC zero check OK. No leak check done.,day shift (MO); on-call eng
+2026-11-09 05:40,,ETCH-04,B,WO-58516,Unscheduled: down,"He backside flow high, fourth He alarm since PM. Chamber down awaiting day shift engineering.",-,-,night shift (TC)

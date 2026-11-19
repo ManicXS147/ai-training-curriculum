@@ -1,0 +1,18 @@
+SYNTHETIC TRAINING DATA. Made up for the AI for Troubleshooting course. Not from any real tool, vendor, lot, product or person.
+
+SHIFT NOTES, ETCH AREA (copied from the pass-down log, unedited)
+
+Thu Nov 5, days: 05A He MFC swapped to the new rev per vendor notice. Back up 10:40, no issues.
+Thu Nov 5, nights: 04B down 20:00 for chuck PM. Swapping its He MFC to the new rev too while it's open.
+  Software patch for ETCH-04 loading during the PM window, 04A paused ~50 min for it.
+Fri Nov 6, days: 04B back up 07:10. Leak check passed, seasoning good. Running mixed product.
+Fri Nov 6, nights: 04B He flow on the tool screen reads higher than A side? No alarm. Not sure what normal is on B.
+Sat Nov 7, nights: 02:10 04B He backside flow high. Reset, rechucked a test wafer, back up 03:30.
+Sat Nov 7, days: 14:20 04B He backside flow high AGAIN. Reset, back up 16:00. That new MFC??
+Sat Nov 7, nights: Facilities called a He header pressure dip around 22:35 to 23:20, every chamber got a
+  supply warning. 00:55 04B ESC clamp fault, reset, back up 02:30. Probably from the dip.
+Sun Nov 8, days: 09:00 04B He backside flow high, third one. Called on-call eng, holding the chamber.
+  Tech did an MFC zero check, reads fine at zero.
+Sun Nov 8, nights: On-call said reset and run, swap the MFC back to the old rev Monday. Back up 00:40.
+  05:30 down AGAIN, He backside flow high. That's 4 He alarms since the PM. It's the new MFC, has to be.
+  04B ran P-110, P-220, P-330 and P-440 all weekend. 04A fine all weekend.

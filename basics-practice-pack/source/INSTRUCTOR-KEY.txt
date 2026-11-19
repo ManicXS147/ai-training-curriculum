@@ -1,0 +1,82 @@
+AI BASICS · PRACTICE PACK · INSTRUCTOR KEY
+Not for trainees. Keep it out of the zip you send with the invite.
+All content is invented. The "good result" lines describe what to look for;
+they are illustrations, not captured Copilot output.
+
+BEFORE THE SESSION
+- Send AI-Basics-practice-pack.zip with the invite, or put the folder on the
+  shared drive and put the path on the whiteboard.
+- Each exercise has a Floor and an Office file. People pick either; mixed
+  tables are fine.
+- Every hands-on slide ends with a Checkpoint click after the timer. Use it to
+  catch the room up before moving on.
+
+QUICK RECOVERIES (any exercise)
+- Can't attach the file: paste the text instead.
+- Pasted something real from work: stop, delete that chat, use the pack file.
+  It's the section 05 habit, so say so kindly.
+- Long thread getting muddled: new chat, paste the notes again (move 6).
+- Neighbor got a different answer: expected. Same question, different wording
+  each time (check 3). The facts should match the notes; the wording won't.
+- Finished early: run the other track's file.
+
+--------------------------------------------------------------------
+SECTION 02 · Prompt A or B?  5:00
+--------------------------------------------------------------------
+Goal: feel the four parts and one move change the answer.
+Trap built in: the notes say "Vendor FSE maybe Thurs??" (Floor) and
+"Go-live ... maybe moves to the 24th??" (Office). A model filling gaps with
+what's likely often turns "maybe" into a firm fact.
+Checkpoint (2 min in): "Who has Prompt B back? Hands up." Help anyone still
+on step 1 paste the notes.
+A good Floor result (illustration): ETCH-04 down since 01:40, alarm 2217,
+vendor visit NOT confirmed; CVD-02 needs its 3rd seasoning wafer before
+release; MET-01 IT ticket unknown / new tech needs vent sign-off / safety walk
+volunteer. Coffee machine, WET-01, particle check and the delivery dropped.
+A good Office result: Ask: help getting the IT account answer by Friday; at
+risk: go-live 17th may slip to 24th (not decided); changed: badge and safety
+training now day 1, 3 of 5 reps replied.
+Debrief (Checkpoint click): "Did any version say the vendor is coming
+Thursday, or that go-live moved to the 24th? The notes only say maybe. That's
+the 15-versus-10 again, and it's exactly what section 03 catches." Step 3's
+"write 'not in notes'" usually fixes it: point that out.
+
+--------------------------------------------------------------------
+SECTION 06 · Brainstorm in three turns  4:00
+--------------------------------------------------------------------
+Goal: the good ideas show up in turns 2 and 3.
+Checkpoint (2 min): "Who's on turn 3?" Anyone stuck on picking a topic gets
+the spare in prompts.txt.
+Debrief: ask two people which idea they'd try and which turn found it. Most
+will say turn 2 or 3.
+
+--------------------------------------------------------------------
+SECTION 07 · Draft and shape  5:00
+--------------------------------------------------------------------
+Goal: you bring the facts, it brings the structure; small edits shape it.
+Traps built in: Floor notes say "check soon if it doesn't come back" (no
+time). Office notes have the walkway action with no owner and "next meeting
+(date?)". Drafts often fill these in: "check again after 15 minutes", "Shipping
+lead to clear the walkway by the 31st", a made-up meeting date.
+Checkpoint (2:30): "Hands up if you're on step 2." Anyone with no draft yet:
+paste Prompt 1 for them.
+Debrief (Checkpoint click): "Every fact in your draft should be one you gave
+it. Did yours add a time, an owner, or a date? Circle it; that's what we
+review next." Remind them to keep the chat open.
+
+--------------------------------------------------------------------
+SECTION 08 · Review race  4:00
+--------------------------------------------------------------------
+Goal: a first review that keeps your voice; the checklist is the source.
+What the checklist should surface (illustration):
+  Floor: no exact time for "check soon"; no owner or review date; who to call
+  is vague ("equipment on-call if it's a hard down"); acronyms (OCAP) not
+  spelled out.
+  Office: walkway action has no owner or due date; next meeting date missing;
+  the audit-frequency idea is an open question with nobody to answer it.
+Checkpoint (2 min): "Who has a list back?" If a chat rewrote the draft
+instead of listing problems, have them add "Don't rewrite it. Number each
+problem and quote the line."
+Debrief (Checkpoint click): first table to read out a problem they would
+have missed wins. Then: "Would you sign it now?" Point out that the fixes
+for "no owner" and "no date" need a person: the AI can't know them.

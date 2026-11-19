@@ -1,0 +1,36 @@
+DECISION FRAME · CONSOLIDATE ETCH ONTO ONE LINE
+Confirmed by the decision owner. Paste or upload this into the chat that
+builds the Decision Brief. Your leaning is NOT in this file on purpose.
+
+1. Decision
+   Approve the plan to move the Line A etch tools onto Line B by the end of
+   Q3, and its facilities spend?
+
+2. Options
+   A. Approve as written.
+   B. Approve with changes.
+   C. Don't approve; keep etch on two lines.
+
+3. Deadline
+   Friday's operations staff meeting. Facilities design starts the week after.
+
+4. Blast radius
+   - Etch operators and technicians on both lines, and the etch support team.
+   - Customers whose product runs on the moved tools.
+   - The Q3 customer audit.
+   - Facilities (shutdown work) and finance (spend and savings).
+
+5. Undo cost
+   High after the move: a second shutdown, and requalification of the tools.
+
+6. Criteria
+   - The savings figure has a source and holds up.
+   - Line B etch uptime and output hold after the move.
+   - The Q3 customer audit passes.
+   - No customer surprises on product that moves to new tools.
+   - The support team's workload stays sustainable.
+
+Open items
+   OPEN-1  Where the $1.2M savings figure comes from.
+
+(Training material. Everything in this file is invented.)

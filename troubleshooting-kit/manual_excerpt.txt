@@ -1,0 +1,36 @@
+SYNTHETIC TRAINING DATA. Made up for the AI for Troubleshooting course. Not from any real tool, vendor, lot, product or person.
+
+GENERIC ETCH PLATFORM · MAINTENANCE MANUAL (illustrative excerpt)
+CHAPTER 7: ELECTROSTATIC CHUCK (ESC)
+
+7.1 How backside helium works
+Helium is fed through grooves in the chuck surface, under the clamped wafer, to carry heat from the wafer
+into the chuck. The controller holds backside pressure at setpoint (typically 10 Torr) and reports the
+flow it needs to do so. That flow is the He leak: helium escaping past the wafer edge and the chuck seal.
+A normal chuck with a good wafer runs well under 1.0 sccm. The interlock stops the chamber at 4.0 sccm.
+
+7.4 Removing and installing the chuck
+  a. Vent, cool the chuck below 30 C, and lock out per site procedure.
+  b. Lift the chuck assembly with the lifting fixture. Do not rest it on the seal face.
+  c. Replace the outer chuck seal O-ring at every chuck removal.
+  d. SEAT THE SEAL FULLY IN ITS GROOVE BEFORE LOWERING THE CHUCK. Run a finger around the full
+     circumference. A seal that is rolled or partly out of the groove can hold at room temperature and
+     open up as the chuck heats and cycles.
+  e. Lower the chuck straight down. Torque the clamp screws in the star pattern in two passes.
+
+7.6 He backside leak check (required after any chuck removal)
+  a. Bring the chuck to process temperature (typically 60 C) and let it soak 30 minutes.
+  b. Clamp a test wafer. Set backside pressure to the process setpoint.
+  c. Record the He flow after 5 minutes.
+  Acceptance: 1.0 sccm or less AT TEMPERATURE.
+  NOTE: A check done at room temperature does not verify seal seating. A seal that is not seated
+  typically reads above 1.0 sccm on the first runs at temperature and climbs as the chuck cycles.
+
+7.9 Troubleshooting: He backside flow high
+  Symptom                                         Most likely            Check
+  One wafer, does not repeat                      Wafer: chipped, warped, particle on backside
+                                                                         Inspect the wafer
+  Several chambers at once                        He supply              Supply pressure, facility log
+  Step change right after an MFC swap             MFC                    Flow verify against a reference
+  Flow climbs run by run after chuck work;        Chuck seal not seated  Hot leak check (7.6), then
+    a reset brings it down for a while              or damaged             inspect and reseat the seal

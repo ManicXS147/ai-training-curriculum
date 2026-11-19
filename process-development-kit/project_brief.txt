@@ -1,0 +1,44 @@
+SYNTHETIC TRAINING DATA. Made up for the AI for Process Development course. Not from any real tool, lot, product or person.
+
+PROJECT BRIEF: A FASTER CAP NITRIDE
+
+The ask (from your manager, Monday Nov 2, 2026)
+PECVD-03 is the bottleneck tool for the new product ramp. Step 38, the cap nitride deposition
+(recipe CAPNIT-POR), takes 60 seconds of deposition per wafer. Cut deposition time by at least
+20 percent without breaking anything downstream. Two weeks. 25 wafers for experiments.
+
+What done looks like
+  1. A designed experiment (DOE) that fits the wafer budget
+  2. A recommended recipe, backed by the DOE
+  3. Confirmation runs that pass on BOTH chambers of PECVD-03 (A and B)
+  4. A change request the change control board can approve
+
+The film today (CAPNIT-POR on PECVD-03)
+  Target thickness 3000 A. Deposition rate about 3100 A/min.
+  RF power 500 W, pressure 4.0 Torr, SiH4 200 sccm, NH3 2000 sccm, spacing 400 mil, 400 C
+
+Specs for the new recipe
+  Deposition rate         Mean at least 3700 A/min (that is 20 percent faster than today)
+  Uniformity (NU)         At most 2.0 % (1 sigma, 49-point map). Cpk at least 1.33
+  Film stress             -250 to -50 MPa (compressive). Cpk at least 1.33
+  Refractive index (RI)   1.98 to 2.02 at 633 nm. Cpk at least 1.33
+  HF wet etch rate (WER)  Mean within 10 percent of today's (see TR-2023-007)
+Cpk is checked for each chamber separately.
+
+What you have (all in this folder)
+  project_brief.txt   This page
+  tool_limits.csv     What you are allowed to change, and how far
+  past_reports.txt    Earlier tech reports on this and similar films
+  process_flow.txt    Every later step that touches this film
+  spc_baseline.csv    60 days of monitor wafers on today's recipe, both chambers
+  doe_results.csv     Results of the experiment (open it in section 04)
+
+Terms
+  PECVD     Plasma-enhanced chemical vapor deposition
+  NU        Nonuniformity: thickness spread across the wafer, as 1 sigma in percent of the mean
+  RI        Refractive index, a quick check of film composition (higher = more silicon-rich)
+  WER       Wet etch rate in 100:1 HF, a check of film density and composition
+  Spacing   Gap between the showerhead and the wafer heater, in mil (thousandths of an inch)
+  DOE       Design of experiments
+  Cpk       Process capability: distance from the mean to the nearest spec limit, in units of 3 sigma
+  POR       Process of record, the recipe running today

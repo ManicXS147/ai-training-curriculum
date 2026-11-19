@@ -1,0 +1,47 @@
+timestamp,tool,chamber,alarm_code,subsystem,alarm_text,severity,cleared_at,operator_comment
+2026-10-20 06:10,ETCH-05,B,TM-014,TRANSFER,Wafer not detected at transfer arm,WARNING,2026-10-20 06:40,"retry ok, no wafer damage"
+2026-10-20 11:14,ETCH-04,B,HE-101,HE,He backside flow high (interlock 4.0 sccm),ALARM,2026-10-20 12:02,"chipped wafer, removed, no repeat"
+2026-10-20 14:13,ETCH-05,A,PC-033,PRESSURE,Throttle valve position out of range,WARNING,2026-10-20 14:33,recovered on its own
+2026-10-21 06:40,ETCH-05,A,ESC-231,ESC,ESC dechuck timeout,WARNING,2026-10-21 06:46,auto retry ok
+2026-10-21 18:34,ETCH-05,A,CW-008,COOLING,Chiller flow low,ALARM,2026-10-21 19:05,chiller filter changed
+2026-10-22 05:23,ETCH-04,B,CW-008,COOLING,Chiller flow low,ALARM,2026-10-22 05:45,flow recovered
+2026-10-22 07:34,ETCH-05,B,RF-052,RF,RF reflected power high,WARNING,2026-10-22 07:45,auto tune recovered
+2026-10-23 03:52,ETCH-05,A,HE-101,HE,He backside flow high (interlock 4.0 sccm),ALARM,2026-10-23 04:31,"wafer off center on chuck, robot re-taught"
+2026-10-23 16:52,ETCH-05,A,PC-033,PRESSURE,Throttle valve position out of range,WARNING,2026-10-23 17:20,recovered on its own
+2026-10-23 19:56,ETCH-05,B,EP-071,ENDPOINT,"Endpoint not detected, timed etch used",WARNING,2026-10-23 20:00,monitor wafer ok
+2026-10-24 11:52,ETCH-04,B,RF-052,RF,RF reflected power high,WARNING,2026-10-24 12:29,auto tune recovered
+2026-10-24 13:22,ETCH-05,B,DI-002,INTERLOCK,Lid interlock open,ALARM,2026-10-24 13:31,cleared
+2026-10-24 18:30,ETCH-05,B,CW-008,COOLING,Chiller flow low,ALARM,2026-10-24 18:32,flow recovered
+2026-10-24 19:12,ETCH-04,A,ESC-205,ESC,ESC clamp voltage deviation,WARNING,2026-10-24 19:15,"cleared, monitor"
+2026-10-24 21:08,ETCH-04,A,TM-014,TRANSFER,Wafer not detected at transfer arm,WARNING,2026-10-24 21:36,sensor wiped
+2026-10-26 08:40,ETCH-04,B,EP-071,ENDPOINT,"Endpoint not detected, timed etch used",WARNING,2026-10-26 08:46,"lot dispositioned by eng, ok"
+2026-10-26 20:45,ETCH-04,B,CW-008,COOLING,Chiller flow low,ALARM,2026-10-26 20:55,flow recovered
+2026-10-27 18:22,ETCH-04,A,CW-008,COOLING,Chiller flow low,ALARM,2026-10-27 18:32,flow recovered
+2026-10-27 20:54,ETCH-05,B,EP-071,ENDPOINT,"Endpoint not detected, timed etch used",WARNING,2026-10-27 21:33,monitor wafer ok
+2026-10-28 16:37,ETCH-04,A,HE-101,HE,He backside flow high (interlock 4.0 sccm),ALARM,2026-10-28 17:18,"warped wafer from rework lot, removed"
+2026-10-28 20:01,ETCH-05,A,CW-008,COOLING,Chiller flow low,ALARM,2026-10-28 20:23,flow recovered
+2026-10-28 23:15,ETCH-04,A,PC-033,PRESSURE,Throttle valve position out of range,WARNING,2026-10-28 23:55,recovered on its own
+2026-10-29 19:11,ETCH-05,B,PC-033,PRESSURE,Throttle valve position out of range,WARNING,2026-10-29 19:44,cleared
+2026-10-30 21:05,ETCH-05,B,HE-101,HE,He backside flow high (interlock 4.0 sccm),ALARM,2026-10-30 21:43,"wafer chipped at edge, removed"
+2026-10-31 13:03,ETCH-05,B,ESC-231,ESC,ESC dechuck timeout,WARNING,2026-10-31 13:05,auto retry ok
+2026-10-31 13:39,ETCH-05,A,DI-002,INTERLOCK,Lid interlock open,ALARM,2026-10-31 14:19,lid closed after inspection
+2026-11-01 08:26,ETCH-04,B,HE-101,HE,He backside flow high (interlock 4.0 sccm),ALARM,2026-11-01 08:47,"backside particle on wafer, removed, no repeat"
+2026-11-01 13:52,ETCH-05,A,EP-071,ENDPOINT,"Endpoint not detected, timed etch used",WARNING,2026-11-01 14:12,monitor wafer ok
+2026-11-02 03:24,ETCH-05,B,PC-033,PRESSURE,Throttle valve position out of range,WARNING,2026-11-02 03:27,recovered on its own
+2026-11-02 09:15,ETCH-05,A,TM-014,TRANSFER,Wafer not detected at transfer arm,WARNING,2026-11-02 09:42,"retry ok, no wafer damage"
+2026-11-02 20:14,ETCH-05,B,RF-052,RF,RF reflected power high,WARNING,2026-11-02 20:38,auto tune recovered
+2026-11-03 02:48,ETCH-04,B,ESC-231,ESC,ESC dechuck timeout,WARNING,2026-11-03 02:53,auto retry ok
+2026-11-03 14:17,ETCH-05,B,RF-052,RF,RF reflected power high,WARNING,2026-11-03 14:31,cleared on next step
+2026-11-04 05:28,ETCH-05,A,PC-033,PRESSURE,Throttle valve position out of range,WARNING,2026-11-04 05:52,recovered on its own
+2026-11-05 17:38,ETCH-04,B,DI-002,INTERLOCK,Lid interlock open,ALARM,2026-11-05 18:16,cleared
+2026-11-06 13:18,ETCH-05,A,VA-019,VACUUM,Load lock pump-down slow,WARNING,2026-11-06 13:44,cleared
+2026-11-07 02:10,ETCH-04,B,HE-101,HE,He backside flow high (interlock 4.0 sccm),ALARM,2026-11-07 03:30,"reset, rechucked test wafer, ran"
+2026-11-07 14:20,ETCH-04,B,HE-101,HE,He backside flow high (interlock 4.0 sccm),ALARM,2026-11-07 16:00,same as nights. reset
+2026-11-07 22:41,ETCH-04,A,HE-310,HE,He supply pressure low (< 25 psi),WARNING,2026-11-07 23:23,facilities He event
+2026-11-07 22:42,ETCH-04,B,HE-310,HE,He supply pressure low (< 25 psi),WARNING,2026-11-07 23:21,facilities He event
+2026-11-07 22:44,ETCH-05,A,HE-310,HE,He supply pressure low (< 25 psi),WARNING,2026-11-07 23:24,facilities He event
+2026-11-07 22:47,ETCH-05,B,HE-310,HE,He supply pressure low (< 25 psi),WARNING,2026-11-07 23:22,facilities He event
+2026-11-08 00:55,ETCH-04,B,ESC-220,ESC,ESC clamp fault: backside pressure not reached,ALARM,2026-11-08 02:30,"clamp fault, prob the He dip earlier. reset"
+2026-11-08 05:22,ETCH-05,B,TM-014,TRANSFER,Wafer not detected at transfer arm,WARNING,2026-11-08 05:58,sensor wiped
+2026-11-08 09:00,ETCH-04,B,HE-101,HE,He backside flow high (interlock 4.0 sccm),ALARM,2026-11-09 00:40,"held for eng. on-call: reset and run, MFC swap Mon"
+2026-11-09 05:30,ETCH-04,B,HE-101,HE,He backside flow high (interlock 4.0 sccm),ALARM,,down. waiting on day shift eng
