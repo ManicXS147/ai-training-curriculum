@@ -66,8 +66,8 @@ RED HERRINGS PLANTED
   D7: warning limits on 04B and 05B (and every chamber), hot leak check made mandatory in the chuck PM
     procedure, and a check that every chamber has every limit its sister has.
 
-THE 8D LOOP IN CLASS (deck rebuilt 2026-11-15)
-  Trainees run the playbook (playbook.md). Only the inputs and the technicians' findings are mocked, in
+THE 8D LOOP IN CLASS (deck rebuilt 2026-11-15; Gemini only from 2026-11-19)
+  Trainees run the playbook (playbook.md, v0.6) in Gemini Enterprise; anyone without a seat pairs with a neighbor. Only the inputs and the technicians' findings are mocked, in
   worked_example.md: interview responses, the engineer's selections for each cycle, and a findings bank keyed
   to the kind of check. Every AI output is the trainee's real output.
   Cycle 1 (no chamber opening): hot leak 1.48 sccm at 60 C, backside pressure held 10 Torr, flow verify

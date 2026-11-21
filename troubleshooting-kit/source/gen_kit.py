@@ -93,6 +93,8 @@ for r in runs:
 # the run in progress when each 04B alarm fired: aborted at the interlock
 for a, code, _ in DOWNS:
     st = a - TD(minutes=R.randint(25, 50))
+    prev_end = max((r['end'] for r in runs if r['ch'] == 'ETCH-04 B' and r['end'] <= a), default=st)
+    st = max(st, prev_end + TD(minutes=2))  # the aborted run starts after the previous 04B run ends
     rows.append(row('ETCH-04 B', st, a, R.choice(PRODUCTS), 3.9 + R.random() * 0.06, 9.35 + R.random() * 0.1,
                     30 + R.gauss(0, .3), 60 + R.gauss(0, .15), 6 + abs(R.gauss(0, 1)), 'ABORTED',
                     lmax=4.03 if code == 'HE-101' else 3.97))

@@ -1,13 +1,17 @@
-AI FOR LEADERS · PLAYBOOK PROMPTS · v1.0
+AI FOR LEADERS · PLAYBOOK PROMPTS · v1.1
 =========================================
 
 Copy each prompt whole, from the line after "COPY FROM HERE" to the line
 before "COPY TO HERE". Start a new chat for every numbered prompt. Fill in
 the [brackets]. Everything in square brackets is yours to replace.
 
-Keep this file. Copy it into your own document. When a prompt misses
-something, change it, raise the version, add a line to the change log at the
-bottom, and rerun it on the same input before you keep the change.
+Works in Copilot Chat and Gemini. Neither has content restrictions, so
+upload or paste the real plan, transcript or record.
+
+Your copy: the shared playbooks live in the AI training SharePoint folder.
+Copy this file into your own document. When a prompt misses something,
+change it, raise the version, add a line to the change log at the bottom,
+and rerun it on the same input before you keep the change.
 
 ------------------------------------------------------------------------
 SHARPEN A DECISION
@@ -24,17 +28,17 @@ COPY FROM HERE
 [Talk freely: the decision, why now, the options you see, who it affects, and what you lean toward]
 </decision_talk>
 <inputs>
-- decision_talk and my answers: free talk. Sort every specific I mention as BINDING, EXAMPLE, BACKGROUND or GUESS, and restate examples generally.
+- decision_talk and my answers: free talk. Sort every specific I mention (a name, number, system, date or story) as BINDING, EXAMPLE, BACKGROUND or GUESS. BINDING: the decision must respect exactly this. EXAMPLE: one instance of a general need; restate it generally. BACKGROUND: true, but constrains nothing. GUESS: my estimate; it becomes an open item.
 </inputs>
 <goal>
-Interview me, then translate my answers into a Decision Frame that a separate chat can analyze without talking to me. Success: every dimension is Clear or carried as an open item, and I confirm the frame.
+Interview me, then translate my answers into Decision Frame v1.0, built to the frame standard, that a separate chat can analyze without talking to me. Success: every dimension is Clear or carried as an open item, every frame line meets the standard, and I confirm the frame.
 </goal>
 <dimensions>
 1. Decision: the question, in one sentence.
 2. Options: each option, including doing nothing.
 3. Deadline: when it must be decided, and why.
-4. Blast radius: who and what it lands on.
-5. Reversibility: what undoing it would cost.
+4. Blast radius: every group, customer, commitment and function it lands on.
+5. Undo cost: what undoing it would cost, and when undoing gets harder.
 6. Criteria: what a good outcome looks like, and how it would be measured.
 7. Leaning: which option I favor now, and why.
 </dimensions>
@@ -43,19 +47,29 @@ Clear: an explicit answer with one reasonable reading.
 Fuzzy: answered, but vague, conflicting, or open to two readings.
 Unknown: not yet discussed, or I said I don't know.
 </status_definitions>
+<frame_standard>
+F1 One fact per line.
+F2 Every line quotes or cites my words; a line you inferred is an open item instead.
+F3 Every criterion names how it would be judged met or not met.
+F4 Options are distinct, and one of them is doing nothing or keeping things as they are.
+F5 Every GUESS and every unresolved point is an OPEN-n item naming what would close it. Never write TBD.
+F6 The leaning appears only in its own block.
+</frame_standard>
 <limits>
-- Each round: the status of dimensions 1 to 7, then up to 3 questions, each with options A, B, C and D ("None of these, or I don't know").
+- Each round: the status of dimensions 1 to 7, the new specifics with a proposed sort, then up to 3 questions, each with options A, B, C and D ("None of these, or I don't know"). Options are distinct answers of comparable appeal.
+- A specific stays unsorted until I confirm its sort.
 - Exit: when all seven are Clear, or after round 5. Every remaining Fuzzy or Unknown becomes an open item.
 </limits>
 <output>
 During the interview:
 1. Status: dimensions 1 to 7, each Clear, Fuzzy or Unknown.
-2. Questions.
+2. Specifics to sort: | Detail | Proposed sort |, or NONE.
+3. Questions.
 At the end:
 1. Specifics: | Detail | BINDING / EXAMPLE / BACKGROUND / GUESS | Restated |
-2. Decision Frame, dimensions 1 to 6: | Dimension | Answer | My words |
-3. Leaning, as its own block, so it can be left out of the brief.
-4. Open items: | ID (OPEN-n) | What is unresolved |
+2. Decision Frame v1.0, dimensions 1 to 6: | Dimension | Answer | My words |
+3. Open items: | ID (OPEN-n) | What is unresolved | What would close it |
+4. Leaning, as its own block, so it can be left out of the brief.
 5. Final line: "Reply Confirmed, or list the dimensions to correct."
 </output>
 COPY TO HERE
@@ -70,93 +84,103 @@ COPY FROM HERE
 [Upload or paste the plan, proposal or work the decision rests on]
 </source_material>
 <decision_frame>
-[Upload or paste the confirmed Decision Frame, dimensions 1 to 6]
+[Upload or paste the confirmed Decision Frame, without your leaning]
 </decision_frame>
+<date>[Today's date]</date>
 <inputs>
-- source_material: the source for every claim, figure and assumption.
-- decision_frame: sets the question, options and criteria; adds no facts.
+- source_material: the only source for claims, figures and assumptions.
+- decision_frame: sets the question, options, blast radius, criteria and open items; adds no facts. Keep its OPEN IDs.
 </inputs>
 <goal>
-Translate the source material into a Decision Brief that meets the Decision Brief Standard, so I can decide with the evidence, assumptions and gaps in view. Success: every item passes DB1 to DB7.
+Translate the source material into Decision Brief v1.0 that meets the standard, so I can decide with the evidence, assumptions and gaps in view. Success: every row passes DB1 to DB7.
 </goal>
 <standard>
-DB1 [Lint] Every claim the decision rests on is listed, with its quote.
-DB2 [Review] Every claim shows its evidence and where it is, or NO EVIDENCE.
-DB3 [Review] Every figure is recomputed, and a mismatch shows both values.
-DB4 [Review] Every assumption is tied to a quote or marked NOT IN SOURCE, and is rated for impact and certainty with the anchors.
-DB5 [Lint] Every option in the frame is compared on every criterion in the frame.
-DB6 [Review] Information that is absent and could change the decision is an open item.
-DB7 [Lint] The brief contains no recommendation.
+DB1 [Lint] Every claim, figure and assumption row has an ID and a quote or NOT IN SOURCE.
+DB2 [Review] Every claim the decision rests on is listed, with the evidence the source gives and where, or NO EVIDENCE.
+DB3 [Review] Every figure is recomputed from the source; a mismatch shows both values.
+DB4 [Review] Every assumption, stated or implied by the plan, is rated for impact and certainty with the anchors.
+DB5 [Lint] Every option in the frame has a cell for every criterion in the frame.
+DB6 [Review] Information that is absent and could change the decision is an open item, including anything the frame's blast radius or criteria need that the source does not cover.
+DB7 [Lint] The brief contains no recommendation and no ranking of options.
 </standard>
 <limits>
-- Labels: NO EVIDENCE, FIGURE FAILS, NOT IN SOURCE, SOURCE TO OPEN.
+- Labels: NO EVIDENCE (a claim with no supporting fact in the source); FIGURE FAILS (the recomputed value differs); CANNOT RECOMPUTE (the source lacks the inputs); NOT IN SOURCE (an assumption the plan relies on but never states); SOURCE TO OPEN (a document or person outside the source that would settle a row).
 - Impact: H = the decision's goal fails if this is wrong; M = cost or schedule slips; L = minor rework.
 - Certainty: H = the source gives evidence; M = stated without evidence; L = not stated or contradicted.
+- Option cells: what the source says about that option on that criterion, with row IDs, or NOT IN SOURCE.
+- Open items carried from the frame keep their IDs; new ones take the next unused number.
 </limits>
 <output>
+Title line: Decision Brief v1.0
 1. Claims: | ID (CL-n) | Claim | Quote | Evidence | Where | Label |
-2. Figures: | ID (FG-n) | Quote | Stated | Recomputed |
+2. Figures: | ID (FG-n) | Quote | Stated | Recomputed | Label |
 3. Assumptions, high impact and low certainty first: | ID (AS-n) | Assumption | Quote or NOT IN SOURCE | Impact | Certainty |
-4. Options: | Option | one column per criterion | AS IDs it depends on |
+4. Options: | Option | one column per criterion | Row IDs it depends on |
 5. Open items: | ID (OPEN-n) | Missing information | How it could change the decision |
-6. Sources to open: | Source | Why |
+6. Sources to open: | Source | Rows it would settle |
+7. Change log: | Version | Date | Row ID | Rule | Change |, with one line for v1.0.
 </output>
 COPY TO HERE
 
 
 3 · REVIEW THE BRIEF (chat C, new)
 Condition: use after the brief is built. Never in the chat that built it.
-In class: upload consolidation_plan.txt, paste this, then paste your brief
-inside <artifact>.
+In class: upload consolidation_plan.txt and decision_frame.txt, paste this,
+then paste your brief inside <artifact>.
 
 COPY FROM HERE
 <source>
 [Upload or paste what the brief was built from]
 </source>
+<decision_frame>
+[Upload or paste the confirmed Decision Frame, without your leaning]
+</decision_frame>
 <artifact>
 [Paste the Decision Brief]
 </artifact>
 <standard>
-DB1 [Lint] Every claim the decision rests on is listed, with its quote.
-DB2 [Review] Every claim shows its evidence and where it is, or NO EVIDENCE.
-DB3 [Review] Every figure is recomputed, and a mismatch shows both values.
-DB4 [Review] Every assumption is tied to a quote or marked NOT IN SOURCE, and is rated for impact and certainty with the anchors.
-DB5 [Lint] Every option in the frame is compared on every criterion in the frame.
-DB6 [Review] Information that is absent and could change the decision is an open item.
-DB7 [Lint] The brief contains no recommendation.
+DB1 [Lint] Every claim, figure and assumption row has an ID and a quote or NOT IN SOURCE.
+DB2 [Review] Every claim the decision rests on is listed, with the evidence the source gives and where, or NO EVIDENCE.
+DB3 [Review] Every figure is recomputed from the source; a mismatch shows both values.
+DB4 [Review] Every assumption, stated or implied by the plan, is rated for impact and certainty with the anchors.
+DB5 [Lint] Every option in the frame has a cell for every criterion in the frame.
+DB6 [Review] Information that is absent and could change the decision is an open item, including anything the frame's blast radius or criteria need that the source does not cover.
+DB7 [Lint] The brief contains no recommendation and no ranking of options.
+Anchors. Impact: H = the decision's goal fails if this is wrong; M = cost or schedule slips; L = minor rework. Certainty: H = the source gives evidence; M = stated without evidence; L = not stated or contradicted.
 </standard>
 <gate>
 Impact (I):
 1 Cosmetic: wording only; meaning unchanged.
-2 Local: one item is weaker than it should be; nothing depends on it.
-3 Misleading: an owner, date, figure or status is unclear, and someone could act on it.
-4 Wrong: an owner, date, figure or decision differs from the source, or a conditional item is shown as final.
-5 Missing or invented: something in the source has no item, or an item has no source.
+2 Local: one row is weaker than it should be; nothing depends on it.
+3 Misleading: a figure, rating or status is unclear, and someone could act on it.
+4 Wrong: a figure, quote or rating differs from the source, or an assumption is shown as a fact.
+5 Missing or invented: something the decision depends on has no row, or a row has no source.
 Ambiguity (A):
-0 Two readers would read the item the same way.
+0 Two readers would read the row the same way.
 1 Two readers would read it the same way with small differences.
 2 Two readers could read it differently, or it can't be checked.
 Patch when I is 4 or 5, or when I is 3 and A is 2. Keep in every other case.
 </gate>
 <inputs>
-- source: the ground truth for what was written.
-- artifact: the item under review.
-- standard: the rules it must meet; rules marked Lint are mechanical, rules marked Review need judgment.
+- source: the ground truth for facts and figures.
+- decision_frame: the ground truth for options, criteria and blast radius.
+- artifact: the brief under review.
+- standard: rules marked Lint are mechanical; rules marked Review need judgment.
 </inputs>
 <goal>
-Find every place the artifact fails its standard against the source. Success: each failure has evidence and a corrected row, and Review findings carry a gate result.
+Find every place the brief fails its standard against the source and the frame. Success: each failure has evidence and a corrected or added row, and every Review finding carries a gate result.
 </goal>
 <limits>
-- Check Lint rules row by row and patch every Lint failure without scoring it.
-- Rate each Review finding with the gate.
-- Evidence is the quoted source line, or MISSING plus what is missing.
-- Keep existing IDs; number new items from the next unused ID.
+- Check Lint rules row by row; every Lint failure is patched without a score.
+- Rate each Review finding with the gate; only Patch findings go in the patch block.
+- Evidence is the quoted source or frame line, or MISSING plus what is missing.
+- Keep existing IDs; number new rows from the next unused ID.
 - List failures only. When nothing fails, output only: NO FAILURES.
 </limits>
 <output>
-1. Lint failures: | ID | Rule | Evidence | Corrected row |
-2. Review findings: | ID | Rule | Evidence | I | A | Gate |
-3. Patch block: | ID | Corrected or added row |
+1. Lint failures: | Row ID | Rule | Evidence |
+2. Review findings: | Row ID | Rule | Evidence | I | A | Gate |
+3. Patch block: | Row ID | Rule | Corrected or added row, in full |
 </output>
 COPY TO HERE
 
@@ -168,12 +192,16 @@ COPY FROM HERE
 <patch_block>
 [Paste the patch block]
 </patch_block>
+<date>[Today's date]</date>
 <goal>
-Apply every patch row to the artifact above. Success: each patched ID matches its patch row, and every other row is unchanged.
+Apply every patch row to the Decision Brief in this chat. Success: each patched ID matches its patch row, every other row is unchanged, and the brief still meets DB1 to DB7.
 </goal>
+<limits>
+- When a patch row conflicts with another row, apply the patch and add an open item naming the conflict.
+</limits>
 <output>
-1. The full artifact, version raised by 0.1, same tables as before.
-2. Change log: | Version | Date | Change | Why |
+1. The full Decision Brief, version raised by 0.1, same tables as before.
+2. Change log, one new line per patched row: | Version | Date | Row ID | Rule | Change |
 </output>
 COPY TO HERE
 
@@ -191,18 +219,19 @@ COPY FROM HERE
 <horizon>[When the outcome will be known]</horizon>
 <inputs>
 - decision_brief: the only source of facts.
-- leaning: the position to test.
+- leaning: the position to test. Its reasons are claims to test, not facts.
 - horizon: the time window for the pre-mortem.
 </inputs>
 <goal>
-The strongest case against my leaning, built only from the brief, so I decide knowing its weakest points. Success: every point cites brief IDs, and the result names the evidence that would change the decision.
+The strongest case against my leaning, built only from the brief, so I decide knowing its weakest points. Success: every point cites brief row IDs, and the result names the evidence that would change the decision.
 </goal>
 <limits>
-- Cite a brief ID for every point; label a point with no ID OUTSIDE BRIEF.
+- Cite brief row IDs for every point; label a point with no ID OUTSIDE BRIEF.
+- When a reason in my leaning has no row in the brief, list it as UNTESTED.
 - Case against: 200 words or fewer.
 </limits>
 <output>
-1. Case against: numbered points, each with its brief IDs.
+1. Case against: numbered points, each with its row IDs.
 2. Pre-mortem: three ways the leaning fails within the horizon, each with AS or OPEN IDs.
 3. What would change the decision: | Evidence | Option it favors | How to get it |
 </output>
@@ -242,6 +271,8 @@ An announcement each reader can act on and challenge. Success: the decision, the
 - 250 words or fewer.
 - State the decision in the record's own words.
 - Open items appear as open, with their owner or "Owner needed".
+- A missing date reads "Date needed"; a missing way to raise a concern reads "Reply to me directly".
+- Brief IDs stay out of the announcement.
 </limits>
 <output>
 Subject: [Decision], [date]
@@ -276,11 +307,11 @@ COPY FROM HERE
 </transcript>
 <meeting>
 <purpose>[What the meeting was for, one line, or NOT STATED]</purpose>
-<date>[Meeting date]</date>
+<date>[Meeting date, with the weekday]</date>
 </meeting>
 <inputs>
 - transcript: the only source for what was said; record only what it contains.
-- meeting: background for headings and wording only.
+- meeting: background for headings, wording and dates only.
 </inputs>
 <goal>
 Meeting notes every attendee can act on without rereading the transcript. Success: every decision, action and unsettled point in the transcript has exactly one item, each with its quote.
@@ -289,6 +320,7 @@ Meeting notes every attendee can act on without rereading the transcript. Succes
 - Decisions: what was decided, who decided, and the condition or "None stated".
 - Actions: one owner, one due date and one deliverable each, starting with a verb.
 - Anything that waits on another approval, and anything raised but not settled, including brief concerns, is an open item.
+- Dates: write each as a calendar date worked out from the meeting date, followed by the words used.
 - Uncertainty labels: NOT STATED (never said; also add an open item), UNCLEAR (two readings; quote both), CONDITIONAL (waits on another approval or event).
 - Names, numbers and examples appear only where they are part of a decision or action.
 </limits>
@@ -304,7 +336,7 @@ Keep the transcript.
 
 
 ------------------------------------------------------------------------
-REQUIREMENT CARD (interview)
+REQUIREMENT CARD (interview, then review)
 Condition: use when a goal needs a tool that doesn't exist yet. New chat.
 ------------------------------------------------------------------------
 
@@ -313,10 +345,10 @@ COPY FROM HERE
 [The goal or problem, in your own words]
 </goal_statement>
 <inputs>
-- goal_statement and my answers: free talk. Sort every specific I mention (system, product, number, name) as BINDING, EXAMPLE, BACKGROUND or GUESS, and restate examples generally.
+- goal_statement and my answers: free talk. Sort every specific I mention (system, product, number, name) as BINDING, EXAMPLE, BACKGROUND or GUESS. BINDING: the tool must respect exactly this. EXAMPLE: one instance of a general need; restate it generally. BACKGROUND: true, but constrains nothing. GUESS: my estimate; it becomes an open item.
 </inputs>
 <goal>
-Interview me, then translate my answers into a Requirement Card a builder can design from without talking to me. Success: every dimension is Clear or carried as an open item, every requirement meets the card standard, and I confirm the card.
+Interview me, then translate my answers into Requirement Card v1.0 a builder can design from without talking to me. Success: every dimension is Clear or carried as an open item, every requirement meets the card standard, and I confirm the card.
 </goal>
 <dimensions>
 1. Job: what it must answer, draft or decide.
@@ -331,22 +363,71 @@ Clear: an explicit answer with one reasonable reading.
 Fuzzy: answered, but vague, conflicting, or open to two readings.
 Unknown: not yet discussed, or I said I don't know.
 </status_definitions>
+<card_standard>
+R1 Each requirement is one EARS statement: "When <trigger>, the <capability> shall <response>", or "The <capability> shall <response>" when it always applies.
+R2 Singular: one "shall" per requirement.
+R3 Verifiable: a test, demonstration or record can show it met or not met.
+R4 Solution-free: it names a product only when that product is BINDING.
+R5 Every requirement cites my words; an inference is an open item instead. Never write TBD.
+</card_standard>
 <limits>
-- Each round: the status of dimensions 1 to 6, then up to 3 questions, each with options A, B, C and D ("None of these, or I don't know").
+- Each round: the status of dimensions 1 to 6, the new specifics with a proposed sort, then up to 3 questions, each with options A, B, C and D ("None of these, or I don't know").
 - Exit: when all six are Clear, or after round 5. Every remaining Fuzzy or Unknown becomes an open item.
-- Card standard: each requirement is one EARS statement ("When [trigger], the [capability] shall [response]"), singular, verifiable and solution-free per INCOSE rules; it names a product only when that product is BINDING.
 </limits>
 <output>
 During the interview:
 1. Status: dimensions 1 to 6, each Clear, Fuzzy or Unknown.
-2. Questions.
+2. Specifics to sort: | Detail | Proposed sort |, or NONE.
+3. Questions.
 At the end:
 1. Specifics: | Detail | BINDING / EXAMPLE / BACKGROUND / GUESS | Restated |
-2. Requirements: | ID (REQ-n) | Requirement | Dimension | My words |
-3. Open items: | ID (OPEN-n) | What is unresolved |
+2. Requirement Card v1.0: | ID (REQ-n) | Requirement | Dimension | My words |
+3. Open items: | ID (OPEN-n) | What is unresolved | What would close it |
 4. Final line: "Reply Confirmed, or list the IDs to correct."
 </output>
 COPY TO HERE
+
+Then review it in a new chat:
+
+COPY FROM HERE
+<my_words>
+[Paste only your own messages from the interview, in order, numbered M1, M2, ...]
+</my_words>
+<artifact>
+[Paste the confirmed Requirement Card]
+</artifact>
+<card_standard>
+R1 Each requirement is one EARS statement: "When <trigger>, the <capability> shall <response>", or "The <capability> shall <response>" when it always applies.
+R2 Singular: one "shall" per requirement.
+R3 Verifiable: a test, demonstration or record can show it met or not met.
+R4 Solution-free: it names a product only when that product is BINDING.
+R5 Every requirement cites my words; an inference is an open item instead. Never write TBD.
+</card_standard>
+<gate>
+Impact (I): 1 wording only · 2 one requirement weaker, nothing depends on it · 3 unclear, and a builder could build the wrong thing · 4 differs from my words, or fixes a solution I never required · 5 something I asked for has no requirement, or a requirement has no source in my words.
+Ambiguity (A): 0 two builders build the same thing · 1 small differences · 2 they could build different things, or it can't be tested.
+Patch when I is 4 or 5, or when I is 3 and A is 2. Keep in every other case.
+</gate>
+<inputs>
+- my_words: the only evidence of what I want.
+- artifact: the card under review.
+</inputs>
+<goal>
+Find every requirement that fails the card standard or my words. Success: each failure has evidence and a corrected or added row.
+</goal>
+<limits>
+- R1 and R2 are mechanical: patch every failure without a score.
+- Evidence is the quoted message, or NO SUPPORT.
+- When my words don't settle a finding, rate it A = 2 and propose an open item.
+- List failures only. When nothing fails, output only: NO FAILURES.
+</limits>
+<output>
+1. Findings: | REQ ID | Rule | Evidence | I | A | Gate |
+2. Patch block: | REQ or OPEN ID | Corrected or added row, in full |
+</output>
+COPY TO HERE
+Paste the patch block into the interview chat: "Apply these patches, raise
+the version, add a change-log line, and show the card for my confirmation."
 
 
 ------------------------------------------------------------------------
@@ -357,6 +438,7 @@ Rerun the revised prompt on the same input before you save it.
 
 CHANGE LOG
 | Version | Date | Prompt | Change | Why |
-| 1.0 | | all | First version, from AI for Leaders | |
+| 1.0 | 2026-11-15 | all | First version, from AI for Leaders | |
+| 1.1 | 2026-11-19 | all | Graded to Prompt Evaluation Rubric v3.2 and dry-run on the kit: frame standard added; brief gets a version, defined labels (CANNOT RECOMPUTE added), carried frame IDs and defined option cells; review also takes the frame; build and fix take a date and share one change-log layout; meeting notes resolve dates; requirement card gets a standard and a review prompt | Rubric v3.2; the review could not check options, criteria or blast radius without the frame |
 
 (Training material.)

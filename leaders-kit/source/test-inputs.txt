@@ -1,0 +1,34 @@
+LEADERS PROMPT TEST · SAMPLE INPUTS · 2026-11-19
+Not for trainees. Use with cheat-sheets/AI-for-Leaders-Prompt-Test-Sheet.
+Paste each block where the prompt's [brackets] are. These are the same inputs
+the dry run used (source/dry-run-2026-11-19/), so you can compare.
+
+------------------------------------------------------------------------
+PROMPT 1 · FRAME · paste inside <decision_talk>
+------------------------------------------------------------------------
+So we've got this plan to pull the Line A etch tools over onto Line B, consolidate everything on one line. Ops wants an answer at Friday's staff meeting. Line A is running at maybe half capacity, I think, and the plan says it saves a million two a year, which sounds great but I don't know where that number came from. Honestly I'm leaning toward just approving it, it makes sense. My worry is the audit, we've got the customer audit in Q3 and I don't want to be mid-move. Also the techs on both lines, they'd have to absorb this. Last time we moved a tool, the implant one a couple of years back, it took a month longer than planned.
+
+------------------------------------------------------------------------
+PROMPT 6 · ANNOUNCEMENT · paste inside <decision_record>
+Audience: Etch operators, technicians and the etch support team on Lines A and B
+------------------------------------------------------------------------
+Decision: Approve with changes. Move the Line A etch tools onto Line B, but schedule the shutdown after the Q3 customer audit.
+Why (with brief IDs): The audit lands one week after full production (AS-4). The $1.2M has no source yet (CL-4, OPEN-1). Facilities work is 4 weeks, not 2 (FG-5).
+What would change my mind: Finance cannot source the $1.2M, or Line B utilities can't take the tools.
+Who it lands on: Etch operators and technicians on both lines, the etch support team, customers on the moved tools, facilities, finance.
+Owners and dates: Finance sources the $1.2M by Oct 3. Facilities confirms Line B utility capacity by Oct 10. Customer quality confirms whether requalification is needed by Oct 10. Facilities spend is released once finance sources the savings.
+Still open: Customer requalification (customer quality). Support team staffing (no owner yet).
+
+------------------------------------------------------------------------
+REQUIREMENT CARD · paste inside <goal_statement>
+------------------------------------------------------------------------
+I want something that can read all our 8D reports and tell a new engineer whether a problem like theirs has happened before. Like when ETCH-04 had the chuck issue, someone had seen it on another tool two years ago but nobody knew. It should probably be in SkyChat or maybe SharePoint search, I don't know. Engineers and techs would use it, mostly when a tool goes down. It needs to show the report it got the answer from.
+
+------------------------------------------------------------------------
+MEETING NOTES
+------------------------------------------------------------------------
+Transcript: ops_review_transcript.txt
+Purpose: Weekly operations review
+Date: Tuesday, March 3
+
+(Training material. Everything in this file is invented.)
